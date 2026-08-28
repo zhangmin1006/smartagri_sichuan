@@ -1,0 +1,53 @@
+==========================================================================
+MODEL VALIDATION SUITE
+==========================================================================
+
+[V4] shock module against observed climate
+  C1  Chengdu Plain (Dujiangyan-irrigated)    12419 days   34 years
+  C2  Deyang / Mianyang plain margin          12419 days   34 years
+  C3  Suining central basin hills             12419 days   34 years
+  C4  Yibin southern basin rim                12419 days   34 years
+  C5  Nanchong eastern basin                  12419 days   34 years
+  C6  Liangshan western mountains             12419 days   34 years
+  [PASS] county occurrence probabilities reproduced
+         expected max deviation < 0.03 | observed 0.008
+         3000 simulated seasons against 34 observed years
+  [WARN] spatial correlation reproduced per hazard
+         expected max deviation < 0.12 | observed 0.188 ({'D1': 0.188, 'D2': 0.093, 'D3': nan})
+         tetrachoric-to-Pearson attenuation makes exact recovery of the latent correlation from binary outcomes impossible; the ordering across hazards is what matters
+  [PASS] held-out decade 2015-2024 vs parameters fitted to 1991-2014
+         expected max |difference| < 0.15 | observed 0.015
+         D1: 0.188 -> 0.183; D2: 0.368 -> 0.383; D3: 0.076 -> 0.083
+  [PASS] documented Sichuan drought years recovered from the data
+
+[V6] behavioural response to fundamentals (belief-mediated)
+  [PASS] steady-state adoption is ordered by true efficacy
+         expected zero < baseline < high | observed 0.055 < 0.081 < 0.134
+         measured over the last 6 of 24 seasons, shock every season
+  [PASS] the efficacy response is economically material
+  [PASS] beliefs converge toward true efficacy
+
+[V7] face validation against external anchors
+  [PASS] adoption below the 0.355 stated-willingness anchor
+         expected 0.05 - 0.355 (revealed use below stated willingness) | observed 0.171
+         Gong, Ma & Zhang (2024), 214 Sichuan smallholders: mean stated willingness 0.355; verified use is expected to be lower
+  [PASS] service is the dominant access mode for T3
+         expected service share exceeds own-equipment share | observed service 0.124
+         over 60 per cent of Sichuan plots are below 0.07 ha, so ownership is uneconomic for most farmers
+  [PASS] mean seasonal loss in a plausible range
+  [PASS] peak-season waiting time is operationally plausible
+         expected 1 - 20 days | observed 2.7 days
+         NOT yet validated against data; work-order timestamps are the priority-1 acquisition in the data audit
+  [PASS] exit rate is low over a four-year horizon
+
+==========================================================================
+SUMMARY
+==========================================================================
+  V4: PASS 3, WARN 1
+  V6: PASS 3
+  V7: PASS 5
+
+  overall: PASS 11, WARN 1
+  runtime: 328s
+
+Outputs -> C:\Users\3054109\OneDrive - Queen's University Belfast\Model building\sichuan\smartagri_sichuan\outputs\validation

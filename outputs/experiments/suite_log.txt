@@ -1,0 +1,48 @@
+==========================================================================
+EXPERIMENT SUITE  (n_farmers=250, seasons=8, reps=4, contract grid=17)
+==========================================================================
+
+[RQ1] adoption and effort ...
+  risk_quartile  n  c_farmer  area_mu  adopt_any  effective  service_T3  own_T3  adopt_T2  mean_effort
+Q1 least averse 63     0.249   20.842      0.667      0.571       0.270     0.0     0.143        0.199
+             Q2 62     0.388   14.829      0.645      0.500       0.242     0.0     0.129        0.164
+             Q3 62     0.507   11.609      0.484      0.403       0.177     0.0     0.097        0.122
+ Q4 most averse 63     0.643    8.512      0.381      0.254       0.063     0.0     0.079        0.090
+
+[RQ1] contract map over the (c1, c2) plane ...
+curvature   n  mean_effort  share_interior  mean_payment
+  concave 136        0.965           0.110         0.028
+   convex 136        0.796           0.559         0.126
+   linear  17        0.861           0.353         0.073
+
+[RQ1] verifiability experiment ...
+                            regime  mean_effort_T3  effective_use_rate  mean_loss_fraction  avoided_loss_fraction  mean_income
+     first-best (fully verifiable)          0.7528              0.4490              0.0658                 0.0017   10418.8866
+partial monitoring (as configured)          0.6988              0.4000              0.1013                 0.0023    9789.0944
+          no monitoring (shirking)          0.4204              0.2365              0.1050                 0.0012   10168.3234
+
+[RQ2] resilience under controlled shocks ...
+                      design  income_drop_pct  recovery_seasons  loss_shock_season  causal_mitigation_rate  naive_adopter_effect  selection_inflation  loss_adopters  loss_non_adopters  cumulative_loss_area
+   no shock (counterfactual)            0.000               0.0              0.000                   0.000                   NaN                  NaN          0.000              0.000                 0.000
+                  D1 drought            3.642               1.0              0.056                   0.015                 0.436               29.189          0.042              0.074                 0.056
+                    D2 flood            6.694               1.0              0.050                   0.035                 0.346                9.772          0.040              0.062                 0.050
+ D3 compound (tech degraded)           21.495               1.0              0.171                   0.011                 0.142               12.948          0.159              0.185                 0.171
+         D1 then D2 (repeat)            3.642               2.0              0.056                   0.015                 0.460               30.819          0.041              0.077                 0.100
+D2 plus D4 (compound stress)            9.168               1.0              0.050                   0.035                 0.287                8.101          0.043              0.060                 0.050
+
+[RQ3] policy scenarios ...
+             scenario  mitigation_rate  avoided_loss  effective_use_rate  mean_wait_days  peak_wait_days  income_p10  exit_rate  fiscal_cost  equity_gap  mountain_gap
+             baseline           0.0227        0.0021              0.3456          2.3476          2.9245   2225.4244        0.0       0.0000      0.0045        0.0035
+            insurance           0.0227        0.0021              0.3456          2.3476          2.9245   2252.1695        0.0 1367657.2625      0.0045        0.0035
+           integrated           0.0238        0.0019              0.3846          1.2152          2.7195   2184.7041        0.0   37797.6589      0.0038        0.0032
+      mountain_equity           0.0237        0.0013              0.3460          2.4511          3.0634   2301.2418        0.0       0.0000      0.0029        0.0021
+              subsidy           0.0232        0.0027              0.3439          1.8680          2.2610   2095.1301        0.0  687540.5589      0.0056        0.0045
+ training_maintenance           0.0199        0.0023              0.3661          2.3542          2.8749   2137.0686        0.0       0.0000      0.0046        0.0036
+              voucher           0.0240        0.0028              0.3490          2.5162          3.0684   2209.3269        0.0   50332.7034      0.0060        0.0046
+voucher_plus_capacity           0.0250        0.0033              0.3705          1.1593          2.2736   2024.6140        0.0   50820.7895      0.0072        0.0054
+     warning_response           0.0225        0.0024              0.3362          3.0586          3.9498   2160.5283        0.0       0.0000      0.0054        0.0039
+
+Pareto-non-dominated scenarios: ['integrated', 'mountain_equity', 'training_maintenance', 'voucher', 'voucher_plus_capacity']
+
+Outputs -> C:\Users\3054109\OneDrive - Queen's University Belfast\Model building\sichuan\smartagri_sichuan\outputs\experiments
+Total runtime: 499.7s

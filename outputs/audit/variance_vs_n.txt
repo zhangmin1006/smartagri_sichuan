@@ -1,0 +1,6 @@
+ n_farmers  farmers/provider   mean diff        sd  CV of mean @8  reps for +-10%
+       150              12.5    +0.01240   0.00536          15.3%              72
+       300              25.0    +0.01431   0.00769          19.0%             111
+       600              50.0    +0.01287   0.00671          18.4%             105
+
+done

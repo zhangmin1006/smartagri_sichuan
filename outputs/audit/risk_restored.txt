@@ -1,0 +1,25 @@
+=== 1. adoption by risk quartile (does c1 order behaviour?) ===
+           n     c1    area  adopt  effort
+q                                         
+Q1 least  63  0.236  17.450  0.317   0.054
+Q2        62  0.404  15.595  0.242   0.045
+Q3        62  0.506  12.826  0.226   0.046
+Q4 most   63  0.645   9.884  0.143   0.031
+
+=== 2. sensitivity of outputs to farmer risk aversion ===
+  farmer risk mean low 0.45:
+     adopt_any                  0.0961 ->     0.0954  (  -0.8%)
+     effort_T3                  0.7339 ->     0.7188  (  -2.1%)
+     effective_use_rate         0.1278 ->     0.1239  (  -3.0%)
+     mitigation_rate            0.0109 ->     0.0110  (  +0.5%)
+     mean_wait_days             7.0570 ->     6.3952  (  -9.4%)
+     mean_income             8048.5358 ->  8048.6693  (  +0.0%)
+  farmer risk mean high 0.75:
+     adopt_any                  0.0961 ->     0.0967  (  +0.6%)
+     effort_T3                  0.7339 ->     0.7611  (  +3.7%)
+     effective_use_rate         0.1278 ->     0.1394  (  +9.1%)
+     mitigation_rate            0.0109 ->     0.0112  (  +2.8%)
+     mean_wait_days             7.0570 ->     7.1701  (  +1.6%)
+     mean_income             8048.5358 ->  8050.8299  (  +0.0%)
+
+done

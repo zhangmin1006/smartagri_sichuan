@@ -1,0 +1,83 @@
+============================================================================
+MODEL AND DATA AUDIT
+============================================================================
+
+[A1] configuration coverage
+  declared keys checked : 302
+  never read by code    : 64
+    - disruptions.yaml       calibrated_on
+    - disruptions.yaml       decision_date
+    - disruptions.yaml       liquidity_stress_elasticity
+    - disruptions.yaml       outage_duration_days
+    - disruptions.yaml       region
+    - disruptions.yaml       risk_aversion_shift
+    - disruptions.yaml       scope_change_2026_08
+    - disruptions.yaml       spatial_correlation_estimated
+    - disruptions.yaml       tier1_rationale
+    - disruptions.yaml       typical_duration_days
+    - model_params.yaml      abm_to_sd
+    - model_params.yaml      contract_diversification
+    - model_params.yaml      debt_ratio
+    - model_params.yaml      distribution
+    - model_params.yaml      dt_years
+    - model_params.yaml      fleet_size
+    - model_params.yaml      grain_filling
+    - model_params.yaml      harvest_month
+    - model_params.yaml      input_price_shock
+    - model_params.yaml      jointing
+    - model_params.yaml      liquidity_floor
+    - model_params.yaml      maturity
+    - model_params.yaml      owned_by_abm
+    - model_params.yaml      owned_by_sd
+    - model_params.yaml      rule
+
+[A2] hard-coded numeric literals in behavioural code
+  literals flagged: 164
+file
+agents.py     39
+model.py     103
+sd.py         14
+shocks.py      8
+
+[A3] sensitivity analysis (this takes a few minutes)
+         parameter     module  max_effect_pct             drives
+   logit scale tau  behaviour          152.54     mean_wait_days
+ capacity coverage         sd           62.72     mean_wait_days
+    gamma provider   contract           59.49 effective_use_rate
+provider risk mean       risk           42.78 effective_use_rate
+  shirk multiplier   contract           41.71 effective_use_rate
+  T3 service price technology           35.50     mean_wait_days
+  farmer risk mean       risk           22.21     mean_wait_days
+      eta T3 flood technology           20.50    mitigation_rate
+  verifiability T3   contract           20.26     mean_wait_days
+    U_min provider   contract           16.77     mean_wait_days
+      eta T1 flood technology           13.31    mitigation_rate
+   social learning  behaviour            8.26     mean_wait_days
+   T2 capex per mu technology            0.73          adopt_any
+    max mitigation       loss            0.15    mitigation_rate
+    eta T2 drought technology            0.00     mean_wait_days
+
+[A4] Monte Carlo stability
+ n_reps               ranking_by_mitigation          top_scenario  top_mitigation  sem_top  cv_pct
+      1 voucher_plus_c > voucher > baseline voucher_plus_capacity          0.0478      NaN     NaN
+      2 voucher_plus_c > voucher > baseline voucher_plus_capacity          0.0433   0.0045 10.3989
+      3 voucher_plus_c > voucher > baseline voucher_plus_capacity          0.0499   0.0071 14.2566
+      4 voucher_plus_c > voucher > baseline voucher_plus_capacity          0.0604   0.0116 19.2156
+      5 voucher_plus_c > voucher > baseline voucher_plus_capacity          0.0536   0.0112 20.9590
+      6 voucher_plus_c > voucher > baseline voucher_plus_capacity          0.0506   0.0097 19.0649
+      7 voucher_plus_c > voucher > baseline voucher_plus_capacity          0.0495   0.0082 16.6310
+      8 voucher_plus_c > voucher > baseline voucher_plus_capacity          0.0514   0.0074 14.3563
+
+[A5] extreme-condition tests
+                             test                                   expected  adopt_T3  effort_T3  mitigation  wait_days   loss  income  exit_rate
+                 No shocks at all                 zero loss, zero mitigation    0.1605     0.7009      0.0000      8.450 0.0000 12190.4        0.0
+                  Every season D3                  high loss, low mitigation    0.0810     0.6840      0.0039      3.157 0.3382  6199.7        0.0
+          Technology efficacy = 0         adoption collapses, mitigation = 0    0.0825     0.6949      0.0000      3.627 0.3392  6170.2        0.0
+               Technology is free         adoption near ceiling, queue binds    0.1260     0.7329      0.0080     14.426 0.3370  6258.7        0.0
+       Unlimited service capacity                            wait -> minimum    0.1105     0.6349      0.0050      1.000 0.3379  6190.3        0.0
+              No service capacity wait at ceiling, service adoption unusable    0.0420     0.0000      0.0000     30.000 0.3392  6199.7        0.0
+             No monitoring at all         effort falls to the shirking floor    0.0780     0.4174      0.0023      3.690 0.3386  6185.6        0.0
+Zero budget with subsidy scenario                 instrument rations to zero    0.0810     0.6840      0.0039      3.157 0.3382  6199.7        0.0
+
+Outputs -> C:\Users\3054109\OneDrive - Queen's University Belfast\Model building\sichuan\smartagri_sichuan\outputs\audit
+Runtime: 3010s

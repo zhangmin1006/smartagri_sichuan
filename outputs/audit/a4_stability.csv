@@ -1,0 +1,9 @@
+n_reps,ranking_by_mitigation,top_scenario,top_mitigation,sem_top,cv_pct
+1,voucher_plus_c > voucher > baseline,voucher_plus_capacity,0.08078151648478551,,
+2,voucher_plus_c > voucher > baseline,voucher_plus_capacity,0.07019543697612217,0.010586079508663346,15.080865601369972
+3,voucher_plus_c > voucher > baseline,voucher_plus_capacity,0.07582438114789898,0.008309033574583794,10.958260982541535
+4,voucher_plus_c > voucher > baseline,voucher_plus_capacity,0.08884455190288149,0.01428442739351782,16.078000381084184
+5,voucher_plus_c > voucher > baseline,voucher_plus_capacity,0.0787381948070921,0.01498550544105944,19.032066302477215
+6,voucher_plus_c > voucher > baseline,voucher_plus_capacity,0.07450965389075888,0.012945686816997603,17.374509397101363
+7,voucher_plus_c > voucher > baseline,voucher_plus_capacity,0.07126245717217428,0.011412800091646686,16.015164989431522
+8,voucher_plus_c > voucher > baseline,voucher_plus_capacity,0.07284983302516998,0.010010432885124989,13.741188509884894

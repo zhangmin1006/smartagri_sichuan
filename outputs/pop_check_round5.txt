@@ -1,0 +1,10 @@
+POPULATION AFTER FILL-RATE FIX (3 seeds)
+   adopt           0.1562
+   adopt_T3        0.2172
+   eff_use         0.1268
+   mitig           0.0261
+   loss            0.0284
+   inc_p10      2436.9369
+   wait           17.5074
+
+V7 anchor: adoption 0.1562 < 0.355 -> OK

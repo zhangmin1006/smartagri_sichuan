@@ -1,0 +1,56 @@
+{
+  "model_version": "0.2.0",
+  "model_hash": "8de61f91de229e46",
+  "config_hash": "91ba3d0f810c30ac",
+  "config": {
+    "n_farmers": 100,
+    "seasons": 6,
+    "min_reps": 4,
+    "max_reps": 8,
+    "batch_size": 2,
+    "confidence": 0.95,
+    "relative_half_width": 0.1,
+    "seed0": 81001
+  },
+  "scenarios": [
+    "baseline",
+    "insurance",
+    "integrated",
+    "mountain_equity",
+    "subsidy",
+    "training_maintenance",
+    "voucher",
+    "voucher_plus_capacity",
+    "warning_response"
+  ],
+  "stochastic_rows": 72,
+  "stochastic_replicates": 8,
+  "epistemic_rows": 0,
+  "epistemic_parameter_draws": 0,
+  "epistemic_inner_replicates": 0,
+  "metric_direction": {
+    "mitigation_rate": "max",
+    "effective_use_rate": "max",
+    "mean_wait_days": "min",
+    "income_p10": "max",
+    "equity_gap": "min",
+    "mountain_gap": "min",
+    "fiscal_cumulative": "min"
+  },
+  "absolute_tolerance": {
+    "mitigation_rate": 0.001,
+    "effective_use_rate": 0.01,
+    "mean_wait_days": 0.25,
+    "income_p10": 100.0,
+    "equity_gap": 0.002,
+    "mountain_gap": 0.002,
+    "fiscal_cumulative": 1000.0
+  },
+  "status": {
+    "converged": false,
+    "stop_reps": 8,
+    "stopping_rule": "all policy-vs-baseline CI half-widths <= max(metric absolute tolerance, relative_half_width * |mean difference|)"
+  },
+  "runtime_s": 1066.31,
+  "parameter_distributions": "uniform Latin-hypercube audit envelopes; not empirical posteriors"
+}

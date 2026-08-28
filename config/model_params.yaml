@@ -1,0 +1,334 @@
+# ===========================================================================
+# model_params.yaml -- ABM + SD parameters
+# ===========================================================================
+# RISK ATTITUDE IS THE ORGANISING AGENT ATTRIBUTE.
+# Every agent carries a power-utility coefficient c (Arrow-Pratt relative
+# risk aversion). The PAIR (c_farmer, c_provider) determines, via
+# Proposition 1 of Guo, Parlar & Zhang (2025), the shape of the service
+# contract; the pair plus effort cost determines the equilibrium effort e*.
+# ===========================================================================
+
+meta:
+  version: "0.2.0"
+  seed: 20260825
+  seasons: 12                 # 2 per year -> 6 years
+  seasons_per_year: 2
+
+population:
+  n_farmers: 500
+  n_providers: 12
+  n_cooperatives: 6
+  counties:
+    - {id: C1, name: plain_high_service, terrain: plain, n_farmers: 130,
+       mean_area_mu: 22.0, service_density: 1.00, irrigation_share: 0.85}
+    - {id: C2, name: plain_mixed, terrain: plain, n_farmers: 100,
+       mean_area_mu: 14.0, service_density: 0.80, irrigation_share: 0.70}
+    - {id: C3, name: hill_fragmented, terrain: hill, n_farmers: 110,
+       mean_area_mu: 6.0, service_density: 0.45, irrigation_share: 0.40}
+    - {id: C4, name: hill_flood_exposed, terrain: hill, n_farmers: 80,
+       mean_area_mu: 5.5, service_density: 0.40, irrigation_share: 0.35}
+    - {id: C5, name: hill_drought_exposed, terrain: hill, n_farmers: 50,
+       mean_area_mu: 5.0, service_density: 0.35, irrigation_share: 0.25}
+    - {id: C6, name: mountain_remote, terrain: mountain, n_farmers: 30,
+       mean_area_mu: 4.0, service_density: 0.15, irrigation_share: 0.15}
+
+# ---------------------------------------------------------------------------
+# RISK ATTITUDE -- the defining agent attribute
+# ---------------------------------------------------------------------------
+risk_attitude:
+  # Farmers: principal in the service contract (c1 in the paper).
+  # Beta-distributed on (0,1) then shifted into the admissible band, so that
+  # power utility stays well defined (c > 0, c != 1).
+  farmer:
+    distribution: beta
+    params: [4.5, 3.0]          # mean approx 0.60: smallholders risk-averse
+    support: [0.10, 0.92]
+    covariates:
+      # c_farmer is adjusted by observable characteristics; coefficients are
+      # PRIORS to be estimated from the farmer panel (lottery or multiple
+      # price list elicitation), not measurements.
+      log_area_mu: -0.055        # larger operators less risk-averse
+      education_years: -0.012
+      age_years: 0.0035
+      cooperative_member: -0.06
+      liquidity_ratio: -0.10     # cash-constrained behave more risk-averse
+      prior_loss_experience: 0.05
+      digital_literacy: -0.04
+    # Proxy for prior_loss_experience: county exposure, taken as
+    # (1 - irrigation_share) weighted by terrain, then centred. These were
+    # hard-coded in model.py when the covariate was first wired; they are
+    # PRIORS, not measurements, so they belong here where the sensitivity
+    # sweep can reach them.
+    prior_loss_proxy:
+      terrain_weight: {plain: 0.6, hill: 1.0, mountain: 1.25}
+      centre: 0.45
+    stress_shift:
+      # Transient state component of risk aversion. The input-price entry
+      # is retained but DORMANT: the price shock was moved out of the
+      # modelled set in the Aug-2026 three-shock revision, so only the
+      # loss-experience and low-liquidity channels currently fire.
+      input_price_shock: 0.08   # dormant while D4 is deferred
+      recent_severe_loss: 0.06
+      # A loss counts as SEVERE on the SAME definition the risk framing
+      # already uses: damage_mult_severe x mean damage given a shock. Set
+      # `severe_loss_threshold: auto` to derive it, which keeps the two
+      # definitions of "severe" in this file from drifting apart. A fixed
+      # 0.15 was tried first and fired on 37 per cent of farmer-seasons --
+      # i.e. on essentially ANY shock -- because losses are bimodal (median
+      # zero, p90 near 0.47), which is not what "recent severe loss" means.
+      # The stress component decays geometrically, so a bad year raises risk
+      # aversion sharply and fades over about three calm seasons.
+      severe_loss_threshold: auto
+      stress_decay_per_season: 0.35
+      stress_cap: 0.18
+    note: >
+      Empirical anchor: a 2024 survey of 214 Sichuan smallholders across
+      7 prefectures found mean WILLINGNESS to adopt digital production
+      technology of about 0.355, with over 70 per cent of respondents
+      educated to junior secondary level or below. That is a willingness
+      measure, not an adoption rate, and is used here only to set the prior
+      location of the behavioural distribution.
+
+  # Service providers: agent in the service contract (c2 in the paper).
+  provider:
+    distribution: beta
+    params: [2.2, 4.5]          # mean approx 0.33: less risk-averse
+    support: [0.08, 0.85]
+    covariates:
+      fleet_size: -0.030
+      years_operating: -0.015
+      contract_diversification: -0.05
+      debt_ratio: 0.08
+    note: >
+      Providers are modelled as systematically LESS risk-averse than
+      farmers because they diversify across many plots and clients. The
+      degree of overlap between the two distributions is the key structural
+      uncertainty: it determines what share of the population sits in the
+      c1 > c2 region (convex contract, provider bears risk) versus the
+      c1 < c2 region (concave contract, flat fee).
+
+  government:
+    c: 0.45
+    note: >
+      Used only in the policy-contract layer, where the government is the
+      principal facing an aggregate outcome. Sensitivity over [0.2, 0.8] is
+      run because it drives how hard the government pushes effective use.
+
+# ---------------------------------------------------------------------------
+# Contract layer
+# ---------------------------------------------------------------------------
+contract:
+  gamma_provider: 0.12          # v(e) = gamma e^2, provider effort disutility
+  gamma_farmer_selfuse: 0.22    # own-equipment mode: farmer supplies effort
+  u_min_provider_base: 0.28     # reservation utility, outside option
+  u_min_scaling_with_demand: 0.35
+  effort_max: 1.0
+  quantise_step: 0.02           # cache granularity for the solver
+  verifiability:
+    # Key structural switch: the paper assumes effort and outcome are
+    # observable and verifiable (first best). Without monitoring technology
+    # they are not, and the contract collapses to a flat fee with shirking.
+    base_verifiability: 0.25          # no monitoring technology
+    with_T3_telemetry: 0.80           # BeiDou terminals, flight logs
+    with_T1_remote_sensing: 0.65      # plot-level crop condition
+    with_T2_sensors: 0.70
+    shirk_effort_multiplier: 0.55     # effort delivered when unverifiable
+
+# ---------------------------------------------------------------------------
+# Production and loss
+# ---------------------------------------------------------------------------
+production:
+  base_yield_value_per_mu: 1250.0     # normalised gross value, currency units
+  yield_cv: 0.18
+  input_cost_per_mu: 380.0
+  crop_calendar:
+    sowing_month: 4
+    critical_window_months: [7, 8]
+    harvest_month: 9
+
+loss:
+  # Loss = Y_base * D(H, stage, terrain) * (1 - sum_k eta_k * e_k * rho_k)
+  # capped so that technology can never eliminate loss entirely.
+  # D3 interrupts grid power and the mobile network. Technologies that need
+  # mains power (pumps, fertigation controllers) stop entirely; battery or
+  # satellite equipment degrades only through platform and network downtime.
+  # Availability was previously applied UNIFORMLY to every technology, which
+  # made a solar-charged drone as fragile as an electric pump and understated
+  # the differential fragility that D3 is in the model to expose.
+  non_power_outage_share: 0.40
+  max_total_mitigation: 0.65
+  stage_vulnerability:
+    seedling: 0.6
+    jointing: 0.8
+    tasselling: 1.0
+    grain_filling: 0.95
+    maturity: 0.7
+    harvest: 0.5
+
+# ---------------------------------------------------------------------------
+# Behaviour
+# ---------------------------------------------------------------------------
+behaviour:
+  choice_rule: softmax
+  softmax_temperature: 0.02   # logit scale as a fraction of gross output
+                              # value; identified in validation V6 against
+                              # three behavioural moments, see validate.py
+  social_learning_weight: 0.30
+  peer_network:
+    type: watts_strogatz
+    k: 6
+    p_rewire: 0.10
+    within_county_bias: 0.85
+  belief_update:
+    prior_efficacy_mean: 0.20
+    prior_efficacy_sd: 0.12
+    learning_rate_own: 0.35
+    learning_rate_peer: 0.12
+    # Farmers also learn about HAZARD FREQUENCY, not only about efficacy.
+    # Without this, shock probability came from the prior below and never
+    # moved, so a farmer kept buying protection against shocks that had
+    # stopped happening (audit A5 showed adoption HIGHEST in the no-shock
+    # scenario). Exponential smoothing toward realised frequency.
+    learning_rate_hazard: 0.15
+  trust:
+    initial: 0.55
+    gain_on_success: 0.06
+    loss_on_false_alarm: 0.09
+    loss_on_service_failure: 0.12
+    loss_on_payment_delay: 0.05
+  # Frictions in the adoption decision. These were previously hard-coded in
+  # model.py (audit finding M9). The switching cost in particular carried a
+  # magnitude error: it was set to 0.9 x the PER-MU output value, which made
+  # it larger than the entire expected benefit for every farmer, so "none"
+  # became a near-absorbing state and all observed adoption was logit noise.
+  # It is now a fraction of the transaction it applies to, which is what a
+  # search-and-trust-building friction actually is.
+  # How the adoption gamble is presented to the utility function. The
+  # technology truncates a large downside rather than adding a small gain, and
+  # a risk-averse farmer reacts to the TAIL of the damage distribution, so the
+  # lottery keeps a separate severe branch instead of collapsing damage to its
+  # conditional mean. Multiples are relative to mean damage given a shock and
+  # follow the calibrated Beta severity parameters.
+  risk_framing:
+    severe_share: 0.25            # share of shock seasons that are severe
+    damage_mult_moderate: 0.62    # damage in a moderate shock, x mean
+    damage_mult_severe: 2.14      # damage in a severe shock, x mean
+
+  frictions:
+    switching_cost_share: 0.25    # of the first-year cost of the new mode
+    switching_cost_floor: 40.0    # currency units, small fixed search cost
+    access_cost_scale: 260.0
+    learning_scale: 900.0
+    # One-off skill acquisition decays as experience accumulates:
+    # cost multiplier is 1/(1 + decay * seasons_used), so a farmer pays
+    # the full amount on first use, half by the second season and so on.
+    learning_decay: 1.0
+    subsidy_salience: 0.35
+
+  exit_rule:
+    consecutive_bad_seasons: 2
+    liquidity_floor: 0.0
+    exit_probability_when_triggered: 0.35
+
+# ---------------------------------------------------------------------------
+# System Dynamics layer -- slow stocks only
+# ---------------------------------------------------------------------------
+sd:
+  dt_years: 0.5
+  stocks:
+    government_budget:
+      initial: 5.0e7
+      annual_inflow: 1.2e7
+      growth_rate: 0.04
+      carryover_share: 0.60
+    service_capacity:
+      # Capacity is initialised from a COVERAGE RATIO rather than an absolute
+      # unit count, so the queue binds at a realistic level whatever the
+      # simulated population size. 0.55 = capacity to serve 55 per cent of
+      # total modelled area inside one critical operating window.
+      initial_capacity_coverage: 0.55
+      initial_units: 90
+      unit_capacity_mu_per_day: 300.0
+      depreciation_rate: 0.10
+      commissioning_lag_years: 0.5
+      utilisation_ceiling: 0.85
+    capable_farmers:
+      initial_share: 0.22
+      training_throughput_per_year: 3000
+      skill_decay_rate: 0.20
+      learning_by_doing_gain: 0.05
+    infrastructure_reliability:
+      initial: 0.90
+      maintenance_rate: 0.06
+      degradation_rate: 0.04
+      shock_damage: 0.25          # D3 knocks this down
+      repair_time_years: 0.25
+    institutional_trust:
+      initial: 0.55
+      gain_per_delivered_outcome: 0.03
+      loss_per_failure: 0.05
+      decay_to_mean: 0.10
+  interface_contract:
+    # STRICT ownership rules so nothing is double-counted
+    owned_by_abm:
+      - individual adoption state and effort
+      - individual trust and beliefs
+      - service requests and work orders
+      - realised loss and recovery per farmer
+    owned_by_sd:
+      - aggregate budget stock and disbursement
+      - aggregate service capacity and depreciation
+      - stock of trained and capable farmers
+      - infrastructure reliability
+      - aggregate institutional trust index
+    abm_to_sd:
+      - subsidy applications and expenditure
+      - service demand in mu
+      - training demand
+      - device failure counts
+      - realised avoided loss and its distribution
+    sd_to_abm:
+      - subsidy rate and remaining budget
+      - available capacity -> expected wait time
+      - training slots
+      - platform and network reliability rho
+      - trust prior for new entrants
+    rule: >
+      Waiting time is computed ONCE, in the SD layer, from SD capacity and
+      ABM demand. Neither layer may recompute it independently.
+
+# ---------------------------------------------------------------------------
+# Scenarios
+# ---------------------------------------------------------------------------
+scenarios:
+  - key: baseline
+    label: No new policy
+    instruments: {}
+  - key: subsidy
+    label: Equipment purchase subsidy only
+    instruments: {P1: {subsidy_rate: 0.40}}
+  - key: voucher
+    label: Per-mu service voucher only
+    instruments: {P2: {voucher_value_per_mu: 6.0}}
+  - key: voucher_plus_capacity
+    label: Voucher plus service capacity expansion
+    instruments: {P2: {voucher_value_per_mu: 6.0}, P3: {new_centres_per_year: 30}}
+  - key: training_maintenance
+    label: Training plus maintenance guarantee
+    instruments: {P4: {slots_per_year: 6000, followup_support: true}}
+  - key: warning_response
+    label: Warning plus reserved emergency capacity
+    instruments: {P5: {lead_time_gain_days: 1.0, reserved_capacity_share: 0.2}}
+  - key: insurance
+    label: Precision insurance with fast payout
+    instruments: {P6: {premium_subsidy_rate: 0.7, payout_lag_days: 21}}
+  - key: mountain_equity
+    label: Mountain adaptation package
+    instruments: {P7: {light_equipment_share: 0.4, remote_service_points: 30}}
+  - key: integrated
+    label: Integrated package under a fixed budget
+    instruments:
+      P2: {voucher_value_per_mu: 4.0}
+      P3: {new_centres_per_year: 20}
+      P4: {slots_per_year: 4000, followup_support: true}
+      P5: {reserved_capacity_share: 0.15}

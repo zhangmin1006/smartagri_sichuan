@@ -1,0 +1,46 @@
+============================================================================
+MODEL AND DATA AUDIT
+============================================================================
+
+[A3] sensitivity analysis (this takes a few minutes)
+         parameter     module  max_effect_pct             drives
+   logit scale tau  behaviour           72.20    mitigation_rate
+    gamma provider   contract           48.51          effort_T3
+provider risk mean       risk           22.77 effective_use_rate
+  verifiability T3   contract           14.70    mitigation_rate
+      eta T3 flood technology           13.74    mitigation_rate
+  shirk multiplier   contract           13.07    mitigation_rate
+  T3 service price technology           12.59        mean_income
+   T2 capex per mu technology            8.79        mean_income
+      eta T1 flood technology            7.71    mitigation_rate
+   social learning  behaviour            6.75        mean_income
+  farmer risk mean       risk            5.94     mean_wait_days
+    eta T2 drought technology            0.00 effective_use_rate
+ capacity coverage         sd            0.00 effective_use_rate
+    U_min provider   contract            0.00 effective_use_rate
+    max mitigation       loss            0.00          effort_T3
+
+[A4] Monte Carlo stability
+ n_reps               ranking_by_mitigation          top_scenario  top_mitigation  sem_top  cv_pct
+      1 voucher_plus_c > voucher > baseline voucher_plus_capacity          0.0154      NaN     NaN
+      2 voucher_plus_c > voucher > baseline voucher_plus_capacity          0.0146   0.0009  5.8505
+      3 voucher > voucher_plus_c > baseline               voucher          0.0139   0.0007  5.2301
+      4 voucher > voucher_plus_c > baseline               voucher          0.0139   0.0005  3.7020
+      5 voucher > voucher_plus_c > baseline               voucher          0.0146   0.0008  5.3629
+      6 voucher > voucher_plus_c > baseline               voucher          0.0137   0.0011  7.9453
+      7 voucher > voucher_plus_c > baseline               voucher          0.0134   0.0010  7.3670
+      8 voucher > voucher_plus_c > baseline               voucher          0.0130   0.0009  7.2285
+
+[A5] extreme-condition tests
+                             test                                   expected  adopt_T3  effort_T3  mitigation  wait_days   loss  income  exit_rate
+                 No shocks at all                 zero loss, zero mitigation    0.3211     0.7038      0.0000      1.545 0.0000 11199.3        0.0
+                  Every season D3                  high loss, low mitigation    0.2956     0.6835      0.0106      1.541 0.1812  8310.6        0.0
+          Technology efficacy = 0         adoption collapses, mitigation = 0    0.2833     0.6936      0.0000      1.340 0.1946  8188.3        0.0
+               Technology is free         adoption near ceiling, queue binds    0.3200     0.6901      0.0103      1.695 0.2376  7800.2        0.0
+       Unlimited service capacity                            wait -> minimum    0.2956     0.6984      0.0108      1.000 0.1811  8311.9        0.0
+              No service capacity wait at ceiling, service adoption unusable    0.3067     0.5632      0.0061      6.278 0.2806  6945.7        0.0
+             No monitoring at all         effort falls to the shirking floor    0.3000     0.4133      0.0062      1.516 0.1471  8945.6        0.0
+Zero budget with subsidy scenario                 instrument rations to zero    0.2956     0.6835      0.0106      1.541 0.1812  8310.6        0.0
+
+Outputs -> C:\Users\3054109\OneDrive - Queen's University Belfast\Model building\sichuan\smartagri_sichuan\outputs\audit
+Runtime: 1046s

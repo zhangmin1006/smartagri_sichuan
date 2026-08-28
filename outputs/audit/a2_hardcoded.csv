@@ -1,0 +1,168 @@
+file,line,value,context
+agents.py,52,6.0,units: float = 6.0
+agents.py,54,0.85,utilisation_ceiling: float = 0.85
+agents.py,55,300.0,unit_capacity_mu_per_day: float = 300.0
+agents.py,57,0.28,u_min_base: float = 0.28
+agents.py,151,0.55,trust: float = 0.55
+agents.py,574,0.45,access_discount: float = 0.45
+agents.py,575,0.08,literacy_bonus: float = 0.08
+agents.py,576,40.0,training_slots: int = 40
+agents.py,584,0.45,c_risk: float = 0.45
+agents.py,72,0.35,scaling: float = 0.35) -> float:
+agents.py,175,0.08,"stress_shift: float = 0.08,"
+agents.py,176,0.06,loss_shift: float = 0.06) -> float:
+agents.py,189,0.2,if self.liquidity < 0.2:
+agents.py,190,0.05,c += 0.05
+agents.py,264,2.2,learning *= 2.2
+agents.py,271,0.35,access_cost *= 0.35
+agents.py,278,0.9,"rho = ctx[""reliability""].get(tech, 0.9)"
+agents.py,279,0.6,"e_expect = ctx[""expected_effort""].get((tech, mode), 0.6)"
+agents.py,359,0.02,"ce += ctx[""peer_weight""] * self._peer_signal(tech, ctx) * gross * 0.02"
+agents.py,360,0.03,ce += (self.trust - 0.55) * gross * 0.03
+agents.py,191,0.05,"return float(np.clip(c, 0.05, 0.95))"
+agents.py,191,0.95,"return float(np.clip(c, 0.05, 0.95))"
+agents.py,274,0.2,"eta = self.belief_efficacy.get(tech, spec[""model""].get(""eta_drought"", 0.2))"
+agents.py,352,0.35,mitig_frac *= 0.35
+agents.py,399,200.0,"floor = float(ctx.get(""income_floor"", 200.0))"
+agents.py,407,0.25,"p_sev = float(ctx.get(""severe_share"", 0.25))"
+agents.py,408,0.62,"mult_mod = float(ctx.get(""damage_mult_moderate"", 0.62))"
+agents.py,409,2.14,"mult_sev = float(ctx.get(""damage_mult_severe"", 2.14))"
+agents.py,515,0.02,"c1, c2, gamma, max(u_min, 0.02), 1.0, ctx[""effort_max""])"
+agents.py,606,25000.0,"""subsidy_cap"": p1.get(""cap_per_farm"", 25000.0),"
+agents.py,607,120.0,"""subsidy_lag_days"": p1.get(""disbursement_lag_days"", 120),"
+agents.py,609,30.0,"""voucher_max_mu"": p2.get(""max_mu_per_farm"", 30.0),"
+agents.py,619,60.0,"""insurance_payout_lag"": p6.get(""payout_lag_days"", 60),"
+agents.py,620,0.15,"""insurance_basis_risk"": p6.get(""basis_risk"", 0.15),"
+agents.py,269,0.06,* (self.service_distance + 0.06 * wait))
+agents.py,360,0.55,ce += (self.trust - 0.55) * gross * 0.03
+agents.py,242,0.35,"lag_discount = 1.0 / (1.0 + pol.get(""subsidy_lag_days"", 0) / 365.0 * 0.35)"
+agents.py,242,365.0,"lag_discount = 1.0 / (1.0 + pol.get(""subsidy_lag_days"", 0) / 365.0 * 0.35)"
+agents.py,461,60.0,"p = np.where(finite, np.exp(np.clip(v / scale, -60.0, 0.0)), 0.0)"
+model.py,226,64.0,"horizon = max(int(self.seasons_total) + 4, 64)"
+model.py,482,0.45,prior_demand = sum(f.area_mu for f in active) * 0.45
+model.py,1144,0.8,thresh = 0.8 * base
+model.py,160,0.55,"""initial_capacity_coverage"", 0.55))"
+model.py,185,0.15,"self._hazard_lr = float(_bu.get(""learning_rate_hazard"", 0.15))"
+model.py,669,0.9,if ev.tech_availability < 0.9:
+model.py,823,1000.0,"f.wealth = max(f.wealth + income - cost * 0.0, 1000.0)"
+model.py,867,1.15,"""requested"": self.gov.spent_season * 1.15,"
+model.py,882,0.12,"""skill_gain"": p4.get(""skill_gain"", 0.12),"
+model.py,1131,0.15,if observed is not None and observed > 0.15:
+model.py,1132,0.95,"f.trust = min(0.95, f.trust + tr[""gain_on_success""])"
+model.py,1138,0.5,"far = float(self.tech_spec[""T1""][""model""].get(""false_alarm_rate"", 0.5))"
+model.py,1140,0.05,"f.trust = max(0.05, f.trust - tr[""loss_on_false_alarm""] * far)"
+model.py,235,0.3,"return float(np.clip(self.outcome_rng.normal(1.0, cv), 0.3, 1.7))"
+model.py,235,1.7,"return float(np.clip(self.outcome_rng.normal(1.0, cv), 0.3, 1.7))"
+model.py,253,0.35,"""hill"": 1.0 + 0.35 * light,"
+model.py,254,0.8,"""mountain"": 1.0 + 0.80 * light,"
+model.py,257,0.5,"reach = min(1.0, points / 40.0) * 0.5 + transport * 0.2"
+model.py,257,0.2,"reach = min(1.0, points / 40.0) * 0.5 + transport * 0.2"
+model.py,296,37.0,"target = (f.uid * 37 + TECHS.index(tech) * 101) % max(len(self.providers), 1)"
+model.py,296,101.0,"target = (f.uid * 37 + TECHS.index(tech) * 101) % max(len(self.providers), 1)"
+model.py,391,0.06,"c2 = float(np.clip(lo + base * (hi - lo), 0.06, 0.92))"
+model.py,391,0.92,"c2 = float(np.clip(lo + base * (hi - lo), 0.06, 0.92))"
+model.py,488,0.1,"* sd_state[""reliability""], 0.1, 0.99)) for t in TECHS}"
+model.py,488,0.99,"* sd_state[""reliability""], 0.1, 0.99)) for t in TECHS}"
+model.py,769,0.15,if dmg > 0.15:
+model.py,822,0.08,"f.c_risk = float(np.clip(f.c_risk_base + f.risk_stress, 0.08, 0.92))"
+model.py,822,0.92,"f.c_risk = float(np.clip(f.c_risk_base + f.risk_stress, 0.08, 0.92))"
+model.py,830,0.05,if mitig_total > 0.05 and dmg_nomit > 0.05:
+model.py,830,0.05,if mitig_total > 0.05 and dmg_nomit > 0.05:
+model.py,839,0.02,if dmg_nomit > 0.02 else None)
+model.py,950,0.25,"""severe_share"": float(bh.get(""severe_share"", 0.25)),"
+model.py,951,0.62,"""damage_mult_moderate"": float(bh.get(""damage_mult_moderate"", 0.62)),"
+model.py,952,2.14,"""damage_mult_severe"": float(bh.get(""damage_mult_severe"", 2.14)),"
+model.py,955,200.0,".get(""income_floor"", 200.0)),"
+model.py,956,0.25,"""switch_share"": float(fr.get(""switching_cost_share"", 0.25)),"
+model.py,957,40.0,"""switch_floor"": float(fr.get(""switching_cost_floor"", 40.0)),"
+model.py,977,0.6,"""expected_effort"": {(t, m): self._expected_effort.get(t, 0.6)"
+model.py,982,2.2,"""T2"": self.tech_spec[""T2""][""model""][""opex_per_mu""] * 2.2,"
+model.py,987,260.0,"""access_cost_scale"": float(fr.get(""access_cost_scale"", 260.0)),"
+model.py,988,900.0,"""learning_scale"": float(fr.get(""learning_scale"", 900.0)),"
+model.py,990,0.35,"""subsidy_salience"": float(fr.get(""subsidy_salience"", 0.35)),"
+model.py,1067,0.35,"can_act = 1.0 if (f.mode[""T3""] != ""none"" or f.mode[""T2""] != ""none"") else 0.35"
+model.py,1133,0.02,elif observed is not None and observed < 0.02:
+model.py,1134,0.05,"f.trust = max(0.05, f.trust - tr[""loss_on_service_failure""])"
+model.py,325,0.5,"np.log(max(c[""mean_area_mu""], 0.5)), 0.55), 0.5, 400.0))"
+model.py,325,400.0,"np.log(max(c[""mean_area_mu""], 0.5)), 0.55), 0.5, 400.0))"
+model.py,326,16.0,"edu = float(np.clip(rng.normal(7.5, 3.0), 0, 16))"
+model.py,327,20.0,"age = float(np.clip(rng.normal(52, 11), 20, 80))"
+model.py,327,80.0,"age = float(np.clip(rng.normal(52, 11), 20, 80))"
+model.py,331,0.02,"0.02, 0.98))"
+model.py,331,0.98,"0.02, 0.98))"
+model.py,333,4000.0,"0.5), 4000, 5e6))"
+model.py,334,0.02,"liq = float(np.clip(rng.beta(2.0, 3.0), 0.02, 0.95))"
+model.py,334,0.95,"liq = float(np.clip(rng.beta(2.0, 3.0), 0.02, 0.95))"
+model.py,359,0.08,"c_risk = float(np.clip(c_risk, 0.08, 0.92))"
+model.py,359,0.92,"c_risk = float(np.clip(c_risk, 0.08, 0.92))"
+model.py,766,0.06,"premium = (gross * 0.06 * (1 - gov_terms[""insurance_premium_subsidy""]))"
+model.py,768,0.06,"self.gov.spent_season += gross * 0.06 * gov_terms[""insurance_premium_subsidy""]"
+model.py,774,365.0,"season_days = 365.0 / max(self.seasons_per_year, 1)"
+model.py,815,0.02,"f.update_hazard_belief(bool(dmg_nomit > 0.02),"
+model.py,834,0.01,if served_but_late or (mitig_total <= 0.01 and dmg > 0.2):
+model.py,834,0.2,if served_but_late or (mitig_total <= 0.01 and dmg > 0.2):
+model.py,938,0.45,"[d[""model""][""yield_damage_max""] * 0.45 for d in nat]))"
+model.py,1101,0.01,"signal_eta = float(np.clip(observed / at, 0.01, 0.9))"
+model.py,1101,0.9,"signal_eta = float(np.clip(observed / at, 0.01, 0.9))"
+model.py,1104,0.01,"0.01, 0.9))"
+model.py,1104,0.9,"0.01, 0.9))"
+model.py,1130,0.01,"0.01, 0.9))"
+model.py,1130,0.9,"0.01, 0.9))"
+model.py,1139,0.6,"if any(ev.shock_id == ""D2"" and ev.warning_lead_days < 0.6 for ev in events):"
+model.py,197,0.45,"[d[""model""][""yield_damage_max""] * 0.45 for d in _nat]))"
+model.py,257,40.0,"reach = min(1.0, points / 40.0) * 0.5 + transport * 0.2"
+model.py,325,0.55,"np.log(max(c[""mean_area_mu""], 0.5)), 0.55), 0.5, 400.0))"
+model.py,326,7.5,"edu = float(np.clip(rng.normal(7.5, 3.0), 0, 16))"
+model.py,327,52.0,"age = float(np.clip(rng.normal(52, 11), 20, 80))"
+model.py,327,11.0,"age = float(np.clip(rng.normal(52, 11), 20, 80))"
+model.py,328,0.28,"coop = bool(rng.random() < 0.28 + 0.25 * c[""service_density""])"
+model.py,333,0.5,"0.5), 4000, 5e6))"
+model.py,642,0.6,if e_real >= 0.6 and f.digital_literacy >= self.tech_spec[t][
+model.py,741,30.0,"if gov_terms[""voucher_targeting""] == ""smallholder"" and f.area_mu > 30:"
+model.py,782,0.05,"f.trust = max(0.05, f.trust - delay_penalty)"
+model.py,878,8.0,"* p3.get(""units_per_centre"", 8)"
+model.py,1066,0.1,"usable = min(1.0, ev.warning_lead_days / max(ev.action_window_days, 0.1))"
+model.py,1175,25.0,"[g.area_mu for g in active], 25)] if active else []"
+model.py,1177,75.0,"[g.area_mu for g in active], 75)] if active else []"
+model.py,328,0.25,"coop = bool(rng.random() < 0.28 + 0.25 * c[""service_density""])"
+model.py,330,0.06,"rng.beta(2.2, 3.2) + 0.02 * (edu - 7.5) + 0.06 * coop,"
+model.py,356,0.5,"+ cov[""digital_literacy""] * (lit - 0.5)"
+model.py,911,0.12,"f.digital_literacy + p4.get(""skill_gain"", 0.12), 0, 1))"
+model.py,1124,0.01,"q._last_observed / at_q, 0.01, 0.9)))"
+model.py,1124,0.9,"q._last_observed / at_q, 0.01, 0.9)))"
+model.py,302,0.15,"else 0.15 * (1.0 + f.service_distance)),"
+model.py,325,0.5,"np.log(max(c[""mean_area_mu""], 0.5)), 0.55), 0.5, 400.0))"
+model.py,330,2.2,"rng.beta(2.2, 3.2) + 0.02 * (edu - 7.5) + 0.06 * coop,"
+model.py,330,3.2,"rng.beta(2.2, 3.2) + 0.02 * (edu - 7.5) + 0.06 * coop,"
+model.py,330,0.02,"rng.beta(2.2, 3.2) + 0.02 * (edu - 7.5) + 0.06 * coop,"
+model.py,332,40000.0,"wealth = float(np.clip(rng.lognormal(np.log(40000 + 900 * area),"
+model.py,355,0.5,"+ cov[""liquidity_ratio""] * (liq - 0.5)"
+model.py,330,7.5,"rng.beta(2.2, 3.2) + 0.02 * (edu - 7.5) + 0.06 * coop,"
+model.py,332,900.0,"wealth = float(np.clip(rng.lognormal(np.log(40000 + 900 * area),"
+model.py,376,0.01,"0.01, 0.8)) for t in TECHS},"
+model.py,376,0.8,"0.01, 0.8)) for t in TECHS},"
+model.py,353,52.0,"+ cov[""age_years""] * (age - 52)"
+model.py,370,0.12,"1.0 - c[""service_density""] + rng.normal(0, 0.12),"
+model.py,352,7.5,"+ cov[""education_years""] * (edu - 7.5)"
+shocks.py,73,0.65,"spatial_correlation: float = 0.65,"
+shocks.py,209,0.4,"dmax = float(spec_model.get(""yield_damage_max"", 0.4))"
+shocks.py,100,0.18,"idio = self.rng.normal(0.0, 0.18)"
+shocks.py,128,0.99,"rho = float(np.clip(rho, 0.0, 0.99))"
+shocks.py,211,1.25,dmg = dmax * (sev ** 1.25) * stage_v
+shocks.py,148,0.3,"sev = base_sev * float(np.clip(self.rng.normal(1.0, 0.20), 0.3, 1.7))"
+shocks.py,148,1.7,"sev = base_sev * float(np.clip(self.rng.normal(1.0, 0.20), 0.3, 1.7))"
+shocks.py,148,0.2,"sev = base_sev * float(np.clip(self.rng.normal(1.0, 0.20), 0.3, 1.7))"
+sd.py,125,30.0,return 30.0
+sd.py,127,0.85,if rho < 0.85:
+sd.py,174,0.5,decay *= 0.5
+sd.py,129,30.0,"return float(min(30.0, 1.0 + 6.0 * rho ** 2 + 40.0 * (rho - 0.85) ** 2))"
+sd.py,185,0.25,"0.25, 0.995))"
+sd.py,185,0.995,"0.25, 0.995))"
+sd.py,192,0.05,"self.trust = float(np.clip(self.trust, 0.05, 0.95))"
+sd.py,192,0.95,"self.trust = float(np.clip(self.trust, 0.05, 0.95))"
+sd.py,169,0.12,"gain = trained / n_farmers * float(policy.get(""skill_gain"", 0.12))"
+sd.py,191,0.5,- self.trust_decay * dt_years * (self.trust - 0.5))
+sd.py,128,6.0,return float(1.0 + 6.0 * rho ** 2)
+sd.py,129,40.0,"return float(min(30.0, 1.0 + 6.0 * rho ** 2 + 40.0 * (rho - 0.85) ** 2))"
+sd.py,129,6.0,"return float(min(30.0, 1.0 + 6.0 * rho ** 2 + 40.0 * (rho - 0.85) ** 2))"
+sd.py,129,0.85,"return float(min(30.0, 1.0 + 6.0 * rho ** 2 + 40.0 * (rho - 0.85) ** 2))"

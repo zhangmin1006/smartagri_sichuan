@@ -1,0 +1,291 @@
+# ===========================================================================
+# disruptions.yaml -- WHICH SHOCKS THE MODEL FOCUSES ON
+# ===========================================================================
+# Decision rule applied:
+#   (1) recurrent enough in Sichuan to give a usable event frequency;
+#   (2) mechanistically coupled to at least one of the three modelled
+#       technology bundles (otherwise the technology cannot plausibly change
+#       the loss distribution);
+#   (3) discriminating -- the shock must separate policy options, not just
+#       shift every farmer identically;
+#   (4) measurable with obtainable data (meteorological series, remote
+#       sensing, price indices, insurance claim records).
+#
+# evidence_grade: A = official statistics / policy text / peer-reviewed
+#                 B = government news, official case collections
+#                 C = single case, secondary citation -- hypothesis only
+# All numeric fields are MODEL PRIORS to be calibrated, not measurements,
+# unless evidence_grade is A and a source is attached.
+# ===========================================================================
+
+meta:
+  region: Sichuan Province, China
+  decision_date: 2026-08-25
+  tier1_rationale: >
+    THREE shocks are modelled explicitly. D1 and D2 are the two dominant
+    natural hazard families of the Sichuan Basin and between them cover the
+    opposite ends of the water axis, so no single technology can be good at
+    both. D3 is included because it is the only shock that degrades the
+    technology itself, which is where smart-agriculture resilience claims are
+    most fragile and where the ABM adds most value.
+    The set is deliberately confined to hydro-meteorological and compound
+    infrastructure hazards so that every shock acts through the same
+    biophysical loss channel and the technology efficacy parameters remain
+    jointly identifiable from meteorological, remote-sensing and loss records.
+  scope_change_2026_08: >
+    The input price shock (formerly D4) was moved to the deferred set. It acted
+    through the cash constraint rather than the yield function, which made it
+    the only shock in the set whose damage no yield-side technology could
+    address, and it required a separate price-series data chain to calibrate.
+    Consequence to be aware of: the model no longer exercises the
+    liquidity-to-risk-aversion channel, so the state component of risk aversion
+    (risk_attitude.farmer.stress_shift) is now driven only by recent loss
+    experience and low liquidity, not by input prices.
+
+calibration:
+  source: Open-Meteo ERA5 reanalysis, daily, 1991-2024
+  points: six Sichuan archetype locations (see calibrate_shocks.py)
+  method: >
+    Occurrence probability, severity Beta and spatial correlation
+    derived from 34 years of daily precipitation and maximum
+    temperature using Chinese meteorological hazard definitions
+    (rainstorm >= 50 mm/day, high temperature >= 35 C, summer
+    drought as a Jul-Aug dry spell). Reanalysis is graded B; CMA
+    station series for the same points would upgrade this to A.
+  spatial_correlation_estimated: 0.393
+  calibrated_on: 2026-08-25
+
+tier1:
+
+  - id: D1
+    name_en: Seasonal summer drought
+    name_zh: 伏旱
+    family: hydro-meteorological
+    evidence_grade: B
+    season_window: [7, 8]          # calendar months of peak occurrence
+    typical_duration_days: [20, 60]
+    crop_stages_at_risk: [jointing, tasselling, grain_filling]
+    spatial_signature: >
+      Concentrated in the eastern and central Sichuan Basin; hill-country
+      counties with limited effective irrigation are the most exposed.
+      The Chengdu Plain is buffered by the irrigation network.
+    why_included: >
+      The classic recurrent climatic feature of the Sichuan Basin and the
+      shock with the clearest technological counter-measure: smart irrigation
+      and fertigation act directly on the loss mechanism (soil-moisture
+      deficit), so the technology efficacy parameter is identifiable.
+    coupled_technologies: [T2, T1]
+    primary_loss_channel: soil moisture deficit during reproductive stage
+    model:
+      annual_probability_prior: 0.211
+      severity_distribution: beta
+      severity_params: [0.43, 1.25]
+      # --- calibrated from ERA5 reanalysis 1991-2024 (see
+      # outputs/calibration/shock_calibration.json) ---
+      # latent Gaussian correlation, tetrachoric-corrected from an
+      # observed binary event correlation of 0.334
+      spatial_correlation: 0.556
+      probability_by_county:
+        C1: 0.235
+        C2: 0.206
+        C3: 0.265
+        C4: 0.147
+        C5: 0.235
+        C6: 0.176
+      n_events_observed: 43
+      hazard_definition: "SPI <= -0.8"
+      yield_damage_max: 0.45        # D() ceiling at maximum severity
+      terrain_multiplier: {plain: 0.6, hill: 1.0, mountain: 1.15}
+      irrigation_offset: 0.45       # existing irrigation already offsets this
+    data_needed:
+      - CMA station precipitation and temperature, daily, 2000-2025
+      - drought index (CI, MCI) gridded series
+      - irrigated area by county (Sichuan Statistical Yearbook)
+      - insurance drought claim records by county and year
+    verify_queries:
+      - 四川 伏旱 干旱 农业 损失
+      - Sichuan basin summer drought agricultural loss
+
+  - id: D2
+    name_en: Rainstorm, flood and waterlogging
+    name_zh: 暴雨洪涝
+    family: hydro-meteorological
+    evidence_grade: B
+    season_window: [6, 7, 8, 9]
+    typical_duration_days: [1, 7]
+    crop_stages_at_risk: [seedling, flowering, maturity, harvest]
+    spatial_signature: >
+      Western basin rim and hill counties; slope land adds landslide and
+      soil loss; low-lying plain plots suffer waterlogging. Short, intense
+      and spatially concentrated -- the opposite temporal profile to D1.
+    why_included: >
+      Fast onset means the binding constraint is the LEAD TIME of warning and
+      the QUEUE for machinery in the operating window, not equipment
+      ownership. This is precisely the mechanism the service-capacity SD
+      module and the contract effort variable are built to represent, so D2
+      is what makes voucher-versus-subsidy policies separate.
+    coupled_technologies: [T1, T3]
+    primary_loss_channel: >
+      lodging, submergence, harvest delay, inability to enter waterlogged
+      plots with machinery
+    model:
+      annual_probability_prior: 0.373
+      severity_distribution: beta
+      severity_params: [0.19, 0.35]
+      # --- calibrated from ERA5 reanalysis 1991-2024 (see
+      # outputs/calibration/shock_calibration.json) ---
+      # latent Gaussian correlation, tetrachoric-corrected from an
+      # observed binary event correlation of 0.124
+      spatial_correlation: 0.237
+      probability_by_county:
+        C1: 0.647
+        C2: 0.529
+        C3: 0.206
+        C4: 0.294
+        C5: 0.500
+        C6: 0.059
+      n_events_observed: 76
+      hazard_definition: ">= 2 rainstorm days"
+      yield_damage_max: 0.55
+      terrain_multiplier: {plain: 1.0, hill: 1.1, mountain: 1.25}
+      warning_lead_time_days: [0.5, 3.0]   # what T1 can deliver
+      action_window_days: 2                # time to act before loss locks in
+    data_needed:
+      - hourly rainfall and river stage, flood warning issuance timestamps
+      - remote sensing inundation extent by event
+      - service work orders with request/dispatch/arrival timestamps
+      - crop calendar by county to align stage vulnerability
+    verify_queries:
+      - 四川 暴雨 洪涝 农作物 受灾面积
+      - Sichuan flood agricultural damage remote sensing
+
+  - id: D3
+    name_en: Compound heat-drought with power and network interruption
+    name_zh: 高温干旱复合冲击（伴电力/网络中断）
+    family: compound / infrastructure
+    evidence_grade: B
+    season_window: [7, 8]
+    typical_duration_days: [5, 20]
+    crop_stages_at_risk: [tasselling, grain_filling]
+    spatial_signature: province-wide, correlated across counties
+    why_included: >
+      THE DIAGNOSTIC SHOCK OF THIS STUDY. Extreme heat raises irrigation
+      demand at the same moment that hydropower shortfall and grid stress cut
+      the electricity that pumps, sensors, base stations and platforms depend
+      on. Technology efficacy is therefore NOT exogenous: it collapses exactly
+      when it is most needed. The August 2022 Sichuan heat-drought episode
+      with industrial power rationing is the reference event. Any model that
+      applies a fixed percentage loss reduction to smart technology will
+      overstate resilience precisely here, so this shock is the sharpest test
+      of the whole modelling claim and the strongest argument for redundancy
+      and maintenance policies over pure equipment subsidies.
+    coupled_technologies: [T1, T2, T3]
+    primary_loss_channel: >
+      heat sterility and moisture deficit, PLUS forced technology outage
+      (pump downtime, sensor and gateway loss, warning not delivered)
+    model:
+      annual_probability_prior: 0.078
+      severity_distribution: beta
+      severity_params: [2.54, 1.81]
+      # --- calibrated from ERA5 reanalysis 1991-2024 (see
+      # outputs/calibration/shock_calibration.json) ---
+      # latent Gaussian correlation, tetrachoric-corrected from an
+      # observed binary event correlation of 0.447
+      spatial_correlation: 0.757
+      probability_by_county:
+        C1: 0.088
+        C2: 0.088
+        C3: 0.088
+        C4: 0.059
+        C5: 0.147
+        C6: 0.000
+      n_events_observed: 16
+      hazard_definition: "SPI <= -1.0 and hot days >= county p75"
+      yield_damage_max: 0.60
+      terrain_multiplier: {plain: 0.9, hill: 1.05, mountain: 1.0}
+      tech_availability_multiplier: 0.35   # rho collapses during the event
+      outage_duration_days: [2, 12]
+    data_needed:
+      - 2022 heat-drought event chronology and power rationing notices
+      - base station outage and platform downtime logs
+      - irrigation pump electricity consumption series
+      - device telemetry gaps during the event window
+    verify_queries:
+      - 四川 2022 高温 干旱 限电 农业 灌溉
+      - Sichuan 2022 heatwave drought power rationing agriculture
+
+tier2_extensions:
+
+  - id: D4
+    name_en: Input price shock (fertiliser, diesel, electricity)
+    name_zh: 投入品价格冲击（化肥、柴油、电力）
+    family: economic
+    evidence_grade: B
+    why_deferred: >
+      Moved out of the modelled set in the August 2026 scope revision. It was
+      the only shock acting through the CASH constraint rather than the yield
+      function, so no yield-side technology could address its damage and it
+      shared no loss channel with D1-D3. Calibrating it also required a
+      separate price-series data chain (fertiliser, diesel and agricultural
+      electricity indices plus farm-gate output prices) that is not needed for
+      any other part of the model.
+      Retained here because it remains the sharpest test of whether capital
+      subsidies help when the binding constraint is working capital, and
+      because the economic-shock machinery is still present in shocks.py: it
+      can be reinstated by moving this entry back to tier1, with no code change.
+    coupled_technologies: [T2, T3]
+    model:
+      annual_probability_prior: 0.25
+      severity_distribution: lognormal
+      severity_params: [0.0, 0.35]
+      price_multiplier_range: [1.10, 1.80]
+      liquidity_stress_elasticity: 0.6
+      risk_aversion_shift: 0.08
+    data_needed:
+      - fertiliser, diesel and agricultural electricity price series
+      - farm gate output prices for the modelled crops
+      - service pricing per mu from provider records
+
+  - id: D5
+    name_en: Migratory pest outbreak (fall armyworm)
+    name_zh: 草地贪夜蛾等迁飞性害虫
+    evidence_grade: C
+    why_deferred: >
+      Excellent match for early-warning technology (T1) and drone spraying
+      (T3), and Sichuan sits on a migration corridor, but outbreak data are
+      patchier than meteorological series. Add in version 2 once plant
+      protection station records are secured.
+    coupled_technologies: [T1, T3]
+
+  - id: D6
+    name_en: Continuous overcast rain and hail at harvest
+    name_zh: 连阴雨、冰雹
+    evidence_grade: C
+    why_deferred: Localised; needs finer-grained station data than the MVP.
+    coupled_technologies: [T1, T3]
+
+  - id: D7
+    name_en: Output price shock (hog cycle)
+    name_zh: 生猪价格周期
+    evidence_grade: B
+    why_deferred: >
+      Sichuan is a leading hog province and the livestock module is a
+      separate technology path (environmental control, biosecurity
+      monitoring). Out of scope for a crop-focused MVP.
+    coupled_technologies: [T4]
+
+excluded:
+  - id: X1
+    name_en: Earthquake
+    reason: >
+      High salience in Sichuan but essentially orthogonal to smart
+      agricultural technology adoption decisions and effort levels; the
+      response channel is emergency management, not agronomic operations.
+      Including it would add variance without discriminating between the
+      policies under study.
+  - id: X2
+    name_en: Trade and export demand shocks
+    reason: >
+      Acts on marketing and e-commerce channels rather than on production
+      effort and disaster loss, which is the causal chain this model is
+      built to represent.

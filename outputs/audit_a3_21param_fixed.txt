@@ -1,0 +1,30 @@
+============================================================================
+MODEL AND DATA AUDIT
+============================================================================
+
+[A3] sensitivity analysis (this takes a few minutes)
+             parameter     module  max_effect_pct             drives
+        gamma provider   contract           66.40 effective_use_rate
+     capacity coverage         sd           49.05    mitigation_rate
+    provider risk mean       risk           47.29 effective_use_rate
+       logit scale tau  behaviour           44.24          adopt_any
+    routine benefit T3 technology           28.20     mean_wait_days
+        U_min provider   contract           27.49 effective_use_rate
+      shirk multiplier   contract           26.70 effective_use_rate
+      T3 service price technology           25.78     mean_wait_days
+          eta T3 flood technology           21.55    mitigation_rate
+      verifiability T3   contract           20.89 effective_use_rate
+       social learning  behaviour           13.47     mean_wait_days
+          eta T1 flood technology           13.18    mitigation_rate
+  hazard learning rate  behaviour           10.39     mean_wait_days
+      farmer risk mean       risk            8.43     mean_wait_days
+    routine benefit T2 technology            7.48     mean_wait_days
+non-power outage share       loss            7.21    mitigation_rate
+        learning decay  behaviour            5.54          adopt_any
+       T2 capex per mu technology            3.53     mean_wait_days
+          stress decay       risk            0.39 effective_use_rate
+        max mitigation       loss            0.19    mitigation_rate
+        eta T2 drought technology            0.00          adopt_any
+
+Outputs -> C:\Users\3054109\OneDrive - Queen's University Belfast\Model building\sichuan\smartagri_sichuan\outputs\audit
+Runtime: 1938s

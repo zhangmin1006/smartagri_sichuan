@@ -1,0 +1,16 @@
+
+=== multiplier ON  ===
+  gini=0.45969 p10=2173.3 mitig=0.01686
+  within-farmer income SD by contract form:
+    concave     6370.0
+    convex      5203.3
+    linear      5263.1
+
+=== multiplier OFF ===
+  gini=0.45891 p10=2172.0 mitig=0.01686
+  within-farmer income SD by contract form:
+    concave     6385.5
+    convex      5217.1
+    linear      5274.8
+
+done

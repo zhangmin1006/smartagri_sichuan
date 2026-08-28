@@ -1,0 +1,162 @@
+============================================================================
+MODEL AND DATA AUDIT
+============================================================================
+
+[A1] configuration coverage
+  declared keys checked : 294
+  never read by code    : 74
+    - disruptions.yaml       calibrated_on
+    - disruptions.yaml       decision_date
+    - disruptions.yaml       liquidity_stress_elasticity
+    - disruptions.yaml       outage_duration_days
+    - disruptions.yaml       region
+    - disruptions.yaml       risk_aversion_shift
+    - disruptions.yaml       scope_change_2026_08
+    - disruptions.yaml       spatial_correlation_estimated
+    - disruptions.yaml       tier1_rationale
+    - disruptions.yaml       typical_duration_days
+    - model_params.yaml      abm_to_sd
+    - model_params.yaml      base_verifiability
+    - model_params.yaml      choice_rule
+    - model_params.yaml      contract_diversification
+    - model_params.yaml      debt_ratio
+    - model_params.yaml      distribution
+    - model_params.yaml      dt_years
+    - model_params.yaml      fleet_size
+    - model_params.yaml      grain_filling
+    - model_params.yaml      harvest_month
+    - model_params.yaml      input_price_shock
+    - model_params.yaml      jointing
+    - model_params.yaml      liquidity_floor
+    - model_params.yaml      maturity
+    - model_params.yaml      outcome_scale_per_mu
+
+[A2] hard-coded numeric literals in behavioural code
+  literals flagged: 150
+file
+agents.py    35
+model.py     93
+sd.py        14
+shocks.py     8
+
+[A3] sensitivity analysis (this takes a few minutes)
+         parameter     module  max_effect_pct             drives
+   logit scale tau  behaviour          114.94     mean_wait_days
+    gamma provider   contract           69.43 effective_use_rate
+ capacity coverage         sd           58.99     mean_wait_days
+provider risk mean       risk           48.47 effective_use_rate
+  shirk multiplier   contract           31.88 effective_use_rate
+      eta T3 flood technology           24.53    mitigation_rate
+      eta T1 flood technology           18.07    mitigation_rate
+  T3 service price technology           17.92    mitigation_rate
+    U_min provider   contract           15.72 effective_use_rate
+   T2 capex per mu technology           12.24     mean_wait_days
+  verifiability T3   contract           10.67          effort_T3
+   social learning  behaviour            6.87     mean_wait_days
+  farmer risk mean       risk            3.06 effective_use_rate
+    max mitigation       loss            0.32    mitigation_rate
+    eta T2 drought technology            0.00     mean_wait_days
+
+[A4] Monte Carlo stability
+ n_reps               ranking_by_mitigation          top_scenario  top_mitigation  sem_top  cv_pct
+      1 voucher_plus_c > voucher > baseline voucher_plus_capacity          0.0357      NaN     NaN
+      2 voucher_plus_c > voucher > baseline voucher_plus_capacity          0.0359   0.0002  0.5132
+      3 voucher_plus_c > voucher > baseline voucher_plus_capacity          0.0406   0.0047 11.6727
+      4 voucher_plus_c > voucher > baseline voucher_plus_capacity          0.0480   0.0081 16.8262
+      5 voucher_plus_c > voucher > baseline voucher_plus_capacity          0.0458   0.0066 14.4875
+      6 voucher_plus_c > voucher > baseline voucher_plus_capacity          0.0421   0.0065 15.5567
+      7 voucher_plus_c > voucher > baseline voucher_plus_capacity          0.0394   0.0061 15.5809
+      8 voucher_plus_c > voucher > baseline voucher_plus_capacity          0.0394   0.0053 13.5007
+
+[A5] extreme-condition tests
+                             test                                   expected  adopt_T3  effort_T3  mitigation  wait_days   loss  income  exit_rate
+                 No shocks at all                 zero loss, zero mitigation    0.1511     0.7623      0.0000      6.685 0.0000 12194.4        0.0
+                  Every season D3                  high loss, low mitigation    0.0956     0.7239      0.0030      3.223 0.2826  7231.3        0.0
+          Technology efficacy = 0         adoption collapses, mitigation = 0    0.0900     0.7215      0.0000      3.200 0.2832  7210.2        0.0
+               Technology is free         adoption near ceiling, queue binds    0.1578     0.7461      0.0072     11.040 0.2815  7286.8        0.0
+       Unlimited service capacity                            wait -> minimum    0.1100     0.7241      0.0035      1.000 0.2824  7233.0        0.0
+              No service capacity wait at ceiling, service adoption unusable    0.0444     0.0000      0.0000     30.000 0.2832  7237.6        0.0
+             No monitoring at all         effort falls to the shirking floor    0.1000     0.4504      0.0019      3.459 0.2828  7226.1        0.0
+Zero budget with subsidy scenario                 instrument rations to zero    0.0956     0.7239      0.0030      3.223 0.2826  7231.3        0.0
+
+Outputs -> C:\Users\3054109\OneDrive - Queen's University Belfast\Model building\sichuan\smartagri_sichuan\outputs\audit
+Runtime: 3274s
+########## VALIDATION ##########
+==========================================================================
+MODEL VALIDATION SUITE
+==========================================================================
+
+[V1] contract core against the published results
+  [PASS] Tables 2 and 3, Proposition 1, Theorem 1 bounds
+
+[V2] runtime invariants
+  [PASS] effort, state, belief, trust, loss, capacity, budget bounds
+  [PASS] Theorem 1: 0 < w(x) < x and 0 < dw/dx < 1 (120 random pairs)
+
+[V3] accounting and conservation
+  [PASS] cumulative fiscal spend equals the sum of season spends
+  [PASS] service backlog is never negative
+  [PASS] season capacity strictly positive in every season
+  [PASS] cumulative exit rate is non-decreasing
+
+[V4] shock module against observed climate
+  C1  Chengdu Plain (Dujiangyan-irrigated)    12419 days   34 years
+  C2  Deyang / Mianyang plain margin          12419 days   34 years
+  C3  Suining central basin hills             12419 days   34 years
+  C4  Yibin southern basin rim                12419 days   34 years
+  C5  Nanchong eastern basin                  12419 days   34 years
+  C6  Liangshan western mountains             12419 days   34 years
+  [PASS] county occurrence probabilities reproduced
+         expected max deviation < 0.03 | observed 0.018
+         3000 simulated seasons compounded to annual probability against 34 observed years
+  [PASS] spatial correlation of realised events reproduced
+         expected max deviation < 0.12 and flood less correlated than drought | observed 0.041; observed vs simulated {'D1': (0.334, 0.294), 'D2': (0.124, 0.123), 'D3': (0.447, 0.406)}
+         compares binary event indicators with binary event indicators; the calibrated rho is a latent Gaussian parameter and is necessarily attenuated in realised 0/1 outcomes
+  [PASS] held-out decade 2015-2024 vs parameters fitted to 1991-2014
+         expected max |difference| < 0.15 | observed 0.015
+         D1: 0.188 -> 0.183; D2: 0.368 -> 0.383; D3: 0.076 -> 0.083
+  [PASS] documented Sichuan drought years recovered from the data
+
+[V5] extreme conditions (structural)
+  [PASS] no shocks: zero loss and zero mitigation
+  [PASS] D3 every season: high loss, suppressed mitigation
+  [PASS] unlimited capacity: waiting time at its floor
+  [PASS] no capacity: waiting time at ceiling and effort collapses
+  [PASS] no monitoring: delivered effort falls to the shirking floor
+  [PASS] zero budget: instrument rations to nothing
+
+[V6] behavioural response to fundamentals (belief-mediated)
+  [PASS] steady-state adoption is ordered by true efficacy
+         expected zero < baseline < high | observed 0.028 < 0.031 < 0.048
+         measured over the last 6 of 24 seasons, shock every season
+  [PASS] the efficacy response is economically material
+  [PASS] beliefs converge toward true efficacy
+
+[V7] face validation against external anchors
+  [PASS] adoption below the 0.355 stated-willingness anchor
+         expected 0.05 - 0.355 (revealed use below stated willingness) | observed 0.100
+         Gong, Ma & Zhang (2024), 214 Sichuan smallholders: mean stated willingness 0.355; verified use is expected to be lower
+  [PASS] service is the dominant access mode for T3
+         expected service share exceeds own-equipment share | observed service 0.111
+         over 60 per cent of Sichuan plots are below 0.07 ha, so ownership is uneconomic for most farmers
+  [PASS] mean seasonal loss in a plausible range
+  [PASS] peak-season waiting time is operationally plausible
+         expected 1 - 20 days | observed 4.3 days
+         NOT yet validated against data; work-order timestamps are the priority-1 acquisition in the data audit
+  [PASS] exit rate is low over a four-year horizon
+
+==========================================================================
+SUMMARY
+==========================================================================
+  V1: PASS 1
+  V2: PASS 2
+  V3: PASS 4
+  V4: PASS 4
+  V5: PASS 6
+  V6: PASS 3
+  V7: PASS 5
+
+  overall: PASS 25
+  runtime: 1750s
+
+Outputs -> C:\Users\3054109\OneDrive - Queen's University Belfast\Model building\sichuan\smartagri_sichuan\outputs\validation

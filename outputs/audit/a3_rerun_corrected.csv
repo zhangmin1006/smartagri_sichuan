@@ -1,0 +1,25 @@
+parameter,direction,value,output,base,new,pct
+U_min provider,low,0.15,adopt_any,0.2496,0.2494,-0.07
+U_min provider,low,0.15,effort_T3,0.5799,0.6875,18.55
+U_min provider,low,0.15,effective_use_rate,0.2978,0.3406,14.37
+U_min provider,low,0.15,mitigation_rate,0.0197,0.0223,13.17
+U_min provider,low,0.15,mean_wait_days,5.3948,5.2917,-1.91
+U_min provider,low,0.15,mean_income,8922.4929,9202.8701,3.14
+U_min provider,high,0.45,adopt_any,0.2496,0.2435,-2.45
+U_min provider,high,0.45,effort_T3,0.5799,0.4795,-17.31
+U_min provider,high,0.45,effective_use_rate,0.2978,0.2478,-16.79
+U_min provider,high,0.45,mitigation_rate,0.0197,0.0151,-23.63
+U_min provider,high,0.45,mean_wait_days,5.3948,5.2638,-2.43
+U_min provider,high,0.45,mean_income,8922.4929,8825.7862,-1.08
+capacity coverage,low,0.35,adopt_any,0.2496,0.2172,-12.98
+capacity coverage,low,0.35,effort_T3,0.5799,0.5408,-6.74
+capacity coverage,low,0.35,effective_use_rate,0.2978,0.2567,-13.81
+capacity coverage,low,0.35,mitigation_rate,0.0197,0.0106,-46.07
+capacity coverage,low,0.35,mean_wait_days,5.3948,14.2709,164.53
+capacity coverage,low,0.35,mean_income,8922.4929,9344.4566,4.73
+capacity coverage,high,0.85,adopt_any,0.2496,0.2591,3.78
+capacity coverage,high,0.85,effort_T3,0.5799,0.5932,2.29
+capacity coverage,high,0.85,effective_use_rate,0.2978,0.31,4.1
+capacity coverage,high,0.85,mitigation_rate,0.0197,0.0187,-5.03
+capacity coverage,high,0.85,mean_wait_days,5.3948,2.6338,-51.18
+capacity coverage,high,0.85,mean_income,8922.4929,8920.4066,-0.02

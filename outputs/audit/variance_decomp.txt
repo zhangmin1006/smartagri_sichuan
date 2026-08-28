@@ -1,0 +1,12 @@
+
+=== contract multiplier ON (revised) ===
+  baseline               mitigation mean=0.02031 sd=0.00829 CV=40.8%
+  voucher_plus_capacity  mitigation mean=0.03383 sd=0.01315 CV=38.9%
+  PAIRED CONTRAST mean=+0.01352 sd=0.00577 CV=42.7%  | n needed for +-10% CI: 71
+
+=== contract multiplier OFF (as before) ===
+  baseline               mitigation mean=0.02031 sd=0.00829 CV=40.8%
+  voucher_plus_capacity  mitigation mean=0.03383 sd=0.01315 CV=38.9%
+  PAIRED CONTRAST mean=+0.01352 sd=0.00577 CV=42.7%  | n needed for +-10% CI: 71
+
+done

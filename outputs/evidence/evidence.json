@@ -1,0 +1,4014 @@
+[
+  {
+    "record_id": "DIS-D1-SCOPE",
+    "category": "disruption",
+    "entity_id": "D1",
+    "name_en": "Seasonal summer drought",
+    "name_zh": "伏旱",
+    "claim": "The classic recurrent climatic feature of the Sichuan Basin and the shock with the clearest technological counter-measure: smart irrigation and fertigation act directly on the loss mechanism (soil-moisture deficit), so the technology efficacy parameter is identifiable.",
+    "claim_type": "mechanism",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "tier=tier1",
+    "tags": [
+      "scope_decision",
+      "tier1",
+      "T2",
+      "T1"
+    ]
+  },
+  {
+    "record_id": "DIS-D1-CHANNEL",
+    "category": "disruption",
+    "entity_id": "D1",
+    "name_en": "Seasonal summer drought",
+    "name_zh": "伏旱",
+    "claim": "soil moisture deficit during reproductive stage",
+    "claim_type": "mechanism",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "",
+    "tags": [
+      "loss_channel"
+    ]
+  },
+  {
+    "record_id": "DIS-D1-PAR-annual_probability_prior",
+    "category": "disruption",
+    "entity_id": "D1",
+    "name_en": "Seasonal summer drought",
+    "name_zh": "",
+    "claim": "calibrated: annual_probability_prior",
+    "claim_type": "parameter",
+    "value": 0.211,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "derived from ERA5 reanalysis 1991-2024",
+    "tags": [
+      "parameter",
+      "calibrated"
+    ]
+  },
+  {
+    "record_id": "DIS-D1-PAR-severity_distribution",
+    "category": "disruption",
+    "entity_id": "D1",
+    "name_en": "Seasonal summer drought",
+    "name_zh": "",
+    "claim": "model prior: severity_distribution",
+    "claim_type": "parameter",
+    "value": "beta",
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "DIS-D1-PAR-severity_params",
+    "category": "disruption",
+    "entity_id": "D1",
+    "name_en": "Seasonal summer drought",
+    "name_zh": "",
+    "claim": "calibrated: severity_params",
+    "claim_type": "parameter",
+    "value": [
+      0.43,
+      1.25
+    ],
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "derived from ERA5 reanalysis 1991-2024",
+    "tags": [
+      "parameter",
+      "calibrated"
+    ]
+  },
+  {
+    "record_id": "DIS-D1-PAR-spatial_correlation",
+    "category": "disruption",
+    "entity_id": "D1",
+    "name_en": "Seasonal summer drought",
+    "name_zh": "",
+    "claim": "calibrated: spatial_correlation",
+    "claim_type": "parameter",
+    "value": 0.446,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "derived from ERA5 reanalysis 1991-2024",
+    "tags": [
+      "parameter",
+      "calibrated"
+    ]
+  },
+  {
+    "record_id": "DIS-D1-PAR-probability_by_county",
+    "category": "disruption",
+    "entity_id": "D1",
+    "name_en": "Seasonal summer drought",
+    "name_zh": "",
+    "claim": "calibrated: probability_by_county",
+    "claim_type": "parameter",
+    "value": {
+      "C1": 0.235,
+      "C2": 0.206,
+      "C3": 0.265,
+      "C4": 0.147,
+      "C5": 0.235,
+      "C6": 0.176
+    },
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "derived from ERA5 reanalysis 1991-2024",
+    "tags": [
+      "parameter",
+      "calibrated"
+    ]
+  },
+  {
+    "record_id": "DIS-D1-PAR-n_events_observed",
+    "category": "disruption",
+    "entity_id": "D1",
+    "name_en": "Seasonal summer drought",
+    "name_zh": "",
+    "claim": "calibrated: n_events_observed",
+    "claim_type": "parameter",
+    "value": 43,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "derived from ERA5 reanalysis 1991-2024",
+    "tags": [
+      "parameter",
+      "calibrated"
+    ]
+  },
+  {
+    "record_id": "DIS-D1-PAR-hazard_definition",
+    "category": "disruption",
+    "entity_id": "D1",
+    "name_en": "Seasonal summer drought",
+    "name_zh": "",
+    "claim": "calibrated: hazard_definition",
+    "claim_type": "parameter",
+    "value": "SPI <= -0.8",
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "derived from ERA5 reanalysis 1991-2024",
+    "tags": [
+      "parameter",
+      "calibrated"
+    ]
+  },
+  {
+    "record_id": "DIS-D1-PAR-yield_damage_max",
+    "category": "disruption",
+    "entity_id": "D1",
+    "name_en": "Seasonal summer drought",
+    "name_zh": "",
+    "claim": "model prior: yield_damage_max",
+    "claim_type": "parameter",
+    "value": 0.45,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "DIS-D1-PAR-terrain_multiplier",
+    "category": "disruption",
+    "entity_id": "D1",
+    "name_en": "Seasonal summer drought",
+    "name_zh": "",
+    "claim": "model prior: terrain_multiplier",
+    "claim_type": "parameter",
+    "value": {
+      "plain": 0.6,
+      "hill": 1.0,
+      "mountain": 1.15
+    },
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "DIS-D1-PAR-irrigation_offset",
+    "category": "disruption",
+    "entity_id": "D1",
+    "name_en": "Seasonal summer drought",
+    "name_zh": "",
+    "claim": "model prior: irrigation_offset",
+    "claim_type": "parameter",
+    "value": 0.45,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "DIS-D1-DATA-13407",
+    "category": "disruption",
+    "entity_id": "D1",
+    "name_en": "Seasonal summer drought",
+    "name_zh": "",
+    "claim": "CMA station precipitation and temperature, daily, 2000-2025",
+    "claim_type": "context",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "",
+    "tags": [
+      "data_requirement"
+    ]
+  },
+  {
+    "record_id": "DIS-D1-DATA-694229",
+    "category": "disruption",
+    "entity_id": "D1",
+    "name_en": "Seasonal summer drought",
+    "name_zh": "",
+    "claim": "drought index (CI, MCI) gridded series",
+    "claim_type": "context",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "",
+    "tags": [
+      "data_requirement"
+    ]
+  },
+  {
+    "record_id": "DIS-D1-DATA-403688",
+    "category": "disruption",
+    "entity_id": "D1",
+    "name_en": "Seasonal summer drought",
+    "name_zh": "",
+    "claim": "irrigated area by county (Sichuan Statistical Yearbook)",
+    "claim_type": "context",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "",
+    "tags": [
+      "data_requirement"
+    ]
+  },
+  {
+    "record_id": "DIS-D1-DATA-898696",
+    "category": "disruption",
+    "entity_id": "D1",
+    "name_en": "Seasonal summer drought",
+    "name_zh": "",
+    "claim": "insurance drought claim records by county and year",
+    "claim_type": "context",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "",
+    "tags": [
+      "data_requirement"
+    ]
+  },
+  {
+    "record_id": "DIS-D2-SCOPE",
+    "category": "disruption",
+    "entity_id": "D2",
+    "name_en": "Rainstorm, flood and waterlogging",
+    "name_zh": "暴雨洪涝",
+    "claim": "Fast onset means the binding constraint is the LEAD TIME of warning and the QUEUE for machinery in the operating window, not equipment ownership. This is precisely the mechanism the service-capacity SD module and the contract effort variable are built to represent, so D2 is what makes voucher-versus-subsidy policies separate.",
+    "claim_type": "mechanism",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "tier=tier1",
+    "tags": [
+      "scope_decision",
+      "tier1",
+      "T1",
+      "T3"
+    ]
+  },
+  {
+    "record_id": "DIS-D2-CHANNEL",
+    "category": "disruption",
+    "entity_id": "D2",
+    "name_en": "Rainstorm, flood and waterlogging",
+    "name_zh": "暴雨洪涝",
+    "claim": "lodging, submergence, harvest delay, inability to enter waterlogged plots with machinery",
+    "claim_type": "mechanism",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "",
+    "tags": [
+      "loss_channel"
+    ]
+  },
+  {
+    "record_id": "DIS-D2-PAR-annual_probability_prior",
+    "category": "disruption",
+    "entity_id": "D2",
+    "name_en": "Rainstorm, flood and waterlogging",
+    "name_zh": "",
+    "claim": "calibrated: annual_probability_prior",
+    "claim_type": "parameter",
+    "value": 0.373,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "derived from ERA5 reanalysis 1991-2024",
+    "tags": [
+      "parameter",
+      "calibrated"
+    ]
+  },
+  {
+    "record_id": "DIS-D2-PAR-severity_distribution",
+    "category": "disruption",
+    "entity_id": "D2",
+    "name_en": "Rainstorm, flood and waterlogging",
+    "name_zh": "",
+    "claim": "model prior: severity_distribution",
+    "claim_type": "parameter",
+    "value": "beta",
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "DIS-D2-PAR-severity_params",
+    "category": "disruption",
+    "entity_id": "D2",
+    "name_en": "Rainstorm, flood and waterlogging",
+    "name_zh": "",
+    "claim": "calibrated: severity_params",
+    "claim_type": "parameter",
+    "value": [
+      0.19,
+      0.35
+    ],
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "derived from ERA5 reanalysis 1991-2024",
+    "tags": [
+      "parameter",
+      "calibrated"
+    ]
+  },
+  {
+    "record_id": "DIS-D2-PAR-spatial_correlation",
+    "category": "disruption",
+    "entity_id": "D2",
+    "name_en": "Rainstorm, flood and waterlogging",
+    "name_zh": "",
+    "claim": "calibrated: spatial_correlation",
+    "claim_type": "parameter",
+    "value": 0.19,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "derived from ERA5 reanalysis 1991-2024",
+    "tags": [
+      "parameter",
+      "calibrated"
+    ]
+  },
+  {
+    "record_id": "DIS-D2-PAR-probability_by_county",
+    "category": "disruption",
+    "entity_id": "D2",
+    "name_en": "Rainstorm, flood and waterlogging",
+    "name_zh": "",
+    "claim": "calibrated: probability_by_county",
+    "claim_type": "parameter",
+    "value": {
+      "C1": 0.647,
+      "C2": 0.529,
+      "C3": 0.206,
+      "C4": 0.294,
+      "C5": 0.5,
+      "C6": 0.059
+    },
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "derived from ERA5 reanalysis 1991-2024",
+    "tags": [
+      "parameter",
+      "calibrated"
+    ]
+  },
+  {
+    "record_id": "DIS-D2-PAR-n_events_observed",
+    "category": "disruption",
+    "entity_id": "D2",
+    "name_en": "Rainstorm, flood and waterlogging",
+    "name_zh": "",
+    "claim": "calibrated: n_events_observed",
+    "claim_type": "parameter",
+    "value": 76,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "derived from ERA5 reanalysis 1991-2024",
+    "tags": [
+      "parameter",
+      "calibrated"
+    ]
+  },
+  {
+    "record_id": "DIS-D2-PAR-hazard_definition",
+    "category": "disruption",
+    "entity_id": "D2",
+    "name_en": "Rainstorm, flood and waterlogging",
+    "name_zh": "",
+    "claim": "calibrated: hazard_definition",
+    "claim_type": "parameter",
+    "value": ">= 2 rainstorm days",
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "derived from ERA5 reanalysis 1991-2024",
+    "tags": [
+      "parameter",
+      "calibrated"
+    ]
+  },
+  {
+    "record_id": "DIS-D2-PAR-yield_damage_max",
+    "category": "disruption",
+    "entity_id": "D2",
+    "name_en": "Rainstorm, flood and waterlogging",
+    "name_zh": "",
+    "claim": "model prior: yield_damage_max",
+    "claim_type": "parameter",
+    "value": 0.55,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "DIS-D2-PAR-terrain_multiplier",
+    "category": "disruption",
+    "entity_id": "D2",
+    "name_en": "Rainstorm, flood and waterlogging",
+    "name_zh": "",
+    "claim": "model prior: terrain_multiplier",
+    "claim_type": "parameter",
+    "value": {
+      "plain": 1.0,
+      "hill": 1.1,
+      "mountain": 1.25
+    },
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "DIS-D2-PAR-warning_lead_time_days",
+    "category": "disruption",
+    "entity_id": "D2",
+    "name_en": "Rainstorm, flood and waterlogging",
+    "name_zh": "",
+    "claim": "model prior: warning_lead_time_days",
+    "claim_type": "parameter",
+    "value": [
+      0.5,
+      3.0
+    ],
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "DIS-D2-PAR-action_window_days",
+    "category": "disruption",
+    "entity_id": "D2",
+    "name_en": "Rainstorm, flood and waterlogging",
+    "name_zh": "",
+    "claim": "model prior: action_window_days",
+    "claim_type": "parameter",
+    "value": 2,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "DIS-D2-DATA-21058",
+    "category": "disruption",
+    "entity_id": "D2",
+    "name_en": "Rainstorm, flood and waterlogging",
+    "name_zh": "",
+    "claim": "hourly rainfall and river stage, flood warning issuance timestamps",
+    "claim_type": "context",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "",
+    "tags": [
+      "data_requirement"
+    ]
+  },
+  {
+    "record_id": "DIS-D2-DATA-576203",
+    "category": "disruption",
+    "entity_id": "D2",
+    "name_en": "Rainstorm, flood and waterlogging",
+    "name_zh": "",
+    "claim": "remote sensing inundation extent by event",
+    "claim_type": "context",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "",
+    "tags": [
+      "data_requirement"
+    ]
+  },
+  {
+    "record_id": "DIS-D2-DATA-677752",
+    "category": "disruption",
+    "entity_id": "D2",
+    "name_en": "Rainstorm, flood and waterlogging",
+    "name_zh": "",
+    "claim": "service work orders with request/dispatch/arrival timestamps",
+    "claim_type": "context",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "",
+    "tags": [
+      "data_requirement"
+    ]
+  },
+  {
+    "record_id": "DIS-D2-DATA-523459",
+    "category": "disruption",
+    "entity_id": "D2",
+    "name_en": "Rainstorm, flood and waterlogging",
+    "name_zh": "",
+    "claim": "crop calendar by county to align stage vulnerability",
+    "claim_type": "context",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "",
+    "tags": [
+      "data_requirement"
+    ]
+  },
+  {
+    "record_id": "DIS-D3-SCOPE",
+    "category": "disruption",
+    "entity_id": "D3",
+    "name_en": "Compound heat-drought with power and network interruption",
+    "name_zh": "高温干旱复合冲击（伴电力/网络中断）",
+    "claim": "THE DIAGNOSTIC SHOCK OF THIS STUDY. Extreme heat raises irrigation demand at the same moment that hydropower shortfall and grid stress cut the electricity that pumps, sensors, base stations and platforms depend on. Technology efficacy is therefore NOT exogenous: it collapses exactly when it is most needed. The August 2022 Sichuan heat-drought episode with industrial power rationing is the reference event. Any model that applies a fixed percentage loss reduction to smart technology will overstate resilience precisely here, so this shock is the sharpest test of the whole modelling claim and the strongest argument for redundancy and maintenance policies over pure equipment subsidies.",
+    "claim_type": "mechanism",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "tier=tier1",
+    "tags": [
+      "scope_decision",
+      "tier1",
+      "T1",
+      "T2",
+      "T3"
+    ]
+  },
+  {
+    "record_id": "DIS-D3-CHANNEL",
+    "category": "disruption",
+    "entity_id": "D3",
+    "name_en": "Compound heat-drought with power and network interruption",
+    "name_zh": "高温干旱复合冲击（伴电力/网络中断）",
+    "claim": "heat sterility and moisture deficit, PLUS forced technology outage (pump downtime, sensor and gateway loss, warning not delivered)",
+    "claim_type": "mechanism",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "",
+    "tags": [
+      "loss_channel"
+    ]
+  },
+  {
+    "record_id": "DIS-D3-PAR-annual_probability_prior",
+    "category": "disruption",
+    "entity_id": "D3",
+    "name_en": "Compound heat-drought with power and network interruption",
+    "name_zh": "",
+    "claim": "calibrated: annual_probability_prior",
+    "claim_type": "parameter",
+    "value": 0.078,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "derived from ERA5 reanalysis 1991-2024",
+    "tags": [
+      "parameter",
+      "calibrated"
+    ]
+  },
+  {
+    "record_id": "DIS-D3-PAR-severity_distribution",
+    "category": "disruption",
+    "entity_id": "D3",
+    "name_en": "Compound heat-drought with power and network interruption",
+    "name_zh": "",
+    "claim": "model prior: severity_distribution",
+    "claim_type": "parameter",
+    "value": "beta",
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "DIS-D3-PAR-severity_params",
+    "category": "disruption",
+    "entity_id": "D3",
+    "name_en": "Compound heat-drought with power and network interruption",
+    "name_zh": "",
+    "claim": "calibrated: severity_params",
+    "claim_type": "parameter",
+    "value": [
+      2.54,
+      1.81
+    ],
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "derived from ERA5 reanalysis 1991-2024",
+    "tags": [
+      "parameter",
+      "calibrated"
+    ]
+  },
+  {
+    "record_id": "DIS-D3-PAR-spatial_correlation",
+    "category": "disruption",
+    "entity_id": "D3",
+    "name_en": "Compound heat-drought with power and network interruption",
+    "name_zh": "",
+    "claim": "calibrated: spatial_correlation",
+    "claim_type": "parameter",
+    "value": 0.542,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "derived from ERA5 reanalysis 1991-2024",
+    "tags": [
+      "parameter",
+      "calibrated"
+    ]
+  },
+  {
+    "record_id": "DIS-D3-PAR-probability_by_county",
+    "category": "disruption",
+    "entity_id": "D3",
+    "name_en": "Compound heat-drought with power and network interruption",
+    "name_zh": "",
+    "claim": "calibrated: probability_by_county",
+    "claim_type": "parameter",
+    "value": {
+      "C1": 0.088,
+      "C2": 0.088,
+      "C3": 0.088,
+      "C4": 0.059,
+      "C5": 0.147,
+      "C6": 0.0
+    },
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "derived from ERA5 reanalysis 1991-2024",
+    "tags": [
+      "parameter",
+      "calibrated"
+    ]
+  },
+  {
+    "record_id": "DIS-D3-PAR-n_events_observed",
+    "category": "disruption",
+    "entity_id": "D3",
+    "name_en": "Compound heat-drought with power and network interruption",
+    "name_zh": "",
+    "claim": "calibrated: n_events_observed",
+    "claim_type": "parameter",
+    "value": 16,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "derived from ERA5 reanalysis 1991-2024",
+    "tags": [
+      "parameter",
+      "calibrated"
+    ]
+  },
+  {
+    "record_id": "DIS-D3-PAR-hazard_definition",
+    "category": "disruption",
+    "entity_id": "D3",
+    "name_en": "Compound heat-drought with power and network interruption",
+    "name_zh": "",
+    "claim": "calibrated: hazard_definition",
+    "claim_type": "parameter",
+    "value": "SPI <= -1.0 and hot days >= county p75",
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "derived from ERA5 reanalysis 1991-2024",
+    "tags": [
+      "parameter",
+      "calibrated"
+    ]
+  },
+  {
+    "record_id": "DIS-D3-PAR-yield_damage_max",
+    "category": "disruption",
+    "entity_id": "D3",
+    "name_en": "Compound heat-drought with power and network interruption",
+    "name_zh": "",
+    "claim": "model prior: yield_damage_max",
+    "claim_type": "parameter",
+    "value": 0.6,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "DIS-D3-PAR-terrain_multiplier",
+    "category": "disruption",
+    "entity_id": "D3",
+    "name_en": "Compound heat-drought with power and network interruption",
+    "name_zh": "",
+    "claim": "model prior: terrain_multiplier",
+    "claim_type": "parameter",
+    "value": {
+      "plain": 0.9,
+      "hill": 1.05,
+      "mountain": 1.0
+    },
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "DIS-D3-PAR-tech_availability_multiplier",
+    "category": "disruption",
+    "entity_id": "D3",
+    "name_en": "Compound heat-drought with power and network interruption",
+    "name_zh": "",
+    "claim": "model prior: tech_availability_multiplier",
+    "claim_type": "parameter",
+    "value": 0.35,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "DIS-D3-PAR-outage_duration_days",
+    "category": "disruption",
+    "entity_id": "D3",
+    "name_en": "Compound heat-drought with power and network interruption",
+    "name_zh": "",
+    "claim": "model prior: outage_duration_days",
+    "claim_type": "parameter",
+    "value": [
+      2,
+      12
+    ],
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "DIS-D3-DATA-770758",
+    "category": "disruption",
+    "entity_id": "D3",
+    "name_en": "Compound heat-drought with power and network interruption",
+    "name_zh": "",
+    "claim": "2022 heat-drought event chronology and power rationing notices",
+    "claim_type": "context",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "",
+    "tags": [
+      "data_requirement"
+    ]
+  },
+  {
+    "record_id": "DIS-D3-DATA-34507",
+    "category": "disruption",
+    "entity_id": "D3",
+    "name_en": "Compound heat-drought with power and network interruption",
+    "name_zh": "",
+    "claim": "base station outage and platform downtime logs",
+    "claim_type": "context",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "",
+    "tags": [
+      "data_requirement"
+    ]
+  },
+  {
+    "record_id": "DIS-D3-DATA-211069",
+    "category": "disruption",
+    "entity_id": "D3",
+    "name_en": "Compound heat-drought with power and network interruption",
+    "name_zh": "",
+    "claim": "irrigation pump electricity consumption series",
+    "claim_type": "context",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "",
+    "tags": [
+      "data_requirement"
+    ]
+  },
+  {
+    "record_id": "DIS-D3-DATA-354683",
+    "category": "disruption",
+    "entity_id": "D3",
+    "name_en": "Compound heat-drought with power and network interruption",
+    "name_zh": "",
+    "claim": "device telemetry gaps during the event window",
+    "claim_type": "context",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "",
+    "tags": [
+      "data_requirement"
+    ]
+  },
+  {
+    "record_id": "DIS-D4-SCOPE",
+    "category": "disruption",
+    "entity_id": "D4",
+    "name_en": "Input price shock (fertiliser, diesel, electricity)",
+    "name_zh": "投入品价格冲击（化肥、柴油、电力）",
+    "claim": "Moved out of the modelled set in the August 2026 scope revision. It was the only shock acting through the CASH constraint rather than the yield function, so no yield-side technology could address its damage and it shared no loss channel with D1-D3. Calibrating it also required a separate price-series data chain (fertiliser, diesel and agricultural electricity indices plus farm-gate output prices) that is not needed for any other part of the model. Retained here because it remains the sharpest test of whether capital subsidies help when the binding constraint is working capital, and because the economic-shock machinery is still present in shocks.py: it can be reinstated by moving this entry back to tier1, with no code change.",
+    "claim_type": "mechanism",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "tier=tier2",
+    "tags": [
+      "scope_decision",
+      "tier2",
+      "T2",
+      "T3"
+    ]
+  },
+  {
+    "record_id": "DIS-D5-SCOPE",
+    "category": "disruption",
+    "entity_id": "D5",
+    "name_en": "Migratory pest outbreak (fall armyworm)",
+    "name_zh": "草地贪夜蛾等迁飞性害虫",
+    "claim": "Excellent match for early-warning technology (T1) and drone spraying (T3), and Sichuan sits on a migration corridor, but outbreak data are patchier than meteorological series. Add in version 2 once plant protection station records are secured.",
+    "claim_type": "mechanism",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "tier=tier2",
+    "tags": [
+      "scope_decision",
+      "tier2",
+      "T1",
+      "T3"
+    ]
+  },
+  {
+    "record_id": "DIS-D6-SCOPE",
+    "category": "disruption",
+    "entity_id": "D6",
+    "name_en": "Continuous overcast rain and hail at harvest",
+    "name_zh": "连阴雨、冰雹",
+    "claim": "Localised; needs finer-grained station data than the MVP.",
+    "claim_type": "mechanism",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "tier=tier2",
+    "tags": [
+      "scope_decision",
+      "tier2",
+      "T1",
+      "T3"
+    ]
+  },
+  {
+    "record_id": "DIS-D7-SCOPE",
+    "category": "disruption",
+    "entity_id": "D7",
+    "name_en": "Output price shock (hog cycle)",
+    "name_zh": "生猪价格周期",
+    "claim": "Sichuan is a leading hog province and the livestock module is a separate technology path (environmental control, biosecurity monitoring). Out of scope for a crop-focused MVP.",
+    "claim_type": "mechanism",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "tier=tier2",
+    "tags": [
+      "scope_decision",
+      "tier2",
+      "T4"
+    ]
+  },
+  {
+    "record_id": "DIS-X1-SCOPE",
+    "category": "disruption",
+    "entity_id": "X1",
+    "name_en": "Earthquake",
+    "name_zh": "",
+    "claim": "High salience in Sichuan but essentially orthogonal to smart agricultural technology adoption decisions and effort levels; the response channel is emergency management, not agronomic operations. Including it would add variance without discriminating between the policies under study.",
+    "claim_type": "mechanism",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "tier=excluded",
+    "tags": [
+      "scope_decision",
+      "excluded"
+    ]
+  },
+  {
+    "record_id": "DIS-X2-SCOPE",
+    "category": "disruption",
+    "entity_id": "X2",
+    "name_en": "Trade and export demand shocks",
+    "name_zh": "",
+    "claim": "Acts on marketing and e-commerce channels rather than on production effort and disaster loss, which is the causal chain this model is built to represent.",
+    "claim_type": "mechanism",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "tier=excluded",
+    "tags": [
+      "scope_decision",
+      "excluded"
+    ]
+  },
+  {
+    "record_id": "TEC-T1-SCOPE",
+    "category": "technology",
+    "entity_id": "T1",
+    "name_en": "Digital early warning and agro-situation information",
+    "name_zh": "数字预警与农情信息服务",
+    "claim": "Buys lead time. Converts an unanticipated shock into an anticipated one, enabling pre-emptive drainage, irrigation, early harvest or input adjustment. Value is entirely conditional on the farmer having the CAPACITY to act (labour, machinery access) within the action window, which is why T1 and T3 are complements rather than substitutes.",
+    "claim_type": "mechanism",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "status=in_scope; channel=information",
+    "tags": [
+      "scope_decision",
+      "in_scope",
+      "none",
+      "service"
+    ]
+  },
+  {
+    "record_id": "TEC-T1-ANCHOR",
+    "category": "technology",
+    "entity_id": "T1",
+    "name_en": "Digital early warning and agro-situation information",
+    "name_zh": "",
+    "claim": "Provincial action plan targets extend micro-climate station coverage from 36 counties to 66 counties, and the digital base map pilot from 7 prefectures towards province-wide coverage. Rural 5G and broadband coverage is effectively universal at village level, so the binding constraint is not connectivity but whether a warning is ACTED ON.",
+    "claim_type": "context",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:provincial action plan and statistics",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "",
+    "tags": [
+      "sichuan_anchor"
+    ]
+  },
+  {
+    "record_id": "TEC-T1-PAR-eta_drought",
+    "category": "technology",
+    "entity_id": "T1",
+    "name_en": "Digital early warning and agro-situation information",
+    "name_zh": "",
+    "claim": "model prior: eta_drought",
+    "claim_type": "parameter",
+    "value": 0.12,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T1-PAR-eta_flood",
+    "category": "technology",
+    "entity_id": "T1",
+    "name_en": "Digital early warning and agro-situation information",
+    "name_zh": "",
+    "claim": "model prior: eta_flood",
+    "claim_type": "parameter",
+    "value": 0.28,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T1-PAR-eta_compound",
+    "category": "technology",
+    "entity_id": "T1",
+    "name_en": "Digital early warning and agro-situation information",
+    "name_zh": "",
+    "claim": "model prior: eta_compound",
+    "claim_type": "parameter",
+    "value": 0.15,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T1-PAR-capex_per_farm",
+    "category": "technology",
+    "entity_id": "T1",
+    "name_en": "Digital early warning and agro-situation information",
+    "name_zh": "",
+    "claim": "model prior: capex_per_farm",
+    "claim_type": "parameter",
+    "value": 0.0,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T1-PAR-opex_per_mu",
+    "category": "technology",
+    "entity_id": "T1",
+    "name_en": "Digital early warning and agro-situation information",
+    "name_zh": "",
+    "claim": "model prior: opex_per_mu",
+    "claim_type": "parameter",
+    "value": 2.0,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T1-PAR-learning_cost",
+    "category": "technology",
+    "entity_id": "T1",
+    "name_en": "Digital early warning and agro-situation information",
+    "name_zh": "",
+    "claim": "model prior: learning_cost",
+    "claim_type": "parameter",
+    "value": 0.15,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T1-PAR-digital_literacy_threshold",
+    "category": "technology",
+    "entity_id": "T1",
+    "name_en": "Digital early warning and agro-situation information",
+    "name_zh": "",
+    "claim": "model prior: digital_literacy_threshold",
+    "claim_type": "parameter",
+    "value": 0.25,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T1-PAR-availability_base",
+    "category": "technology",
+    "entity_id": "T1",
+    "name_en": "Digital early warning and agro-situation information",
+    "name_zh": "",
+    "claim": "model prior: availability_base",
+    "claim_type": "parameter",
+    "value": 0.92,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T1-PAR-false_alarm_rate",
+    "category": "technology",
+    "entity_id": "T1",
+    "name_en": "Digital early warning and agro-situation information",
+    "name_zh": "",
+    "claim": "model prior: false_alarm_rate",
+    "claim_type": "parameter",
+    "value": 0.2,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T1-PAR-lead_time_days",
+    "category": "technology",
+    "entity_id": "T1",
+    "name_en": "Digital early warning and agro-situation information",
+    "name_zh": "",
+    "claim": "model prior: lead_time_days",
+    "claim_type": "parameter",
+    "value": [
+      0.5,
+      3.0
+    ],
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T1-PAR-terrain_fit",
+    "category": "technology",
+    "entity_id": "T1",
+    "name_en": "Digital early warning and agro-situation information",
+    "name_zh": "",
+    "claim": "model prior: terrain_fit",
+    "claim_type": "parameter",
+    "value": {
+      "plain": 1.0,
+      "hill": 0.95,
+      "mountain": 0.85
+    },
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T2-SCOPE",
+    "category": "technology",
+    "entity_id": "T2",
+    "name_en": "Smart irrigation, fertigation and field sensing",
+    "name_zh": "智慧灌溉、水肥一体化与传感器",
+    "claim": "Acts directly on the D1 loss mechanism by maintaining root-zone moisture during the reproductive stage. Highest capital intensity of the three, therefore the most exposed to liquidity constraints and the most dependent on maintenance. Requires an existing water source: on hill plots without one, the marginal value is near zero, which is the main source of spatial heterogeneity in returns.",
+    "claim_type": "mechanism",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "status=in_scope; channel=biophysical",
+    "tags": [
+      "scope_decision",
+      "in_scope",
+      "none",
+      "own",
+      "rent",
+      "service"
+    ]
+  },
+  {
+    "record_id": "TEC-T2-ANCHOR",
+    "category": "technology",
+    "entity_id": "T2",
+    "name_en": "Smart irrigation, fertigation and field sensing",
+    "name_zh": "",
+    "claim": "Provincial targets move smart water-fertiliser integration from about 540 thousand mu across 13 counties towards roughly 1.65 million mu across 40 counties. Effective irrigated area is around 3.0 million ha, so smart fertigation remains a small share of irrigated land and its value is strongly conditional on the underlying irrigation asset.",
+    "claim_type": "context",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:provincial action plan and statistics",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "",
+    "tags": [
+      "sichuan_anchor"
+    ]
+  },
+  {
+    "record_id": "TEC-T2-PAR-eta_drought",
+    "category": "technology",
+    "entity_id": "T2",
+    "name_en": "Smart irrigation, fertigation and field sensing",
+    "name_zh": "",
+    "claim": "model prior: eta_drought",
+    "claim_type": "parameter",
+    "value": 0.45,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T2-PAR-eta_flood",
+    "category": "technology",
+    "entity_id": "T2",
+    "name_en": "Smart irrigation, fertigation and field sensing",
+    "name_zh": "",
+    "claim": "model prior: eta_flood",
+    "claim_type": "parameter",
+    "value": 0.05,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T2-PAR-eta_compound",
+    "category": "technology",
+    "entity_id": "T2",
+    "name_en": "Smart irrigation, fertigation and field sensing",
+    "name_zh": "",
+    "claim": "model prior: eta_compound",
+    "claim_type": "parameter",
+    "value": 0.4,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T2-PAR-capex_per_mu",
+    "category": "technology",
+    "entity_id": "T2",
+    "name_en": "Smart irrigation, fertigation and field sensing",
+    "name_zh": "",
+    "claim": "model prior: capex_per_mu",
+    "claim_type": "parameter",
+    "value": 420.0,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T2-PAR-opex_per_mu",
+    "category": "technology",
+    "entity_id": "T2",
+    "name_en": "Smart irrigation, fertigation and field sensing",
+    "name_zh": "",
+    "claim": "model prior: opex_per_mu",
+    "claim_type": "parameter",
+    "value": 35.0,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T2-PAR-lifetime_years",
+    "category": "technology",
+    "entity_id": "T2",
+    "name_en": "Smart irrigation, fertigation and field sensing",
+    "name_zh": "",
+    "claim": "model prior: lifetime_years",
+    "claim_type": "parameter",
+    "value": 8,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T2-PAR-learning_cost",
+    "category": "technology",
+    "entity_id": "T2",
+    "name_en": "Smart irrigation, fertigation and field sensing",
+    "name_zh": "",
+    "claim": "model prior: learning_cost",
+    "claim_type": "parameter",
+    "value": 0.45,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T2-PAR-digital_literacy_threshold",
+    "category": "technology",
+    "entity_id": "T2",
+    "name_en": "Smart irrigation, fertigation and field sensing",
+    "name_zh": "",
+    "claim": "model prior: digital_literacy_threshold",
+    "claim_type": "parameter",
+    "value": 0.4,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T2-PAR-availability_base",
+    "category": "technology",
+    "entity_id": "T2",
+    "name_en": "Smart irrigation, fertigation and field sensing",
+    "name_zh": "",
+    "claim": "model prior: availability_base",
+    "claim_type": "parameter",
+    "value": 0.88,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T2-PAR-failure_rate_annual",
+    "category": "technology",
+    "entity_id": "T2",
+    "name_en": "Smart irrigation, fertigation and field sensing",
+    "name_zh": "",
+    "claim": "model prior: failure_rate_annual",
+    "claim_type": "parameter",
+    "value": 0.18,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T2-PAR-repair_delay_days_prior",
+    "category": "technology",
+    "entity_id": "T2",
+    "name_en": "Smart irrigation, fertigation and field sensing",
+    "name_zh": "",
+    "claim": "model prior: repair_delay_days_prior",
+    "claim_type": "parameter",
+    "value": 9,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T2-PAR-requires_water_source",
+    "category": "technology",
+    "entity_id": "T2",
+    "name_en": "Smart irrigation, fertigation and field sensing",
+    "name_zh": "",
+    "claim": "model prior: requires_water_source",
+    "claim_type": "parameter",
+    "value": true,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T2-PAR-power_dependent",
+    "category": "technology",
+    "entity_id": "T2",
+    "name_en": "Smart irrigation, fertigation and field sensing",
+    "name_zh": "",
+    "claim": "model prior: power_dependent",
+    "claim_type": "parameter",
+    "value": true,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T2-PAR-terrain_fit",
+    "category": "technology",
+    "entity_id": "T2",
+    "name_en": "Smart irrigation, fertigation and field sensing",
+    "name_zh": "",
+    "claim": "model prior: terrain_fit",
+    "claim_type": "parameter",
+    "value": {
+      "plain": 1.0,
+      "hill": 0.75,
+      "mountain": 0.45
+    },
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T3-SCOPE",
+    "category": "technology",
+    "entity_id": "T3",
+    "name_en": "Drone and BeiDou smart machinery operating services",
+    "name_zh": "无人机植保与北斗智能农机社会化服务",
+    "claim": "Compresses the time needed to complete a critical operation, which is what converts an early warning into avoided loss. This is the ONLY bundle whose effectiveness is capacity-rationed at the system level: when many farmers are hit simultaneously, the queue lengthens, service arrives after the action window closes and realised efficacy falls even though every farmer is nominally an adopter. That congestion feedback is the primary reason the SD layer exists.",
+    "claim_type": "mechanism",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "status=in_scope; channel=operating_capacity",
+    "tags": [
+      "scope_decision",
+      "in_scope",
+      "none",
+      "own",
+      "service"
+    ]
+  },
+  {
+    "record_id": "TEC-T3-ANCHOR",
+    "category": "technology",
+    "entity_id": "T3",
+    "name_en": "Drone and BeiDou smart machinery operating services",
+    "name_zh": "",
+    "claim": "Provincial targets include more than 200 regional agricultural machinery service centres, upgrading roughly 26 thousand existing terminals, an intelligent assistance and monitoring equipment rate of about 60 per cent, over 15 thousand drones and more than 5 thousand licensed pilots. Comprehensive mechanisation of major crops was around 65 per cent in 2021, below the national level, with maize about 43 per cent and potato about 26 per cent, so machinery capacity is itself scarce and queueing is real rather than notional.",
+    "claim_type": "context",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:provincial action plan and statistics",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "",
+    "tags": [
+      "sichuan_anchor"
+    ]
+  },
+  {
+    "record_id": "TEC-T3-PAR-eta_drought",
+    "category": "technology",
+    "entity_id": "T3",
+    "name_en": "Drone and BeiDou smart machinery operating services",
+    "name_zh": "",
+    "claim": "model prior: eta_drought",
+    "claim_type": "parameter",
+    "value": 0.1,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T3-PAR-eta_flood",
+    "category": "technology",
+    "entity_id": "T3",
+    "name_en": "Drone and BeiDou smart machinery operating services",
+    "name_zh": "",
+    "claim": "model prior: eta_flood",
+    "claim_type": "parameter",
+    "value": 0.35,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T3-PAR-eta_compound",
+    "category": "technology",
+    "entity_id": "T3",
+    "name_en": "Drone and BeiDou smart machinery operating services",
+    "name_zh": "",
+    "claim": "model prior: eta_compound",
+    "claim_type": "parameter",
+    "value": 0.2,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T3-PAR-capex_own_per_unit",
+    "category": "technology",
+    "entity_id": "T3",
+    "name_en": "Drone and BeiDou smart machinery operating services",
+    "name_zh": "",
+    "claim": "model prior: capex_own_per_unit",
+    "claim_type": "parameter",
+    "value": 62000.0,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T3-PAR-service_price_per_mu",
+    "category": "technology",
+    "entity_id": "T3",
+    "name_en": "Drone and BeiDou smart machinery operating services",
+    "name_zh": "",
+    "claim": "model prior: service_price_per_mu",
+    "claim_type": "parameter",
+    "value": 12.0,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T3-PAR-opex_per_mu",
+    "category": "technology",
+    "entity_id": "T3",
+    "name_en": "Drone and BeiDou smart machinery operating services",
+    "name_zh": "",
+    "claim": "model prior: opex_per_mu",
+    "claim_type": "parameter",
+    "value": 0.0,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T3-PAR-learning_cost",
+    "category": "technology",
+    "entity_id": "T3",
+    "name_en": "Drone and BeiDou smart machinery operating services",
+    "name_zh": "",
+    "claim": "model prior: learning_cost",
+    "claim_type": "parameter",
+    "value": 0.25,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T3-PAR-learning_cost_own",
+    "category": "technology",
+    "entity_id": "T3",
+    "name_en": "Drone and BeiDou smart machinery operating services",
+    "name_zh": "",
+    "claim": "model prior: learning_cost_own",
+    "claim_type": "parameter",
+    "value": 0.6,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T3-PAR-digital_literacy_threshold",
+    "category": "technology",
+    "entity_id": "T3",
+    "name_en": "Drone and BeiDou smart machinery operating services",
+    "name_zh": "",
+    "claim": "model prior: digital_literacy_threshold",
+    "claim_type": "parameter",
+    "value": 0.2,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T3-PAR-availability_base",
+    "category": "technology",
+    "entity_id": "T3",
+    "name_en": "Drone and BeiDou smart machinery operating services",
+    "name_zh": "",
+    "claim": "model prior: availability_base",
+    "claim_type": "parameter",
+    "value": 0.9,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T3-PAR-capacity_mu_per_unit_per_day",
+    "category": "technology",
+    "entity_id": "T3",
+    "name_en": "Drone and BeiDou smart machinery operating services",
+    "name_zh": "",
+    "claim": "model prior: capacity_mu_per_unit_per_day",
+    "claim_type": "parameter",
+    "value": 300.0,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T3-PAR-failure_rate_annual",
+    "category": "technology",
+    "entity_id": "T3",
+    "name_en": "Drone and BeiDou smart machinery operating services",
+    "name_zh": "",
+    "claim": "model prior: failure_rate_annual",
+    "claim_type": "parameter",
+    "value": 0.22,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T3-PAR-terrain_fit",
+    "category": "technology",
+    "entity_id": "T3",
+    "name_en": "Drone and BeiDou smart machinery operating services",
+    "name_zh": "",
+    "claim": "model prior: terrain_fit",
+    "claim_type": "parameter",
+    "value": {
+      "plain": 1.0,
+      "hill": 0.85,
+      "mountain": 0.55
+    },
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T3-PAR-congestion_sensitive",
+    "category": "technology",
+    "entity_id": "T3",
+    "name_en": "Drone and BeiDou smart machinery operating services",
+    "name_zh": "",
+    "claim": "model prior: congestion_sensitive",
+    "claim_type": "parameter",
+    "value": true,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "prior for calibration, not a measurement",
+    "tags": [
+      "parameter",
+      "prior"
+    ]
+  },
+  {
+    "record_id": "TEC-T4-SCOPE",
+    "category": "technology",
+    "entity_id": "T4",
+    "name_en": "Livestock and aquaculture intelligent monitoring",
+    "name_zh": "智慧牧场与智慧渔场",
+    "claim": "Provincial targets of 50 smart pastures and 20 smart fisheries make this a real adoption path, and Sichuan is a leading hog province, but the technology, shock set and policy instruments differ enough that it belongs in a separate model version rather than a crop MVP.",
+    "claim_type": "mechanism",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "status=out_of_scope_mvp; channel=biophysical",
+    "tags": [
+      "scope_decision",
+      "out_of_scope_mvp",
+      "own",
+      "service"
+    ]
+  },
+  {
+    "record_id": "TEC-T5-SCOPE",
+    "category": "technology",
+    "entity_id": "T5",
+    "name_en": "Platform, traceability and e-commerce",
+    "name_zh": "电商、追溯与经营平台",
+    "claim": "Well evidenced at provincial level, but acts on marketing margins rather than on production effort and disaster loss, so it does not belong in the causal chain this model represents. Retained as a context variable only.",
+    "claim_type": "mechanism",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "A",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "status=out_of_scope_mvp; channel=market",
+    "tags": [
+      "scope_decision",
+      "out_of_scope_mvp"
+    ]
+  },
+  {
+    "record_id": "TEC-T6-SCOPE",
+    "category": "technology",
+    "entity_id": "T6",
+    "name_en": "Precision agricultural insurance with remote sensing loss assessment",
+    "name_zh": "精准农业保险与遥感核损",
+    "claim": "Provincial targets extend precision agricultural insurance towards 176 agricultural counties. Modelled as policy instrument P6 rather than as a technology bundle, because from the farmer's perspective it changes the payoff distribution rather than the production technology. It is also the clearest real-world case of technology making an outcome VERIFIABLE, which is the enabling condition for the outcome-contingent contract in the theoretical model.",
+    "claim_type": "mechanism",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "status=modelled_as_policy_instrument; channel=financial",
+    "tags": [
+      "scope_decision",
+      "modelled_as_policy_instrument"
+    ]
+  },
+  {
+    "record_id": "TEC-STATE-0",
+    "category": "technology",
+    "entity_id": "STATE",
+    "name_en": "No access (network, terminal, service or eligibility missing)",
+    "name_zh": "",
+    "claim": "adoption state 0: not_accessible",
+    "claim_type": "context",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "A",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "5G village coverage, platform registration, training headcount and demonstration park counts are evidence for states 1 and 2 ONLY. They must never be used to initialise or validate states 3 and 4.",
+    "tags": [
+      "adoption_ladder"
+    ]
+  },
+  {
+    "record_id": "TEC-STATE-1",
+    "category": "technology",
+    "entity_id": "STATE",
+    "name_en": "Access exists but nothing acquired",
+    "name_zh": "",
+    "claim": "adoption state 1: accessible",
+    "claim_type": "context",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "A",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "5G village coverage, platform registration, training headcount and demonstration park counts are evidence for states 1 and 2 ONLY. They must never be used to initialise or validate states 3 and 4.",
+    "tags": [
+      "adoption_ladder"
+    ]
+  },
+  {
+    "record_id": "TEC-STATE-2",
+    "category": "technology",
+    "entity_id": "STATE",
+    "name_en": "Purchased, registered or granted eligibility",
+    "name_zh": "",
+    "claim": "adoption state 2: acquired",
+    "claim_type": "context",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "A",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "5G village coverage, platform registration, training headcount and demonstration park counts are evidence for states 1 and 2 ONLY. They must never be used to initialise or validate states 3 and 4.",
+    "tags": [
+      "adoption_ladder"
+    ]
+  },
+  {
+    "record_id": "TEC-STATE-3",
+    "category": "technology",
+    "entity_id": "STATE",
+    "name_en": "Verifiable use in the production season",
+    "name_zh": "",
+    "claim": "adoption state 3: used",
+    "claim_type": "context",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "A",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "5G village coverage, platform registration, training headcount and demonstration park counts are evidence for states 1 and 2 ONLY. They must never be used to initialise or validate states 3 and 4.",
+    "tags": [
+      "adoption_ladder"
+    ]
+  },
+  {
+    "record_id": "TEC-STATE-4",
+    "category": "technology",
+    "entity_id": "STATE",
+    "name_en": "Correct, timely, sustained use that changes a production action",
+    "name_zh": "",
+    "claim": "adoption state 4: effectively_used",
+    "claim_type": "context",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "A",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "5G village coverage, platform registration, training headcount and demonstration park counts are evidence for states 1 and 2 ONLY. They must never be used to initialise or validate states 3 and 4.",
+    "tags": [
+      "adoption_ladder"
+    ]
+  },
+  {
+    "record_id": "TEC-STATE-5",
+    "category": "technology",
+    "entity_id": "STATE",
+    "name_en": "Disadopted after failure, cost or disappointment",
+    "name_zh": "",
+    "claim": "adoption state 5: exited",
+    "claim_type": "context",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "A",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "5G village coverage, platform registration, training headcount and demonstration park counts are evidence for states 1 and 2 ONLY. They must never be used to initialise or validate states 3 and 4.",
+    "tags": [
+      "adoption_ladder"
+    ]
+  },
+  {
+    "record_id": "POL-NP1-DOC",
+    "category": "policy",
+    "entity_id": "NP1",
+    "name_en": "Digital Agriculture and Rural Development Plan (2019-2025)",
+    "name_zh": "数字农业农村发展规划（2019—2025年）",
+    "claim": "Defines the technology taxonomy and national ambition; supplies the framing for what counts as a digital agricultural technology.",
+    "claim_type": "policy_document",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "A",
+    "source": "curated:config",
+    "url": "",
+    "year": 2020,
+    "verify": false,
+    "notes": "scope=national; ref=",
+    "tags": [
+      "policy_document",
+      "national"
+    ]
+  },
+  {
+    "record_id": "POL-NP2-DOC",
+    "category": "policy",
+    "entity_id": "NP2",
+    "name_en": "Digital Village Development Action Plan (2022-2025)",
+    "name_zh": "数字乡村发展行动计划（2022—2025年）",
+    "claim": "Eight action lines including infrastructure, smart agriculture, new business forms, governance and public services. Establishes that agricultural and governance platforms share infrastructure, which matters for the shared-reliability assumption in the SD layer.",
+    "claim_type": "policy_document",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "A",
+    "source": "curated:config",
+    "url": "",
+    "year": 2022,
+    "verify": false,
+    "notes": "scope=national; ref=",
+    "tags": [
+      "policy_document",
+      "national"
+    ]
+  },
+  {
+    "record_id": "POL-NP3-DOC",
+    "category": "policy",
+    "entity_id": "NP3",
+    "name_en": "National Smart Agriculture Action Plan (2024-2028)",
+    "name_zh": "全国智慧农业行动计划（2024—2028年）",
+    "claim": "National benchmark for the adoption trajectory. NOT to be assigned to Sichuan directly: Sichuan terrain and plot structure differ materially from the national average.",
+    "claim_type": "policy_document",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "A",
+    "source": "curated:config",
+    "url": "",
+    "year": 2024,
+    "verify": false,
+    "notes": "scope=national; ref=",
+    "tags": [
+      "policy_document",
+      "national"
+    ]
+  },
+  {
+    "record_id": "POL-NP3-KT",
+    "category": "policy",
+    "entity_id": "NP3",
+    "name_en": "National Smart Agriculture Action Plan (2024-2028)",
+    "name_zh": "",
+    "claim": "Agricultural production informatisation rate from 27.6 per cent (2022) to 32 per cent by 2028.",
+    "claim_type": "target",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "A",
+    "source": "curated:config",
+    "url": "",
+    "year": 2024,
+    "verify": false,
+    "notes": "",
+    "tags": [
+      "target"
+    ]
+  },
+  {
+    "record_id": "POL-NP4-DOC",
+    "category": "policy",
+    "entity_id": "NP4",
+    "name_en": "Agricultural machinery purchase and application subsidy scheme",
+    "name_zh": "农机购置与应用补贴政策",
+    "claim": "The legal and fiscal template for instrument P1, including catalogue eligibility, subsidy share caps and the application-to-payment workflow that generates the disbursement lag modelled in P1.",
+    "claim_type": "policy_document",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "A",
+    "source": "curated:config",
+    "url": "",
+    "year": "rolling",
+    "verify": false,
+    "notes": "scope=national; ref=",
+    "tags": [
+      "policy_document",
+      "national"
+    ]
+  },
+  {
+    "record_id": "POL-SP1-DOC",
+    "category": "policy",
+    "entity_id": "SP1",
+    "name_en": "Sichuan Smart Agriculture Action Plan (2025-2028)",
+    "name_zh": "四川省智慧农业行动计划（2025—2028年）",
+    "claim": "Supplies the SD capacity trajectory: these targets become the upper envelope for service capacity, station coverage and equipment stock. Scenario analysis asks whether hitting the targets actually reduces loss, and for whom.",
+    "claim_type": "policy_document",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": 2025,
+    "verify": true,
+    "notes": "scope=provincial; ref=川农发〔2025〕20号",
+    "tags": [
+      "policy_document",
+      "provincial"
+    ]
+  },
+  {
+    "record_id": "POL-SP1-targets_by_2028-smart_farms",
+    "category": "policy",
+    "entity_id": "SP1",
+    "name_en": "Sichuan Smart Agriculture Action Plan (2025-2028)",
+    "name_zh": "",
+    "claim": "targets_by_2028: smart_farms",
+    "claim_type": "target",
+    "value": 200,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": 2025,
+    "verify": true,
+    "notes": "policy commitment, NOT realised adoption",
+    "tags": [
+      "target"
+    ]
+  },
+  {
+    "record_id": "POL-SP1-targets_by_2028-smart_pastures",
+    "category": "policy",
+    "entity_id": "SP1",
+    "name_en": "Sichuan Smart Agriculture Action Plan (2025-2028)",
+    "name_zh": "",
+    "claim": "targets_by_2028: smart_pastures",
+    "claim_type": "target",
+    "value": 50,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": 2025,
+    "verify": true,
+    "notes": "policy commitment, NOT realised adoption",
+    "tags": [
+      "target"
+    ]
+  },
+  {
+    "record_id": "POL-SP1-targets_by_2028-smart_fisheries",
+    "category": "policy",
+    "entity_id": "SP1",
+    "name_en": "Sichuan Smart Agriculture Action Plan (2025-2028)",
+    "name_zh": "",
+    "claim": "targets_by_2028: smart_fisheries",
+    "claim_type": "target",
+    "value": 20,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": 2025,
+    "verify": true,
+    "notes": "policy commitment, NOT realised adoption",
+    "tags": [
+      "target"
+    ]
+  },
+  {
+    "record_id": "POL-SP1-targets_by_2028-digital_government_scenarios",
+    "category": "policy",
+    "entity_id": "SP1",
+    "name_en": "Sichuan Smart Agriculture Action Plan (2025-2028)",
+    "name_zh": "",
+    "claim": "targets_by_2028: digital_government_scenarios",
+    "claim_type": "target",
+    "value": ">= 7",
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": 2025,
+    "verify": true,
+    "notes": "policy commitment, NOT realised adoption",
+    "tags": [
+      "target"
+    ]
+  },
+  {
+    "record_id": "POL-SP1-targets_by_2028-precision_insurance_counties",
+    "category": "policy",
+    "entity_id": "SP1",
+    "name_en": "Sichuan Smart Agriculture Action Plan (2025-2028)",
+    "name_zh": "",
+    "claim": "targets_by_2028: precision_insurance_counties",
+    "claim_type": "target",
+    "value": 176,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": 2025,
+    "verify": true,
+    "notes": "policy commitment, NOT realised adoption",
+    "tags": [
+      "target"
+    ]
+  },
+  {
+    "record_id": "POL-SP1-targets_by_2028-microclimate_station_counties",
+    "category": "policy",
+    "entity_id": "SP1",
+    "name_en": "Sichuan Smart Agriculture Action Plan (2025-2028)",
+    "name_zh": "",
+    "claim": "targets_by_2028: microclimate_station_counties",
+    "claim_type": "target",
+    "value": 66,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": 2025,
+    "verify": true,
+    "notes": "policy commitment, NOT realised adoption",
+    "tags": [
+      "target"
+    ]
+  },
+  {
+    "record_id": "POL-SP1-targets_by_2028-smart_fertigation_counties",
+    "category": "policy",
+    "entity_id": "SP1",
+    "name_en": "Sichuan Smart Agriculture Action Plan (2025-2028)",
+    "name_zh": "",
+    "claim": "targets_by_2028: smart_fertigation_counties",
+    "claim_type": "target",
+    "value": 40,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": 2025,
+    "verify": true,
+    "notes": "policy commitment, NOT realised adoption",
+    "tags": [
+      "target"
+    ]
+  },
+  {
+    "record_id": "POL-SP1-targets_by_2028-smart_fertigation_area_mu",
+    "category": "policy",
+    "entity_id": "SP1",
+    "name_en": "Sichuan Smart Agriculture Action Plan (2025-2028)",
+    "name_zh": "",
+    "claim": "targets_by_2028: smart_fertigation_area_mu",
+    "claim_type": "target",
+    "value": 1650000,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": 2025,
+    "verify": true,
+    "notes": "policy commitment, NOT realised adoption",
+    "tags": [
+      "target"
+    ]
+  },
+  {
+    "record_id": "POL-SP1-targets_by_2028-regional_machinery_service_centres",
+    "category": "policy",
+    "entity_id": "SP1",
+    "name_en": "Sichuan Smart Agriculture Action Plan (2025-2028)",
+    "name_zh": "",
+    "claim": "targets_by_2028: regional_machinery_service_centres",
+    "claim_type": "target",
+    "value": ">= 200",
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": 2025,
+    "verify": true,
+    "notes": "policy commitment, NOT realised adoption",
+    "tags": [
+      "target"
+    ]
+  },
+  {
+    "record_id": "POL-SP1-targets_by_2028-intelligent_machinery_equipment_rate",
+    "category": "policy",
+    "entity_id": "SP1",
+    "name_en": "Sichuan Smart Agriculture Action Plan (2025-2028)",
+    "name_zh": "",
+    "claim": "targets_by_2028: intelligent_machinery_equipment_rate",
+    "claim_type": "target",
+    "value": 0.6,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": 2025,
+    "verify": true,
+    "notes": "policy commitment, NOT realised adoption",
+    "tags": [
+      "target"
+    ]
+  },
+  {
+    "record_id": "POL-SP1-targets_by_2028-drones",
+    "category": "policy",
+    "entity_id": "SP1",
+    "name_en": "Sichuan Smart Agriculture Action Plan (2025-2028)",
+    "name_zh": "",
+    "claim": "targets_by_2028: drones",
+    "claim_type": "target",
+    "value": 15000,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": 2025,
+    "verify": true,
+    "notes": "policy commitment, NOT realised adoption",
+    "tags": [
+      "target"
+    ]
+  },
+  {
+    "record_id": "POL-SP1-targets_by_2028-licensed_pilots",
+    "category": "policy",
+    "entity_id": "SP1",
+    "name_en": "Sichuan Smart Agriculture Action Plan (2025-2028)",
+    "name_zh": "",
+    "claim": "targets_by_2028: licensed_pilots",
+    "claim_type": "target",
+    "value": 5000,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": 2025,
+    "verify": true,
+    "notes": "policy commitment, NOT realised adoption",
+    "tags": [
+      "target"
+    ]
+  },
+  {
+    "record_id": "POL-SP1-targets_by_2028-low_altitude_scenarios",
+    "category": "policy",
+    "entity_id": "SP1",
+    "name_en": "Sichuan Smart Agriculture Action Plan (2025-2028)",
+    "name_zh": "",
+    "claim": "targets_by_2028: low_altitude_scenarios",
+    "claim_type": "target",
+    "value": 100,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": 2025,
+    "verify": true,
+    "notes": "policy commitment, NOT realised adoption",
+    "tags": [
+      "target"
+    ]
+  },
+  {
+    "record_id": "POL-SP1-targets_by_2028-digital_farm_factories",
+    "category": "policy",
+    "entity_id": "SP1",
+    "name_en": "Sichuan Smart Agriculture Action Plan (2025-2028)",
+    "name_zh": "",
+    "claim": "targets_by_2028: digital_farm_factories",
+    "claim_type": "target",
+    "value": ">= 50",
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": 2025,
+    "verify": true,
+    "notes": "policy commitment, NOT realised adoption",
+    "tags": [
+      "target"
+    ]
+  },
+  {
+    "record_id": "POL-SP1-targets_by_2028-upgraded_modern_parks",
+    "category": "policy",
+    "entity_id": "SP1",
+    "name_en": "Sichuan Smart Agriculture Action Plan (2025-2028)",
+    "name_zh": "",
+    "claim": "targets_by_2028: upgraded_modern_parks",
+    "claim_type": "target",
+    "value": 50,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": 2025,
+    "verify": true,
+    "notes": "policy commitment, NOT realised adoption",
+    "tags": [
+      "target"
+    ]
+  },
+  {
+    "record_id": "POL-SP1-targets_by_2028-smart_agriculture_leading_zones",
+    "category": "policy",
+    "entity_id": "SP1",
+    "name_en": "Sichuan Smart Agriculture Action Plan (2025-2028)",
+    "name_zh": "",
+    "claim": "targets_by_2028: smart_agriculture_leading_zones",
+    "claim_type": "target",
+    "value": [
+      1,
+      3
+    ],
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": 2025,
+    "verify": true,
+    "notes": "policy commitment, NOT realised adoption",
+    "tags": [
+      "target"
+    ]
+  },
+  {
+    "record_id": "POL-SP1-baseline_2025-microclimate_station_counties",
+    "category": "policy",
+    "entity_id": "SP1",
+    "name_en": "Sichuan Smart Agriculture Action Plan (2025-2028)",
+    "name_zh": "",
+    "claim": "baseline_2025: microclimate_station_counties",
+    "claim_type": "baseline",
+    "value": 36,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": 2025,
+    "verify": true,
+    "notes": "stated starting point",
+    "tags": [
+      "baseline"
+    ]
+  },
+  {
+    "record_id": "POL-SP1-baseline_2025-smart_fertigation_counties",
+    "category": "policy",
+    "entity_id": "SP1",
+    "name_en": "Sichuan Smart Agriculture Action Plan (2025-2028)",
+    "name_zh": "",
+    "claim": "baseline_2025: smart_fertigation_counties",
+    "claim_type": "baseline",
+    "value": 13,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": 2025,
+    "verify": true,
+    "notes": "stated starting point",
+    "tags": [
+      "baseline"
+    ]
+  },
+  {
+    "record_id": "POL-SP1-baseline_2025-smart_fertigation_area_mu",
+    "category": "policy",
+    "entity_id": "SP1",
+    "name_en": "Sichuan Smart Agriculture Action Plan (2025-2028)",
+    "name_zh": "",
+    "claim": "baseline_2025: smart_fertigation_area_mu",
+    "claim_type": "baseline",
+    "value": 540000,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": 2025,
+    "verify": true,
+    "notes": "stated starting point",
+    "tags": [
+      "baseline"
+    ]
+  },
+  {
+    "record_id": "POL-SP1-baseline_2025-regional_machinery_service_centres",
+    "category": "policy",
+    "entity_id": "SP1",
+    "name_en": "Sichuan Smart Agriculture Action Plan (2025-2028)",
+    "name_zh": "",
+    "claim": "baseline_2025: regional_machinery_service_centres",
+    "claim_type": "baseline",
+    "value": 50,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": 2025,
+    "verify": true,
+    "notes": "stated starting point",
+    "tags": [
+      "baseline"
+    ]
+  },
+  {
+    "record_id": "POL-SP1-baseline_2025-terminals_to_upgrade",
+    "category": "policy",
+    "entity_id": "SP1",
+    "name_en": "Sichuan Smart Agriculture Action Plan (2025-2028)",
+    "name_zh": "",
+    "claim": "baseline_2025: terminals_to_upgrade",
+    "claim_type": "baseline",
+    "value": 26000,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": 2025,
+    "verify": true,
+    "notes": "stated starting point",
+    "tags": [
+      "baseline"
+    ]
+  },
+  {
+    "record_id": "POL-SP1-baseline_2025-low_altitude_scenarios",
+    "category": "policy",
+    "entity_id": "SP1",
+    "name_en": "Sichuan Smart Agriculture Action Plan (2025-2028)",
+    "name_zh": "",
+    "claim": "baseline_2025: low_altitude_scenarios",
+    "claim_type": "baseline",
+    "value": 20,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": 2025,
+    "verify": true,
+    "notes": "stated starting point",
+    "tags": [
+      "baseline"
+    ]
+  },
+  {
+    "record_id": "POL-SP1-baseline_2025-digital_map_pilot_prefectures",
+    "category": "policy",
+    "entity_id": "SP1",
+    "name_en": "Sichuan Smart Agriculture Action Plan (2025-2028)",
+    "name_zh": "",
+    "claim": "baseline_2025: digital_map_pilot_prefectures",
+    "claim_type": "baseline",
+    "value": 7,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": 2025,
+    "verify": true,
+    "notes": "stated starting point",
+    "tags": [
+      "baseline"
+    ]
+  },
+  {
+    "record_id": "POL-SP2-DOC",
+    "category": "policy",
+    "entity_id": "SP2",
+    "name_en": "Implementation Plan for Vigorously Developing Smart Agriculture",
+    "name_zh": "大力发展智慧农业实施方案",
+    "claim": "implementation pathway and departmental responsibilities",
+    "claim_type": "policy_document",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": 2025,
+    "verify": true,
+    "notes": "scope=provincial; ref=川农发〔2025〕19号",
+    "tags": [
+      "policy_document",
+      "provincial"
+    ]
+  },
+  {
+    "record_id": "POL-SP3-DOC",
+    "category": "policy",
+    "entity_id": "SP3",
+    "name_en": "Sichuan 14th Five-Year Plan for Agricultural and Rural Informatisation",
+    "name_zh": "四川省农业农村信息化\"十四五\"规划",
+    "claim": "Establishes the 2020-2024 baseline period: platform building, standards and pilots, before the shift to scale-up.",
+    "claim_type": "policy_document",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": 2021,
+    "verify": false,
+    "notes": "scope=provincial; ref=",
+    "tags": [
+      "policy_document",
+      "provincial"
+    ]
+  },
+  {
+    "record_id": "POL-SP4-DOC",
+    "category": "policy",
+    "entity_id": "SP4",
+    "name_en": "Sichuan machinery purchase subsidy and operation subsidy pilots",
+    "name_zh": "四川省农机购置补贴实施方案 / 农机作业补贴试点",
+    "claim": "calibration precedent for P2",
+    "claim_type": "policy_document",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "B",
+    "source": "curated:config",
+    "url": "",
+    "year": "rolling",
+    "verify": false,
+    "notes": "scope=provincial; ref=",
+    "tags": [
+      "policy_document",
+      "provincial"
+    ]
+  },
+  {
+    "record_id": "POL-SP5-DOC",
+    "category": "policy",
+    "entity_id": "SP5",
+    "name_en": "Policy agricultural insurance including full-cost insurance",
+    "name_zh": "政策性农业保险（三大粮食作物完全成本保险等）",
+    "claim": "baseline for instrument P6",
+    "claim_type": "policy_document",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "A",
+    "source": "curated:config",
+    "url": "",
+    "year": "rolling",
+    "verify": false,
+    "notes": "scope=provincial; ref=",
+    "tags": [
+      "policy_document",
+      "provincial"
+    ]
+  },
+  {
+    "record_id": "POL-SP6-DOC",
+    "category": "policy",
+    "entity_id": "SP6",
+    "name_en": "Sichuan No.1 Document (annual rural work directive)",
+    "name_zh": "四川省委一号文件",
+    "claim": "Annual political signal; used to set the budget growth rate prior in the SD layer rather than any specific instrument parameter.",
+    "claim_type": "policy_document",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "A",
+    "source": "curated:config",
+    "url": "",
+    "year": "annual",
+    "verify": false,
+    "notes": "scope=provincial; ref=",
+    "tags": [
+      "policy_document",
+      "provincial"
+    ]
+  },
+  {
+    "record_id": "POL-P1-INST",
+    "category": "policy",
+    "entity_id": "P1",
+    "name_en": "Equipment purchase subsidy",
+    "name_zh": "设备购置补贴",
+    "claim": "Lowers K (acquisition cost) in the adoption value function, and the disbursement lag interacts with the liquidity constraint: a farmer who must pay up front and wait 120 days for reimbursement faces a real cost far above the nominal net price. This is why lag is a decision variable and not a fixed constant.",
+    "claim_type": "mechanism",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "targets=['T2', 'T3']; sd_stock=government_budget; equity=poor_favours_large_operators",
+    "tags": [
+      "instrument",
+      "T2",
+      "T3"
+    ]
+  },
+  {
+    "record_id": "POL-P1-DV-subsidy_rate",
+    "category": "policy",
+    "entity_id": "P1",
+    "name_en": "Equipment purchase subsidy",
+    "name_zh": "",
+    "claim": "decision variable: subsidy_rate",
+    "claim_type": "parameter",
+    "value": {
+      "default": 0.3,
+      "range": [
+        0.0,
+        0.6
+      ]
+    },
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "",
+    "tags": [
+      "decision_variable"
+    ]
+  },
+  {
+    "record_id": "POL-P1-DV-cap_per_farm",
+    "category": "policy",
+    "entity_id": "P1",
+    "name_en": "Equipment purchase subsidy",
+    "name_zh": "",
+    "claim": "decision variable: cap_per_farm",
+    "claim_type": "parameter",
+    "value": {
+      "default": 25000.0,
+      "range": [
+        0.0,
+        100000.0
+      ]
+    },
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "",
+    "tags": [
+      "decision_variable"
+    ]
+  },
+  {
+    "record_id": "POL-P1-DV-eligibility_min_area_mu",
+    "category": "policy",
+    "entity_id": "P1",
+    "name_en": "Equipment purchase subsidy",
+    "name_zh": "",
+    "claim": "decision variable: eligibility_min_area_mu",
+    "claim_type": "parameter",
+    "value": {
+      "default": 0.0,
+      "range": [
+        0.0,
+        100.0
+      ]
+    },
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "",
+    "tags": [
+      "decision_variable"
+    ]
+  },
+  {
+    "record_id": "POL-P1-DV-disbursement_lag_days",
+    "category": "policy",
+    "entity_id": "P1",
+    "name_en": "Equipment purchase subsidy",
+    "name_zh": "",
+    "claim": "decision variable: disbursement_lag_days",
+    "claim_type": "parameter",
+    "value": {
+      "default": 120,
+      "range": [
+        15,
+        365
+      ]
+    },
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "",
+    "tags": [
+      "decision_variable"
+    ]
+  },
+  {
+    "record_id": "POL-P1-SE-863156",
+    "category": "policy",
+    "entity_id": "P1",
+    "name_en": "Equipment purchase subsidy",
+    "name_zh": "",
+    "claim": "biases towards larger operators with the cash to pre-finance",
+    "claim_type": "mechanism",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "",
+    "tags": [
+      "side_effect"
+    ]
+  },
+  {
+    "record_id": "POL-P1-SE-634446",
+    "category": "policy",
+    "entity_id": "P1",
+    "name_en": "Equipment purchase subsidy",
+    "name_zh": "",
+    "claim": "can produce idle or duplicated equipment",
+    "claim_type": "mechanism",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "",
+    "tags": [
+      "side_effect"
+    ]
+  },
+  {
+    "record_id": "POL-P1-SE-148207",
+    "category": "policy",
+    "entity_id": "P1",
+    "name_en": "Equipment purchase subsidy",
+    "name_zh": "",
+    "claim": "does nothing about maintenance, which is where failure actually bites",
+    "claim_type": "mechanism",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "",
+    "tags": [
+      "side_effect"
+    ]
+  },
+  {
+    "record_id": "POL-P2-INST",
+    "category": "policy",
+    "entity_id": "P2",
+    "name_en": "Per-mu service voucher",
+    "name_zh": "按亩服务券",
+    "claim": "Reduces the per-mu price of purchased services, shifting the adoption choice from ownership towards the service mode. Because it raises DEMAND without raising CAPACITY, on its own it lengthens queues, and under a correlated shock it can lower realised efficacy for everyone. The interaction between P2 and P3 is the single most policy-relevant non-linearity in the model.",
+    "claim_type": "mechanism",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "targets=['T3', 'T2']; sd_stock=government_budget; equity=favourable",
+    "tags": [
+      "instrument",
+      "T3",
+      "T2"
+    ]
+  },
+  {
+    "record_id": "POL-P2-DV-voucher_value_per_mu",
+    "category": "policy",
+    "entity_id": "P2",
+    "name_en": "Per-mu service voucher",
+    "name_zh": "",
+    "claim": "decision variable: voucher_value_per_mu",
+    "claim_type": "parameter",
+    "value": {
+      "default": 5.0,
+      "range": [
+        0.0,
+        15.0
+      ]
+    },
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "",
+    "tags": [
+      "decision_variable"
+    ]
+  },
+  {
+    "record_id": "POL-P2-DV-max_mu_per_farm",
+    "category": "policy",
+    "entity_id": "P2",
+    "name_en": "Per-mu service voucher",
+    "name_zh": "",
+    "claim": "decision variable: max_mu_per_farm",
+    "claim_type": "parameter",
+    "value": {
+      "default": 30.0,
+      "range": [
+        0.0,
+        200.0
+      ]
+    },
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "",
+    "tags": [
+      "decision_variable"
+    ]
+  },
+  {
+    "record_id": "POL-P2-DV-targeting",
+    "category": "policy",
+    "entity_id": "P2",
+    "name_en": "Per-mu service voucher",
+    "name_zh": "",
+    "claim": "decision variable: targeting",
+    "claim_type": "parameter",
+    "value": {
+      "default": "smallholder",
+      "options": [
+        "universal",
+        "smallholder",
+        "remote",
+        "mountain"
+      ]
+    },
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "",
+    "tags": [
+      "decision_variable"
+    ]
+  },
+  {
+    "record_id": "POL-P2-DV-validity_days",
+    "category": "policy",
+    "entity_id": "P2",
+    "name_en": "Per-mu service voucher",
+    "name_zh": "",
+    "claim": "decision variable: validity_days",
+    "claim_type": "parameter",
+    "value": {
+      "default": 180,
+      "range": [
+        30,
+        365
+      ]
+    },
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "",
+    "tags": [
+      "decision_variable"
+    ]
+  },
+  {
+    "record_id": "POL-P2-SE-372275",
+    "category": "policy",
+    "entity_id": "P2",
+    "name_en": "Per-mu service voucher",
+    "name_zh": "",
+    "claim": "congestion and delayed operations at peak",
+    "claim_type": "mechanism",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "",
+    "tags": [
+      "side_effect"
+    ]
+  },
+  {
+    "record_id": "POL-P2-SE-361179",
+    "category": "policy",
+    "entity_id": "P2",
+    "name_en": "Per-mu service voucher",
+    "name_zh": "",
+    "claim": "remote farmers still served last despite holding vouchers",
+    "claim_type": "mechanism",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "",
+    "tags": [
+      "side_effect"
+    ]
+  },
+  {
+    "record_id": "POL-P3-INST",
+    "category": "policy",
+    "entity_id": "P3",
+    "name_en": "Service capacity expansion (regional machinery service centres)",
+    "name_zh": "区域农机社会化服务中心扩容",
+    "claim": "Raises the capacity stock that determines queue length and expected wait, which enters the provider effort problem through the agent reservation utility and the farmer access cost.",
+    "claim_type": "mechanism",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "targets=['T3']; sd_stock=service_capacity; equity=depends_on_allocation",
+    "tags": [
+      "instrument",
+      "T3"
+    ]
+  },
+  {
+    "record_id": "POL-P3-DV-new_centres_per_year",
+    "category": "policy",
+    "entity_id": "P3",
+    "name_en": "Service capacity expansion (regional machinery service centres)",
+    "name_zh": "",
+    "claim": "decision variable: new_centres_per_year",
+    "claim_type": "parameter",
+    "value": {
+      "default": 25,
+      "range": [
+        0,
+        80
+      ]
+    },
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "",
+    "tags": [
+      "decision_variable"
+    ]
+  },
+  {
+    "record_id": "POL-P3-DV-units_per_centre",
+    "category": "policy",
+    "entity_id": "P3",
+    "name_en": "Service capacity expansion (regional machinery service centres)",
+    "name_zh": "",
+    "claim": "decision variable: units_per_centre",
+    "claim_type": "parameter",
+    "value": {
+      "default": 8,
+      "range": [
+        2,
+        30
+      ]
+    },
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "",
+    "tags": [
+      "decision_variable"
+    ]
+  },
+  {
+    "record_id": "POL-P3-DV-mountain_allocation_share",
+    "category": "policy",
+    "entity_id": "P3",
+    "name_en": "Service capacity expansion (regional machinery service centres)",
+    "name_zh": "",
+    "claim": "decision variable: mountain_allocation_share",
+    "claim_type": "parameter",
+    "value": {
+      "default": 0.25,
+      "range": [
+        0.0,
+        0.8
+      ]
+    },
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "",
+    "tags": [
+      "decision_variable"
+    ]
+  },
+  {
+    "record_id": "POL-P4-INST",
+    "category": "policy",
+    "entity_id": "P4",
+    "name_en": "Digital skills training",
+    "name_zh": "数字技能培训",
+    "claim": "Raises digital literacy, which lowers the learning cost term and raises the probability of reaching the effectively-used state. Skill decays without follow-up, so one-off training campaigns produce a transient bump that the model will show fading.",
+    "claim_type": "mechanism",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "targets=['T1', 'T2', 'T3']; sd_stock=capable_farmers; equity=favourable_if_targeted",
+    "tags": [
+      "instrument",
+      "T1",
+      "T2",
+      "T3"
+    ]
+  },
+  {
+    "record_id": "POL-P4-DV-slots_per_year",
+    "category": "policy",
+    "entity_id": "P4",
+    "name_en": "Digital skills training",
+    "name_zh": "",
+    "claim": "decision variable: slots_per_year",
+    "claim_type": "parameter",
+    "value": {
+      "default": 3000,
+      "range": [
+        0,
+        20000
+      ]
+    },
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "",
+    "tags": [
+      "decision_variable"
+    ]
+  },
+  {
+    "record_id": "POL-P4-DV-followup_support",
+    "category": "policy",
+    "entity_id": "P4",
+    "name_en": "Digital skills training",
+    "name_zh": "",
+    "claim": "decision variable: followup_support",
+    "claim_type": "parameter",
+    "value": {
+      "default": false,
+      "options": [
+        true,
+        false
+      ]
+    },
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "",
+    "tags": [
+      "decision_variable"
+    ]
+  },
+  {
+    "record_id": "POL-P4-DV-skill_gain",
+    "category": "policy",
+    "entity_id": "P4",
+    "name_en": "Digital skills training",
+    "name_zh": "",
+    "claim": "decision variable: skill_gain",
+    "claim_type": "parameter",
+    "value": {
+      "default": 0.12,
+      "range": [
+        0.02,
+        0.3
+      ]
+    },
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "",
+    "tags": [
+      "decision_variable"
+    ]
+  },
+  {
+    "record_id": "POL-P4-DV-decay_rate_annual",
+    "category": "policy",
+    "entity_id": "P4",
+    "name_en": "Digital skills training",
+    "name_zh": "",
+    "claim": "decision variable: decay_rate_annual",
+    "claim_type": "parameter",
+    "value": {
+      "default": 0.2,
+      "range": [
+        0.0,
+        0.5
+      ]
+    },
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "",
+    "tags": [
+      "decision_variable"
+    ]
+  },
+  {
+    "record_id": "POL-P5-INST",
+    "category": "policy",
+    "entity_id": "P5",
+    "name_en": "Warning plus emergency operation guarantee",
+    "name_zh": "预警＋应急作业保障",
+    "claim": "Combines information with reserved operating capacity, so that a warning can actually be acted on during a correlated shock. Designed specifically to break the D2 and D3 failure mode where everyone is warned simultaneously and nobody can get served.",
+    "claim_type": "mechanism",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "targets=['T1', 'T3']; sd_stock=['infrastructure', 'service_capacity']; equity=favourable",
+    "tags": [
+      "instrument",
+      "T1",
+      "T3"
+    ]
+  },
+  {
+    "record_id": "POL-P5-DV-lead_time_gain_days",
+    "category": "policy",
+    "entity_id": "P5",
+    "name_en": "Warning plus emergency operation guarantee",
+    "name_zh": "",
+    "claim": "decision variable: lead_time_gain_days",
+    "claim_type": "parameter",
+    "value": {
+      "default": 0.5,
+      "range": [
+        0.0,
+        2.0
+      ]
+    },
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "",
+    "tags": [
+      "decision_variable"
+    ]
+  },
+  {
+    "record_id": "POL-P5-DV-reserved_capacity_share",
+    "category": "policy",
+    "entity_id": "P5",
+    "name_en": "Warning plus emergency operation guarantee",
+    "name_zh": "",
+    "claim": "decision variable: reserved_capacity_share",
+    "claim_type": "parameter",
+    "value": {
+      "default": 0.1,
+      "range": [
+        0.0,
+        0.4
+      ]
+    },
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "",
+    "tags": [
+      "decision_variable"
+    ]
+  },
+  {
+    "record_id": "POL-P5-DV-false_alarm_penalty",
+    "category": "policy",
+    "entity_id": "P5",
+    "name_en": "Warning plus emergency operation guarantee",
+    "name_zh": "",
+    "claim": "decision variable: false_alarm_penalty",
+    "claim_type": "parameter",
+    "value": {
+      "default": 0.05,
+      "range": [
+        0.0,
+        0.2
+      ]
+    },
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "",
+    "tags": [
+      "decision_variable"
+    ]
+  },
+  {
+    "record_id": "POL-P6-INST",
+    "category": "policy",
+    "entity_id": "P6",
+    "name_en": "Precision insurance with remote sensing loss assessment",
+    "name_zh": "精准农业保险与遥感核损",
+    "claim": "Changes the outcome distribution the farmer faces rather than the production function, so it acts directly on the risk-aversion channel: it lowers the effective c1 and therefore, through Proposition 1, shifts the equilibrium contract form and the effort the provider supplies. Payout speed governs post-shock replanting and recovery time.",
+    "claim_type": "mechanism",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "targets=['T6']; sd_stock=government_budget; equity=mixed",
+    "tags": [
+      "instrument",
+      "T6"
+    ]
+  },
+  {
+    "record_id": "POL-P6-DV-premium_subsidy_rate",
+    "category": "policy",
+    "entity_id": "P6",
+    "name_en": "Precision insurance with remote sensing loss assessment",
+    "name_zh": "",
+    "claim": "decision variable: premium_subsidy_rate",
+    "claim_type": "parameter",
+    "value": {
+      "default": 0.6,
+      "range": [
+        0.0,
+        0.9
+      ]
+    },
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "",
+    "tags": [
+      "decision_variable"
+    ]
+  },
+  {
+    "record_id": "POL-P6-DV-payout_lag_days",
+    "category": "policy",
+    "entity_id": "P6",
+    "name_en": "Precision insurance with remote sensing loss assessment",
+    "name_zh": "",
+    "claim": "decision variable: payout_lag_days",
+    "claim_type": "parameter",
+    "value": {
+      "default": 60,
+      "range": [
+        7,
+        180
+      ]
+    },
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "",
+    "tags": [
+      "decision_variable"
+    ]
+  },
+  {
+    "record_id": "POL-P6-DV-coverage_ratio",
+    "category": "policy",
+    "entity_id": "P6",
+    "name_en": "Precision insurance with remote sensing loss assessment",
+    "name_zh": "",
+    "claim": "decision variable: coverage_ratio",
+    "claim_type": "parameter",
+    "value": {
+      "default": 0.55,
+      "range": [
+        0.2,
+        1.0
+      ]
+    },
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "",
+    "tags": [
+      "decision_variable"
+    ]
+  },
+  {
+    "record_id": "POL-P6-DV-basis_risk",
+    "category": "policy",
+    "entity_id": "P6",
+    "name_en": "Precision insurance with remote sensing loss assessment",
+    "name_zh": "",
+    "claim": "decision variable: basis_risk",
+    "claim_type": "parameter",
+    "value": {
+      "default": 0.15,
+      "range": [
+        0.0,
+        0.4
+      ]
+    },
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "",
+    "tags": [
+      "decision_variable"
+    ]
+  },
+  {
+    "record_id": "POL-P6-SE-249962",
+    "category": "policy",
+    "entity_id": "P6",
+    "name_en": "Precision insurance with remote sensing loss assessment",
+    "name_zh": "",
+    "claim": "basis risk and algorithmic exclusion of atypical plots",
+    "claim_type": "mechanism",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "",
+    "tags": [
+      "side_effect"
+    ]
+  },
+  {
+    "record_id": "POL-P6-SE-94602",
+    "category": "policy",
+    "entity_id": "P6",
+    "name_en": "Precision insurance with remote sensing loss assessment",
+    "name_zh": "",
+    "claim": "claim processing congestion after correlated events",
+    "claim_type": "mechanism",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "",
+    "tags": [
+      "side_effect"
+    ]
+  },
+  {
+    "record_id": "POL-P7-INST",
+    "category": "policy",
+    "entity_id": "P7",
+    "name_en": "Mountain and hill adaptation investment",
+    "name_zh": "山地适配投资",
+    "claim": "Raises the terrain-fit multiplier for hill and mountain agents, which otherwise caps achievable efficacy regardless of how much subsidy is spent. The instrument that most directly addresses the spatial equity objective.",
+    "claim_type": "mechanism",
+    "value": null,
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": false,
+    "notes": "targets=['T2', 'T3']; sd_stock=service_capacity; equity=strongly_favourable",
+    "tags": [
+      "instrument",
+      "T2",
+      "T3"
+    ]
+  },
+  {
+    "record_id": "POL-P7-DV-light_equipment_share",
+    "category": "policy",
+    "entity_id": "P7",
+    "name_en": "Mountain and hill adaptation investment",
+    "name_zh": "",
+    "claim": "decision variable: light_equipment_share",
+    "claim_type": "parameter",
+    "value": {
+      "default": 0.2,
+      "range": [
+        0.0,
+        0.6
+      ]
+    },
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "",
+    "tags": [
+      "decision_variable"
+    ]
+  },
+  {
+    "record_id": "POL-P7-DV-remote_service_points",
+    "category": "policy",
+    "entity_id": "P7",
+    "name_en": "Mountain and hill adaptation investment",
+    "name_zh": "",
+    "claim": "decision variable: remote_service_points",
+    "claim_type": "parameter",
+    "value": {
+      "default": 10,
+      "range": [
+        0,
+        60
+      ]
+    },
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "",
+    "tags": [
+      "decision_variable"
+    ]
+  },
+  {
+    "record_id": "POL-P7-DV-transport_support",
+    "category": "policy",
+    "entity_id": "P7",
+    "name_en": "Mountain and hill adaptation investment",
+    "name_zh": "",
+    "claim": "decision variable: transport_support",
+    "claim_type": "parameter",
+    "value": {
+      "default": 0.0,
+      "range": [
+        0.0,
+        1.0
+      ]
+    },
+    "unit": "",
+    "evidence_grade": "C",
+    "source": "curated:config",
+    "url": "",
+    "year": "",
+    "verify": true,
+    "notes": "",
+    "tags": [
+      "decision_variable"
+    ]
+  }
+]

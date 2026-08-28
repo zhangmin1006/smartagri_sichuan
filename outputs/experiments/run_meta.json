@@ -1,0 +1,7 @@
+{
+  "n_farmers": 80,
+  "seasons": 4,
+  "reps": 2,
+  "contract_grid": 5,
+  "runtime_s": 313.0
+}

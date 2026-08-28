@@ -1,0 +1,268 @@
+# ===========================================================================
+# technologies.yaml -- WHICH SMART TECHNOLOGIES THE MODEL REPRESENTS
+# ===========================================================================
+# Selection rule: three bundles whose RESILIENCE MECHANISMS are structurally
+# different, so that no single policy dominates and the ABM has something to
+# discriminate:
+#
+#   T1 acts on INFORMATION  (lead time before the shock)
+#   T2 acts on the BIOPHYSICAL state (soil moisture, nutrient supply)
+#   T3 acts on OPERATING CAPACITY (getting work done inside a narrow window)
+#
+# They also differ in access mode, which is the point the Sichuan evidence
+# insists on: T1 is near-free and information-like, T2 is capital-intensive
+# and ownership-like, T3 is bought per mu as a SERVICE. Modelling only
+# ownership would misrepresent how Sichuan smallholders actually adopt.
+#
+# eta_k = maximum proportional loss reduction at full effective use (e = 1)
+#         and full availability (rho = 1). NOT a fixed benefit: realised
+#         reduction is eta_k * e * rho, and rho collapses under D3.
+# ===========================================================================
+
+meta:
+  region: Sichuan Province, China
+  decision_date: 2026-08-25
+  access_modes: [none, own, rent, service]
+  selection_rationale: >
+    Three bundles, three distinct causal channels, three distinct access
+    modes. Sichuan-specific justification: plot fragmentation (over 60 per
+    cent of plots below 0.07 ha, basin hill plots averaging under 0.03 ha)
+    and slope (roughly 70 per cent of cultivated land above 6 degrees) make
+    individual ownership of heavy equipment uneconomic for most farmers, so
+    the service channel is not a refinement but the main adoption pathway.
+
+bundles:
+
+  - id: T1
+    name_en: Digital early warning and agro-situation information
+    name_zh: 数字预警与农情信息服务
+    channel: information
+    components:
+      - agro-meteorological warning (SMS, mini-program, platform push)
+      - micro-climate stations at county and township level
+      - cultivated land digital base map (耕地数字一张图)
+      - pest and disease monitoring and forecast
+      - remote sensing crop condition products
+    access_modes: [none, service]
+    evidence_grade: B
+    sichuan_anchor: >
+      Provincial action plan targets extend micro-climate station coverage
+      from 36 counties to 66 counties, and the digital base map pilot from
+      7 prefectures towards province-wide coverage. Rural 5G and broadband
+      coverage is effectively universal at village level, so the binding
+      constraint is not connectivity but whether a warning is ACTED ON.
+    resilience_mechanism: >
+      Buys lead time. Converts an unanticipated shock into an anticipated
+      one, enabling pre-emptive drainage, irrigation, early harvest or input
+      adjustment. Value is entirely conditional on the farmer having the
+      CAPACITY to act (labour, machinery access) within the action window,
+      which is why T1 and T3 are complements rather than substitutes.
+    model:
+      eta_drought: 0.12
+      eta_flood: 0.28
+      eta_compound: 0.15
+      capex_per_farm: 0.0
+      opex_per_mu: 2.0
+      # ROUTINE BENEFIT, currency per mu per season, accruing whether or not
+      # a shock occurs. The model previously valued technology ONLY through
+      # shock mitigation, which inverts the real economics: farmers hire
+      # drone spraying because it displaces labour, not because it is
+      # disaster insurance. Omitting it understated adoption value, which
+      # capped adoption, which capped mitigation, which is why the resilience
+      # outcomes would not move. PRIOR values, not measurements -- calibrate
+      # against service work orders and labour budgets before publication.
+      # T1: better timing of routine operations from warnings and crop
+      # condition data. Smallest of the three.
+      routine_benefit_per_mu: 4.0
+      learning_cost: 0.15          # relative units, effort-cost scaler
+      digital_literacy_threshold: 0.25
+      availability_base: 0.92
+      false_alarm_rate: 0.20       # erodes trust when warnings do not verify
+      lead_time_days: [0.5, 3.0]
+      terrain_fit: {plain: 1.0, hill: 0.95, mountain: 0.85}
+    policy_levers: [P4, P5]
+    data_needed:
+      - warning issuance timestamps and verification outcome by event
+      - platform login and mini-program usage logs by anonymised farmer id
+      - survey item on action taken after warning receipt
+
+  - id: T2
+    name_en: Smart irrigation, fertigation and field sensing
+    name_zh: 智慧灌溉、水肥一体化与传感器
+    channel: biophysical
+    components:
+      - soil moisture and micro-climate sensors
+      - water and fertiliser integration (水肥一体化)
+      - automated or scheduled irrigation control
+      - greenhouse and facility environmental control
+    access_modes: [none, own, rent, service]
+    evidence_grade: B
+    sichuan_anchor: >
+      Provincial targets move smart water-fertiliser integration from about
+      540 thousand mu across 13 counties towards roughly 1.65 million mu
+      across 40 counties. Effective irrigated area is around 3.0 million ha,
+      so smart fertigation remains a small share of irrigated land and its
+      value is strongly conditional on the underlying irrigation asset.
+    resilience_mechanism: >
+      Acts directly on the D1 loss mechanism by maintaining root-zone
+      moisture during the reproductive stage. Highest capital intensity of
+      the three, therefore the most exposed to liquidity constraints and the
+      most dependent on maintenance. Requires an existing water
+      source: on hill plots without one, the marginal value is near zero,
+      which is the main source of spatial heterogeneity in returns.
+    model:
+      # NOTE (Aug 2026): a literature-extraction attempt proposed lowering
+      # this to 0.29. That attempt was REJECTED and reverted: verification
+      # showed the extraction pipeline was matching soil-compaction, biochar
+      # and grafting results to irrigation efficacy, so its range was not
+      # evidence. The value stands at its original judgement-based level and
+      # remains evidence grade C, pending full-text or field calibration.
+      eta_drought: 0.45
+      eta_flood: 0.05
+      eta_compound: 0.40           # before availability collapse
+      capex_per_mu: 420.0
+      opex_per_mu: 35.0
+      lifetime_years: 8
+      # T2: water and fertiliser saved by dosing to demand rather than by
+      # habit. Fertiliser is the largest cash input, so this is the biggest
+      # routine saving of the three.
+      routine_benefit_per_mu: 30.0
+      learning_cost: 0.45
+      digital_literacy_threshold: 0.40
+      availability_base: 0.88
+      failure_rate_annual: 0.18
+      repair_delay_days_prior: 9
+      requires_water_source: true
+      power_dependent: true        # -> hit hard by D3
+      terrain_fit: {plain: 1.0, hill: 0.75, mountain: 0.45}
+    policy_levers: [P1, P3, P7]
+    data_needed:
+      - device telemetry: uptime, irrigation events, fault codes
+      - installation invoices, subsidy share, out-of-pocket cost
+      - repair tickets with fault-to-restoration duration
+
+  - id: T3
+    name_en: Drone and BeiDou smart machinery operating services
+    name_zh: 无人机植保与北斗智能农机社会化服务
+    channel: operating_capacity
+    components:
+      - plant protection drone spraying (低空农业)
+      - BeiDou-guided and auto-steer machinery
+      - intelligent operation monitoring terminals
+      - regional agricultural machinery service centres
+      - cooperative dispatch and scheduling platforms
+    access_modes: [none, own, service]
+    evidence_grade: B
+    sichuan_anchor: >
+      Provincial targets include more than 200 regional agricultural
+      machinery service centres, upgrading roughly 26 thousand existing
+      terminals, an intelligent assistance and monitoring equipment rate of
+      about 60 per cent, over 15 thousand drones and more than 5 thousand
+      licensed pilots. Comprehensive mechanisation of major crops was around
+      65 per cent in 2021, below the national level, with maize about 43 per
+      cent and potato about 26 per cent, so machinery capacity is itself
+      scarce and queueing is real rather than notional.
+    resilience_mechanism: >
+      Compresses the time needed to complete a critical operation, which is
+      what converts an early warning into avoided loss. This is the ONLY
+      bundle whose effectiveness is capacity-rationed at the system level:
+      when many farmers are hit simultaneously, the queue lengthens, service
+      arrives after the action window closes and realised efficacy falls even
+      though every farmer is nominally an adopter. That congestion feedback
+      is the primary reason the SD layer exists.
+    model:
+      eta_drought: 0.10
+      eta_flood: 0.35
+      eta_compound: 0.20
+      capex_own_per_unit: 62000.0
+      service_price_per_mu: 12.0
+      opex_per_mu: 0.0
+      # T3: labour displaced. Knapsack spraying covers roughly 5-8 mu per
+      # person-day; a drone covers 300. At a rural wage near 130 CNY/day
+      # that is on the order of 20 CNY/mu of labour no longer bought, which
+      # is why the service sells at 12 CNY/mu at all.
+      routine_benefit_per_mu: 22.0
+      learning_cost: 0.25          # service mode: farmer learns little
+      learning_cost_own: 0.60
+      digital_literacy_threshold: 0.20
+      availability_base: 0.90
+      capacity_mu_per_unit_per_day: 300.0
+      failure_rate_annual: 0.22
+      terrain_fit: {plain: 1.0, hill: 0.85, mountain: 0.55}
+      congestion_sensitive: true
+    policy_levers: [P1, P2, P3, P7]
+    data_needed:
+      - work orders: request, dispatch, arrival, completion, cancellation
+      - per-mu pricing and voucher redemption records
+      - drone and machinery telemetry: operated area, hours, faults
+      - pilot and operator headcount by county
+
+  - id: T4
+    name_en: Livestock and aquaculture intelligent monitoring
+    name_zh: 智慧牧场与智慧渔场
+    channel: biophysical
+    access_modes: [own, service]
+    evidence_grade: B
+    status: out_of_scope_mvp
+    note: >
+      Provincial targets of 50 smart pastures and 20 smart fisheries make
+      this a real adoption path, and Sichuan is a leading hog province, but
+      the technology, shock set and policy instruments differ enough that it
+      belongs in a separate model version rather than a crop MVP.
+
+  - id: T5
+    name_en: Platform, traceability and e-commerce
+    name_zh: 电商、追溯与经营平台
+    channel: market
+    evidence_grade: A
+    status: out_of_scope_mvp
+    note: >
+      Well evidenced at provincial level, but acts on marketing margins
+      rather than on production effort and disaster loss, so it does not
+      belong in the causal chain this model represents. Retained as a
+      context variable only.
+
+  - id: T6
+    name_en: Precision agricultural insurance with remote sensing loss assessment
+    name_zh: 精准农业保险与遥感核损
+    channel: financial
+    evidence_grade: B
+    status: modelled_as_policy_instrument
+    note: >
+      Provincial targets extend precision agricultural insurance towards 176
+      agricultural counties. Modelled as policy instrument P6 rather than as
+      a technology bundle, because from the farmer's perspective it changes
+      the payoff distribution rather than the production technology. It is
+      also the clearest real-world case of technology making an outcome
+      VERIFIABLE, which is the enabling condition for the outcome-contingent
+      contract in the theoretical model.
+
+# ---------------------------------------------------------------------------
+# Adoption state ladder -- enforced everywhere in the model so that coverage
+# is never silently reported as adoption (the central warning of the
+# evidence report).
+# ---------------------------------------------------------------------------
+adoption_states:
+  - id: 0
+    key: not_accessible
+    label_en: No access (network, terminal, service or eligibility missing)
+  - id: 1
+    key: accessible
+    label_en: Access exists but nothing acquired
+  - id: 2
+    key: acquired
+    label_en: Purchased, registered or granted eligibility
+  - id: 3
+    key: used
+    label_en: Verifiable use in the production season
+  - id: 4
+    key: effectively_used
+    label_en: Correct, timely, sustained use that changes a production action
+  - id: 5
+    key: exited
+    label_en: Disadopted after failure, cost or disappointment
+
+state_warning: >
+  5G village coverage, platform registration, training headcount and
+  demonstration park counts are evidence for states 1 and 2 ONLY. They must
+  never be used to initialise or validate states 3 and 4.

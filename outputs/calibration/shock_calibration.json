@@ -1,0 +1,148 @@
+{
+  "source": "Open-Meteo ERA5 reanalysis",
+  "period": "1991-01-01..2024-12-31",
+  "points": [
+    {
+      "id": "C1",
+      "name": "plain_high_service",
+      "terrain": "plain",
+      "place": "Chengdu Plain (Dujiangyan-irrigated)",
+      "lat": 30.8,
+      "lon": 103.95
+    },
+    {
+      "id": "C2",
+      "name": "plain_mixed",
+      "terrain": "plain",
+      "place": "Deyang / Mianyang plain margin",
+      "lat": 31.13,
+      "lon": 104.4
+    },
+    {
+      "id": "C3",
+      "name": "hill_fragmented",
+      "terrain": "hill",
+      "place": "Suining central basin hills",
+      "lat": 30.53,
+      "lon": 105.57
+    },
+    {
+      "id": "C4",
+      "name": "hill_flood_exposed",
+      "terrain": "hill",
+      "place": "Yibin southern basin rim",
+      "lat": 28.77,
+      "lon": 104.62
+    },
+    {
+      "id": "C5",
+      "name": "hill_drought_exposed",
+      "terrain": "hill",
+      "place": "Nanchong eastern basin",
+      "lat": 30.84,
+      "lon": 106.11
+    },
+    {
+      "id": "C6",
+      "name": "mountain_remote",
+      "terrain": "mountain",
+      "place": "Liangshan western mountains",
+      "lat": 27.9,
+      "lon": 102.27
+    }
+  ],
+  "hazards": {
+    "D1": {
+      "label": "Seasonal summer drought (伏旱)",
+      "index": "Jul-Aug standardised precipitation anomaly",
+      "threshold": "SPI <= -0.8",
+      "annual_probability": 0.2107843137254902,
+      "probability_by_county": {
+        "C1": 0.23529411764705882,
+        "C2": 0.20588235294117646,
+        "C3": 0.2647058823529412,
+        "C4": 0.14705882352941177,
+        "C5": 0.23529411764705882,
+        "C6": 0.17647058823529413
+      },
+      "severity_beta": [
+        0.432,
+        1.247
+      ],
+      "severity_mean": 0.25708809770691077,
+      "n_events": 43,
+      "spatial_correlation_observed": 0.3343927326984426,
+      "spatial_correlation": 0.5556525401394088
+    },
+    "D2": {
+      "label": "Rainstorm, flood and waterlogging (暴雨洪涝)",
+      "index": "Jun-Sep days with precipitation >= 50 mm",
+      "threshold": ">= 2 rainstorm days",
+      "annual_probability": 0.37254901960784315,
+      "probability_by_county": {
+        "C1": 0.6470588235294118,
+        "C2": 0.5294117647058824,
+        "C3": 0.20588235294117646,
+        "C4": 0.29411764705882354,
+        "C5": 0.5,
+        "C6": 0.058823529411764705
+      },
+      "severity_beta": [
+        0.186,
+        0.347
+      ],
+      "severity_mean": 0.34932924004826504,
+      "n_events": 76,
+      "spatial_correlation_observed": 0.1238300179555669,
+      "spatial_correlation": 0.2367923762425981
+    },
+    "D3": {
+      "label": "Compound heat-drought (高温干旱复合)",
+      "index": "SPI and Jul-Aug days >= 35 C",
+      "threshold": "SPI <= -1.0 and hot days >= county p75",
+      "annual_probability": 0.0784313725490196,
+      "probability_by_county": {
+        "C1": 0.08823529411764706,
+        "C2": 0.08823529411764706,
+        "C3": 0.08823529411764706,
+        "C4": 0.058823529411764705,
+        "C5": 0.14705882352941177,
+        "C6": 0.0
+      },
+      "severity_beta": [
+        2.545,
+        1.809
+      ],
+      "severity_mean": 0.5844718494861667,
+      "n_events": 16,
+      "spatial_correlation_observed": 0.44678373988722303,
+      "spatial_correlation": 0.7565649530755146,
+      "event_years": [
+        2002,
+        2006,
+        2011,
+        2013,
+        2022,
+        2024
+      ]
+    }
+  },
+  "exposure_multipliers": {
+    "D1": {
+      "hill": 1.167,
+      "mountain": 0.847,
+      "plain": 1.0
+    },
+    "D2": {
+      "hill": 0.521,
+      "mountain": 0.167,
+      "plain": 1.0
+    },
+    "D3": {
+      "hill": 4.265,
+      "mountain": 0.0,
+      "plain": 1.0
+    }
+  },
+  "mean_spatial_correlation": 0.5163366231525072
+}

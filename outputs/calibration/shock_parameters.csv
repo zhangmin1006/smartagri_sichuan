@@ -1,0 +1,4 @@
+hazard,label,annual_probability,beta_a,beta_b,severity_mean,n_events,spatial_correlation
+D1,Seasonal summer drought (伏旱),0.2107843137254902,0.432,1.247,0.25708809770691077,43,0.5556525401394088
+D2,"Rainstorm, flood and waterlogging (暴雨洪涝)",0.37254901960784315,0.186,0.347,0.34932924004826504,76,0.2367923762425981
+D3,Compound heat-drought (高温干旱复合),0.0784313725490196,2.545,1.809,0.5844718494861667,16,0.7565649530755146

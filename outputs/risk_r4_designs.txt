@@ -1,0 +1,34 @@
+==========================================================================
+RISK ATTITUDE ANALYSIS
+==========================================================================
+
+[R1] RAW gradient - confounded, as a field survey would see it
+       q   n     c1    area  adopt   used  effort
+Q1 least 150 0.2483 16.9938 0.2667 0.2533  0.0518
+      Q2 150 0.4137 15.1991 0.2600 0.2333  0.0468
+      Q3 150 0.5136 12.7432 0.2667 0.2533  0.0545
+ Q4 most 150 0.6533  8.0946 0.1333 0.1333  0.0317
+     c1 correlates with log(area) at r = -0.318
+
+[R2] ORTHOGONAL design - c1 independent of everything else
+       q   n     c1    area  adopt   used  effort
+Q1 least 150 0.3946 13.3412 0.2533 0.2467  0.0706
+      Q2 150 0.5476 13.0168 0.2133 0.2000  0.0597
+      Q3 150 0.6423 13.5707 0.2200 0.2200  0.0569
+ Q4 most 150 0.7641 13.1021 0.2333 0.2133  0.0689
+     c1 correlates with log(area) at r = +0.001
+
+[R3] PARTIAL effects - OLS slope of the outcome on c1
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\3054109\OneDrive - Queen's University Belfast\Model building\sichuan\smartagri_sichuan\src\smartagri\risk_analysis.py", line 247, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\Users\3054109\OneDrive - Queen's University Belfast\Model building\sichuan\smartagri_sichuan\src\smartagri\risk_analysis.py", line 238, in main
+    r1_r2_r3(a.n_farmers, a.seasons, seeds)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\3054109\OneDrive - Queen's University Belfast\Model building\sichuan\smartagri_sichuan\src\smartagri\risk_analysis.py", line 146, in r1_r2_r3
+    b_raw, se_raw = _slope(raw, y, False)
+    ^^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable float object

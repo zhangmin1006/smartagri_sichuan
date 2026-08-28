@@ -1,0 +1,8 @@
+parameter,label,symbol,n_values,n_sources,model_value,lit_p25,lit_median,lit_p75,verdict
+c1_farmer_risk,Farmer relative risk aversion (CRRA),c1,0,0,"Beta(4.5, 3.0) on [0.10, 0.92], mean 0.60",,,,no usable evidence
+eta_flood_machinery,Loss reduction from mechanised/drone operations under flood,eta_T3_flood,4,3,0.35,0.5,0.515,0.585,"UNVERIFIED - discovery only, do not calibrate on this"
+eta_drought_irrigation,Loss reduction from irrigation / fertigation under drought,eta_T2_drought,17,10,0.45,0.1455,0.226,0.5,"UNVERIFIED - discovery only, do not calibrate on this"
+eta_warning,Loss reduction from early warning / climate information,eta_T1,0,0,0.12 drought / 0.28 flood,,,,no usable evidence
+service_price,Outsourced field-operation service price,price_per_mu,6,1,12 currency units per mu (T3),7.45,112.5,278.0,"UNVERIFIED - discovery only, do not calibrate on this"
+adoption_rate,Observed adoption rate of smart / digital agricultural technology,adopt,2,2,0.10 - 0.17 simulated,0.275,0.35,0.425,"UNVERIFIED - discovery only, do not calibrate on this"
+peer_effect,Peer / social network effect on adoption,beta_peer,0,0,0.30 weight,,,,no usable evidence

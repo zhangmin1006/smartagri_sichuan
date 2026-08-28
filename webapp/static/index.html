@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>四川智慧农业政策仿真平台</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <h1>四川智慧农业政策仿真平台</h1>
+    <p class="sub">基于风险规避委托—代理契约的 ABM–SD 耦合模型 · 情景设定与政策评估</p>
+  </div>
+  <div class="topmeta">
+    <span id="verBadge" class="badge">模型 v–</span>
+    <button id="btnHelp" class="ghost" type="button">使用说明</button>
+  </div>
+</header>
+
+<div class="layout">
+
+  <!-- ============ 左侧：情景设定 ============ -->
+  <aside class="panel">
+    <nav class="tabs" id="tabs">
+      <button class="tab active" data-tab="policy">政策工具</button>
+      <button class="tab" data-tab="shock">冲击情景</button>
+      <button class="tab" data-tab="tech">技术参数</button>
+      <button class="tab" data-tab="farmer">农户属性</button>
+      <button class="tab" data-tab="run">运行设置</button>
+    </nav>
+
+    <!-- 政策 -->
+    <section class="tabpane active" id="pane-policy">
+      <div class="paneintro">
+        选择要评估的政策工具并设定其决策变量。未勾选的工具完全不启用；
+        勾选后未调整的参数取 <code>policies.yaml</code> 中的既定默认值。
+      </div>
+      <label class="presetrow">
+        载入预设政策包
+        <select id="presetSelect"><option value="">— 自定义 —</option></select>
+      </label>
+      <div id="instrumentList"></div>
+    </section>
+
+    <!-- 冲击 -->
+    <section class="tabpane" id="pane-shock">
+      <div class="paneintro">
+        设定三类灾害的发生概率与强度。概率与空间相关性已由 1991–2024 年
+        ERA5 再分析资料校准；修改年发生概率时，各县概率按比例缩放，
+        以保留实测的地理分布形态。
+      </div>
+      <div id="shockList"></div>
+      <div class="forcedbox">
+        <h4>强制冲击时序</h4>
+        <p class="hint">
+          指定某一季必然发生某种灾害，用于压力测试。这会覆盖随机抽样，
+          使不同政策面对完全相同的灾害序列 —— 评估极端情景时尤其有用。
+        </p>
+        <div id="forcedRows"></div>
+        <button type="button" class="ghost small" id="addForced">+ 添加一条</button>
+      </div>
+    </section>
+
+    <!-- 技术 -->
+    <section class="tabpane" id="pane-tech">
+      <div class="paneintro">
+        三个技术束分别通过<strong>信息</strong>、<strong>生物物理</strong>、
+        <strong>作业运力</strong>三条不同因果渠道发挥作用。
+        减损效率 eta 为文献与判断先验，证据等级 B–C，尚待田野校准。
+      </div>
+      <div id="techList"></div>
+    </section>
+
+    <!-- 农户 -->
+    <section class="tabpane" id="pane-farmer">
+      <div class="paneintro">
+        风险规避是本模型的组织性属性：农户系数 c1 与服务商系数 c2 的
+        <strong>相对位置</strong>决定契约形态与均衡努力水平。
+      </div>
+      <div id="popList"></div>
+      <div id="riskList"></div>
+      <div id="behavList"></div>
+      <div id="countyList"></div>
+    </section>
+
+    <!-- 运行 -->
+    <section class="tabpane" id="pane-run">
+      <div class="paneintro">
+        政策情景与基准情景使用<strong>同一随机种子</strong>配对运行，
+        因此两者面对完全相同的天气路径，差异即为政策效应而非随机波动。
+      </div>
+      <div id="runList"></div>
+      <div class="warnbox">
+        <strong>结果性质说明</strong>
+        契约核心已对照 Guo, Parlar &amp; Zhang (2025) 已发表结果验证通过；
+        其余为<strong>条件性情景推演，而非预测</strong>。
+        灾害概率、技术效率 eta、努力负效用与风险规避分布均为有据可查的先验值，
+        尚待农户面板、行政与遥感数据校准。
+      </div>
+    </section>
+
+    <div class="actions">
+      <button id="btnRun" class="primary" type="button">运行仿真</button>
+      <button id="btnReset" class="ghost" type="button">恢复默认</button>
+    </div>
+  </aside>
+
+  <!-- ============ 右侧：结果 ============ -->
+  <main class="results">
+    <div id="placeholder" class="placeholder">
+      <h2>设定情景后运行仿真</h2>
+      <p>
+        左侧选择政策工具、冲击强度、技术参数与农户结构，点击「运行仿真」。
+        平台将并行运行<strong>政策情景</strong>与<strong>基准情景</strong>，
+        并给出配对比较结果。
+      </p>
+      <ul class="pointers">
+        <li><b>减损率</b>剔除了灾害发生频率的影响，衡量技术在灾害真正发生时的效果。</li>
+        <li><b>平均等待天数</b>是关键约束：一旦超过可行动窗口，名义采纳者与非采纳者的结果并无差别。</li>
+        <li><b>有效使用率</b>区分「买了」与「真正会用」，这是政策最容易失败的环节。</li>
+      </ul>
+    </div>
+
+    <div id="progressBox" class="progressbox hidden">
+      <div class="spinner"></div>
+      <div>
+        <div id="progStage">准备中…</div>
+        <div class="bar"><div id="progBar"></div></div>
+        <div class="hint" id="progHint">首次运行某组新参数时需求解契约问题，可能较慢；
+          结果会写入持久缓存，后续运行显著加快。</div>
+      </div>
+    </div>
+
+    <div id="errorBox" class="errorbox hidden"></div>
+
+    <div id="resultBox" class="hidden">
+      <div class="resulthead">
+        <h2>评估结果</h2>
+        <div class="resultmeta" id="resultMeta"></div>
+        <button id="btnCsv" class="ghost small" type="button">下载 CSV</button>
+      </div>
+
+      <h3 class="sechead">政策效果（相对基准情景）</h3>
+      <div id="kpiGrid" class="kpigrid"></div>
+
+      <h3 class="sechead">逐季演化</h3>
+      <div class="chartcontrols" id="chartControls"></div>
+      <div id="chartGrid" class="chartgrid"></div>
+
+      <h3 class="sechead">完整指标对照</h3>
+      <div class="tablewrap"><table id="cmpTable"></table></div>
+    </div>
+  </main>
+</div>
+
+<div id="helpModal" class="modal hidden">
+  <div class="modalinner">
+    <button class="closex" id="closeHelp" type="button">×</button>
+    <h2>使用说明</h2>
+    <h4>这个平台做什么</h4>
+    <p>它让您自行设定<strong>农户结构、技术参数、政策工具与灾害冲击</strong>，
+       构造想要检验的情景，然后运行智慧农业采纳—韧性 ABM–SD 模型，
+       评估政策的有效性、财政代价与公平后果。</p>
+    <h4>如何读结果</h4>
+    <p>每次运行都会同时执行一个<strong>基准情景</strong>（不启用任何新政策）
+       与您设定的<strong>政策情景</strong>，两者共用随机种子。
+       指标卡上的数值是二者之差，因此可以直接读作政策效应。
+       标注<em>「与随机波动无法区分」</em>的条目，表示该差异小于重复运行之间的离散程度，
+       不应作为政策结论 —— 请提高重复次数后再判断。</p>
+    <h4>为什么要设重复次数</h4>
+    <p>单次运行的结果很大程度上取决于灾害是否恰好落在模拟期内。
+       重复次数用不同种子重复整个配对实验并取平均，
+       同时给出离散度，用于判断差异是否真实。</p>
+    <h4>模型的诚实边界</h4>
+    <p>契约核心已对照已发表论文的表 2 与表 3 验证通过。
+       其余部分是<strong>条件性情景</strong>：结论的形态（何种机制起作用、
+       何处出现拥堵、谁被落下）比具体数值更可信。
+       请将输出标注为「模拟值」，不要作为预测引用。</p>
+  </div>
+</div>
+
+<script src="charts.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

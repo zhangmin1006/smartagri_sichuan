@@ -1,0 +1,329 @@
+# ===========================================================================
+# policies.yaml -- POLICY INVENTORY AND MODELLED INSTRUMENTS
+# ===========================================================================
+# Part A lists the real policy documents that define the choice set and the
+# constraints (targets, eligibility, budget rules).
+# Part B defines the seven instruments the model actually manipulates, each
+# mapped to the mechanism through which it changes a farmer or provider
+# decision in the ABM, and to the SD stock it draws on.
+#
+# Every target figure below is a POLICY COMMITMENT, not a realised outcome.
+# The model treats targets as upper bounds on supply, never as adoption.
+# ===========================================================================
+
+meta:
+  region: Sichuan Province, China
+  compiled: 2026-08-25
+  caution: >
+    Several 2025 provincial documents are reachable mainly through policy
+    database mirrors. Verify article numbers and clause wording against the
+    Sichuan Provincial Department of Agriculture and Rural Affairs original
+    before quoting them in a published policy evaluation.
+
+# ---------------------------------------------------------------------------
+# PART A: policy documents
+# ---------------------------------------------------------------------------
+national:
+  - key: NP1
+    title_zh: 数字农业农村发展规划（2019—2025年）
+    title_en: Digital Agriculture and Rural Development Plan (2019-2025)
+    issuer: Ministry of Agriculture and Rural Affairs
+    year: 2020
+    evidence_grade: A
+    role_in_model: >
+      Defines the technology taxonomy and national ambition; supplies the
+      framing for what counts as a digital agricultural technology.
+    binding_on_model: taxonomy only
+
+  - key: NP2
+    title_zh: 数字乡村发展行动计划（2022—2025年）
+    title_en: Digital Village Development Action Plan (2022-2025)
+    issuer: Cyberspace Administration of China and others
+    year: 2022
+    evidence_grade: A
+    role_in_model: >
+      Eight action lines including infrastructure, smart agriculture, new
+      business forms, governance and public services. Establishes that
+      agricultural and governance platforms share infrastructure, which
+      matters for the shared-reliability assumption in the SD layer.
+
+  - key: NP3
+    title_zh: 全国智慧农业行动计划（2024—2028年）
+    title_en: National Smart Agriculture Action Plan (2024-2028)
+    issuer: Ministry of Agriculture and Rural Affairs
+    year: 2024
+    evidence_grade: A
+    key_target: >
+      Agricultural production informatisation rate from 27.6 per cent (2022)
+      to 32 per cent by 2028.
+    role_in_model: >
+      National benchmark for the adoption trajectory. NOT to be assigned to
+      Sichuan directly: Sichuan terrain and plot structure differ materially
+      from the national average.
+
+  - key: NP4
+    title_zh: 农机购置与应用补贴政策
+    title_en: Agricultural machinery purchase and application subsidy scheme
+    issuer: Ministry of Agriculture and Rural Affairs, Ministry of Finance
+    year: rolling
+    evidence_grade: A
+    role_in_model: >
+      The legal and fiscal template for instrument P1, including catalogue
+      eligibility, subsidy share caps and the application-to-payment
+      workflow that generates the disbursement lag modelled in P1.
+
+provincial:
+  - key: SP1
+    title_zh: 四川省智慧农业行动计划（2025—2028年）
+    title_en: Sichuan Smart Agriculture Action Plan (2025-2028)
+    reference: 川农发〔2025〕20号
+    issuer: Sichuan Provincial Department of Agriculture and Rural Affairs
+    year: 2025
+    evidence_grade: B
+    verify: true
+    targets_by_2028:
+      smart_farms: 200
+      smart_pastures: 50
+      smart_fisheries: 20
+      digital_government_scenarios: ">= 7"
+      precision_insurance_counties: 176
+      microclimate_station_counties: 66
+      smart_fertigation_counties: 40
+      smart_fertigation_area_mu: 1650000
+      regional_machinery_service_centres: ">= 200"
+      intelligent_machinery_equipment_rate: 0.60
+      drones: 15000
+      licensed_pilots: 5000
+      low_altitude_scenarios: 100
+      digital_farm_factories: ">= 50"
+      upgraded_modern_parks: 50
+      smart_agriculture_leading_zones: [1, 3]
+    baseline_2025:
+      microclimate_station_counties: 36
+      smart_fertigation_counties: 13
+      smart_fertigation_area_mu: 540000
+      regional_machinery_service_centres: 50
+      terminals_to_upgrade: 26000
+      low_altitude_scenarios: 20
+      digital_map_pilot_prefectures: 7
+    role_in_model: >
+      Supplies the SD capacity trajectory: these targets become the upper
+      envelope for service capacity, station coverage and equipment stock.
+      Scenario analysis asks whether hitting the targets actually reduces
+      loss, and for whom.
+
+  - key: SP2
+    title_zh: 大力发展智慧农业实施方案
+    title_en: Implementation Plan for Vigorously Developing Smart Agriculture
+    reference: 川农发〔2025〕19号
+    issuer: Sichuan Provincial Department of Agriculture and Rural Affairs
+    year: 2025
+    evidence_grade: B
+    verify: true
+    role_in_model: implementation pathway and departmental responsibilities
+
+  - key: SP3
+    title_zh: 四川省农业农村信息化"十四五"规划
+    title_en: Sichuan 14th Five-Year Plan for Agricultural and Rural Informatisation
+    year: 2021
+    evidence_grade: B
+    role_in_model: >
+      Establishes the 2020-2024 baseline period: platform building,
+      standards and pilots, before the shift to scale-up.
+
+  - key: SP4
+    title_zh: 四川省农机购置补贴实施方案 / 农机作业补贴试点
+    title_en: Sichuan machinery purchase subsidy and operation subsidy pilots
+    year: rolling
+    evidence_grade: B
+    note: >
+      31 counties ran machinery operation subsidy pilots between 2019 and
+      2022. This is the empirical precedent for the service voucher (P2):
+      operation subsidies already exist in Sichuan, so P2 is a scale-up
+      question rather than a novel instrument.
+    role_in_model: calibration precedent for P2
+
+  - key: SP5
+    title_zh: 政策性农业保险（三大粮食作物完全成本保险等）
+    title_en: Policy agricultural insurance including full-cost insurance
+    year: rolling
+    evidence_grade: A
+    role_in_model: baseline for instrument P6
+
+  - key: SP6
+    title_zh: 四川省委一号文件
+    title_en: Sichuan No.1 Document (annual rural work directive)
+    year: annual
+    evidence_grade: A
+    role_in_model: >
+      Annual political signal; used to set the budget growth rate prior in
+      the SD layer rather than any specific instrument parameter.
+
+# ---------------------------------------------------------------------------
+# PART B: modelled instruments
+# ---------------------------------------------------------------------------
+instruments:
+
+  - id: P1
+    name_en: Equipment purchase subsidy
+    name_zh: 设备购置补贴
+    targets: [T2, T3]
+    decision_variables:
+      subsidy_rate: {default: 0.30, range: [0.0, 0.60]}
+      cap_per_farm: {default: 25000.0, range: [0.0, 100000.0]}
+      eligibility_min_area_mu: {default: 0.0, range: [0.0, 100.0]}
+      disbursement_lag_days: {default: 120, range: [15, 365]}
+    abm_mechanism: >
+      Lowers K (acquisition cost) in the adoption value function, and the
+      disbursement lag interacts with the liquidity constraint: a farmer who
+      must pay up front and wait 120 days for reimbursement faces a real cost
+      far above the nominal net price. This is why lag is a decision variable
+      and not a fixed constant.
+    sd_stock: government_budget
+    known_side_effects:
+      - biases towards larger operators with the cash to pre-finance
+      - can produce idle or duplicated equipment
+      - does nothing about maintenance, which is where failure actually bites
+    equity_flag: poor_favours_large_operators
+
+  - id: P2
+    name_en: Per-mu service voucher
+    name_zh: 按亩服务券
+    targets: [T3, T2]
+    decision_variables:
+      voucher_value_per_mu: {default: 5.0, range: [0.0, 15.0]}
+      max_mu_per_farm: {default: 30.0, range: [0.0, 200.0]}
+      targeting: {default: smallholder, options: [universal, smallholder, remote, mountain]}
+      validity_days: {default: 180, range: [30, 365]}
+    abm_mechanism: >
+      Reduces the per-mu price of purchased services, shifting the adoption
+      choice from ownership towards the service mode. Because it raises
+      DEMAND without raising CAPACITY, on its own it lengthens queues, and
+      under a correlated shock it can lower realised efficacy for everyone.
+      The interaction between P2 and P3 is the single most policy-relevant
+      non-linearity in the model.
+    sd_stock: government_budget
+    known_side_effects:
+      - congestion and delayed operations at peak
+      - remote farmers still served last despite holding vouchers
+    equity_flag: favourable
+
+  - id: P3
+    name_en: Service capacity expansion (regional machinery service centres)
+    name_zh: 区域农机社会化服务中心扩容
+    targets: [T3]
+    decision_variables:
+      new_centres_per_year: {default: 25, range: [0, 80]}
+      units_per_centre: {default: 8, range: [2, 30]}
+      mountain_allocation_share: {default: 0.25, range: [0.0, 0.8]}
+    abm_mechanism: >
+      Raises the capacity stock that determines queue length and expected
+      wait, which enters the provider effort problem through the agent
+      reservation utility and the farmer access cost.
+    sd_stock: service_capacity
+    equity_flag: depends_on_allocation
+
+  - id: P4
+    name_en: Digital skills training
+    name_zh: 数字技能培训
+    targets: [T1, T2, T3]
+    decision_variables:
+      slots_per_year: {default: 3000, range: [0, 20000]}
+      followup_support: {default: false, options: [true, false]}
+      skill_gain: {default: 0.12, range: [0.02, 0.30]}
+      decay_rate_annual: {default: 0.20, range: [0.0, 0.5]}
+    abm_mechanism: >
+      Raises digital literacy, which lowers the learning cost term and raises
+      the probability of reaching the effectively-used state. Skill decays
+      without follow-up, so one-off training campaigns produce a transient
+      bump that the model will show fading.
+    sd_stock: capable_farmers
+    equity_flag: favourable_if_targeted
+
+  - id: P5
+    name_en: Warning plus emergency operation guarantee
+    name_zh: 预警＋应急作业保障
+    targets: [T1, T3]
+    decision_variables:
+      lead_time_gain_days: {default: 0.5, range: [0.0, 2.0]}
+      reserved_capacity_share: {default: 0.10, range: [0.0, 0.4]}
+      false_alarm_penalty: {default: 0.05, range: [0.0, 0.2]}
+    abm_mechanism: >
+      Combines information with reserved operating capacity, so that a
+      warning can actually be acted on during a correlated shock. Designed
+      specifically to break the D2 and D3 failure mode where everyone is
+      warned simultaneously and nobody can get served.
+    sd_stock: [infrastructure, service_capacity]
+    equity_flag: favourable
+
+  - id: P6
+    name_en: Precision insurance with remote sensing loss assessment
+    name_zh: 精准农业保险与遥感核损
+    targets: [T6]
+    decision_variables:
+      premium_subsidy_rate: {default: 0.60, range: [0.0, 0.9]}
+      payout_lag_days: {default: 60, range: [7, 180]}
+      coverage_ratio: {default: 0.55, range: [0.2, 1.0]}
+      basis_risk: {default: 0.15, range: [0.0, 0.4]}
+    abm_mechanism: >
+      Changes the outcome distribution the farmer faces rather than the
+      production function, so it acts directly on the risk-aversion channel:
+      it lowers the effective c1 and therefore, through Proposition 1, shifts
+      the equilibrium contract form and the effort the provider supplies.
+      Payout speed governs post-shock replanting and recovery time.
+    sd_stock: government_budget
+    known_side_effects:
+      - basis risk and algorithmic exclusion of atypical plots
+      - claim processing congestion after correlated events
+    equity_flag: mixed
+
+  - id: P7
+    name_en: Mountain and hill adaptation investment
+    name_zh: 山地适配投资
+    targets: [T2, T3]
+    decision_variables:
+      light_equipment_share: {default: 0.2, range: [0.0, 0.6]}
+      remote_service_points: {default: 10, range: [0, 60]}
+      transport_support: {default: 0.0, range: [0.0, 1.0]}
+    abm_mechanism: >
+      Raises the terrain-fit multiplier for hill and mountain agents, which
+      otherwise caps achievable efficacy regardless of how much subsidy is
+      spent. The instrument that most directly addresses the spatial equity
+      objective.
+    sd_stock: service_capacity
+    equity_flag: strongly_favourable
+
+# ---------------------------------------------------------------------------
+# Evaluation objectives -- reported jointly, never collapsed to one score
+# ---------------------------------------------------------------------------
+objectives:
+  - key: avoided_loss
+    direction: maximise
+    definition: expected yield and income loss avoided relative to no-policy baseline
+  - key: recovery_time
+    direction: minimise
+    definition: seasons to return to 80 per cent of pre-shock income
+  - key: fiscal_cost
+    direction: minimise
+    definition: discounted total public expenditure
+  - key: effective_use_rate
+    direction: maximise
+    definition: share of adopters reaching state 4, not state 2
+  - key: equity_gap
+    direction: minimise
+    definition: >
+      difference in avoided loss between the smallest and largest farm
+      quartiles, and between mountain and plain counties
+  - key: service_backlog
+    direction: minimise
+    definition: peak unserved demand during the critical operating window
+  - key: exit_rate
+    direction: minimise
+    definition: share of farmers disadopting or leaving production
+
+optimisation:
+  method: NSGA-II
+  note: >
+    Report a Pareto front across the objectives above. Do not emit a single
+    weighted-sum optimum: the weights are a political choice belonging to the
+    government user, not a modelling assumption.

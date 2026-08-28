@@ -1,0 +1,97 @@
+﻿record_id,category,entity_id,name_en,claim,value,evidence_grade,verify,notes
+DIS-D1-PAR-annual_probability_prior,disruption,D1,Seasonal summer drought,calibrated: annual_probability_prior,0.211,B,False,derived from ERA5 reanalysis 1991-2024
+DIS-D1-PAR-severity_distribution,disruption,D1,Seasonal summer drought,model prior: severity_distribution,beta,C,True,"prior for calibration, not a measurement"
+DIS-D1-PAR-severity_params,disruption,D1,Seasonal summer drought,calibrated: severity_params,"[0.43, 1.25]",B,False,derived from ERA5 reanalysis 1991-2024
+DIS-D1-PAR-spatial_correlation,disruption,D1,Seasonal summer drought,calibrated: spatial_correlation,0.446,B,False,derived from ERA5 reanalysis 1991-2024
+DIS-D1-PAR-probability_by_county,disruption,D1,Seasonal summer drought,calibrated: probability_by_county,"{'C1': 0.235, 'C2': 0.206, 'C3': 0.265, 'C4': 0.147, 'C5': 0.235, 'C6': 0.176}",B,False,derived from ERA5 reanalysis 1991-2024
+DIS-D1-PAR-n_events_observed,disruption,D1,Seasonal summer drought,calibrated: n_events_observed,43,B,False,derived from ERA5 reanalysis 1991-2024
+DIS-D1-PAR-hazard_definition,disruption,D1,Seasonal summer drought,calibrated: hazard_definition,SPI <= -0.8,B,False,derived from ERA5 reanalysis 1991-2024
+DIS-D1-PAR-yield_damage_max,disruption,D1,Seasonal summer drought,model prior: yield_damage_max,0.45,C,True,"prior for calibration, not a measurement"
+DIS-D1-PAR-terrain_multiplier,disruption,D1,Seasonal summer drought,model prior: terrain_multiplier,"{'plain': 0.6, 'hill': 1.0, 'mountain': 1.15}",C,True,"prior for calibration, not a measurement"
+DIS-D1-PAR-irrigation_offset,disruption,D1,Seasonal summer drought,model prior: irrigation_offset,0.45,C,True,"prior for calibration, not a measurement"
+DIS-D2-PAR-annual_probability_prior,disruption,D2,"Rainstorm, flood and waterlogging",calibrated: annual_probability_prior,0.373,B,False,derived from ERA5 reanalysis 1991-2024
+DIS-D2-PAR-severity_distribution,disruption,D2,"Rainstorm, flood and waterlogging",model prior: severity_distribution,beta,C,True,"prior for calibration, not a measurement"
+DIS-D2-PAR-severity_params,disruption,D2,"Rainstorm, flood and waterlogging",calibrated: severity_params,"[0.19, 0.35]",B,False,derived from ERA5 reanalysis 1991-2024
+DIS-D2-PAR-spatial_correlation,disruption,D2,"Rainstorm, flood and waterlogging",calibrated: spatial_correlation,0.19,B,False,derived from ERA5 reanalysis 1991-2024
+DIS-D2-PAR-probability_by_county,disruption,D2,"Rainstorm, flood and waterlogging",calibrated: probability_by_county,"{'C1': 0.647, 'C2': 0.529, 'C3': 0.206, 'C4': 0.294, 'C5': 0.5, 'C6': 0.059}",B,False,derived from ERA5 reanalysis 1991-2024
+DIS-D2-PAR-n_events_observed,disruption,D2,"Rainstorm, flood and waterlogging",calibrated: n_events_observed,76,B,False,derived from ERA5 reanalysis 1991-2024
+DIS-D2-PAR-hazard_definition,disruption,D2,"Rainstorm, flood and waterlogging",calibrated: hazard_definition,>= 2 rainstorm days,B,False,derived from ERA5 reanalysis 1991-2024
+DIS-D2-PAR-yield_damage_max,disruption,D2,"Rainstorm, flood and waterlogging",model prior: yield_damage_max,0.55,C,True,"prior for calibration, not a measurement"
+DIS-D2-PAR-terrain_multiplier,disruption,D2,"Rainstorm, flood and waterlogging",model prior: terrain_multiplier,"{'plain': 1.0, 'hill': 1.1, 'mountain': 1.25}",C,True,"prior for calibration, not a measurement"
+DIS-D2-PAR-warning_lead_time_days,disruption,D2,"Rainstorm, flood and waterlogging",model prior: warning_lead_time_days,"[0.5, 3.0]",C,True,"prior for calibration, not a measurement"
+DIS-D2-PAR-action_window_days,disruption,D2,"Rainstorm, flood and waterlogging",model prior: action_window_days,2,C,True,"prior for calibration, not a measurement"
+DIS-D3-PAR-annual_probability_prior,disruption,D3,Compound heat-drought with power and network interruption,calibrated: annual_probability_prior,0.078,B,False,derived from ERA5 reanalysis 1991-2024
+DIS-D3-PAR-severity_distribution,disruption,D3,Compound heat-drought with power and network interruption,model prior: severity_distribution,beta,C,True,"prior for calibration, not a measurement"
+DIS-D3-PAR-severity_params,disruption,D3,Compound heat-drought with power and network interruption,calibrated: severity_params,"[2.54, 1.81]",B,False,derived from ERA5 reanalysis 1991-2024
+DIS-D3-PAR-spatial_correlation,disruption,D3,Compound heat-drought with power and network interruption,calibrated: spatial_correlation,0.542,B,False,derived from ERA5 reanalysis 1991-2024
+DIS-D3-PAR-probability_by_county,disruption,D3,Compound heat-drought with power and network interruption,calibrated: probability_by_county,"{'C1': 0.088, 'C2': 0.088, 'C3': 0.088, 'C4': 0.059, 'C5': 0.147, 'C6': 0.0}",B,False,derived from ERA5 reanalysis 1991-2024
+DIS-D3-PAR-n_events_observed,disruption,D3,Compound heat-drought with power and network interruption,calibrated: n_events_observed,16,B,False,derived from ERA5 reanalysis 1991-2024
+DIS-D3-PAR-hazard_definition,disruption,D3,Compound heat-drought with power and network interruption,calibrated: hazard_definition,SPI <= -1.0 and hot days >= county p75,B,False,derived from ERA5 reanalysis 1991-2024
+DIS-D3-PAR-yield_damage_max,disruption,D3,Compound heat-drought with power and network interruption,model prior: yield_damage_max,0.6,C,True,"prior for calibration, not a measurement"
+DIS-D3-PAR-terrain_multiplier,disruption,D3,Compound heat-drought with power and network interruption,model prior: terrain_multiplier,"{'plain': 0.9, 'hill': 1.05, 'mountain': 1.0}",C,True,"prior for calibration, not a measurement"
+DIS-D3-PAR-tech_availability_multiplier,disruption,D3,Compound heat-drought with power and network interruption,model prior: tech_availability_multiplier,0.35,C,True,"prior for calibration, not a measurement"
+DIS-D3-PAR-outage_duration_days,disruption,D3,Compound heat-drought with power and network interruption,model prior: outage_duration_days,"[2, 12]",C,True,"prior for calibration, not a measurement"
+TEC-T1-PAR-eta_drought,technology,T1,Digital early warning and agro-situation information,model prior: eta_drought,0.12,C,True,"prior for calibration, not a measurement"
+TEC-T1-PAR-eta_flood,technology,T1,Digital early warning and agro-situation information,model prior: eta_flood,0.28,C,True,"prior for calibration, not a measurement"
+TEC-T1-PAR-eta_compound,technology,T1,Digital early warning and agro-situation information,model prior: eta_compound,0.15,C,True,"prior for calibration, not a measurement"
+TEC-T1-PAR-capex_per_farm,technology,T1,Digital early warning and agro-situation information,model prior: capex_per_farm,0.0,C,True,"prior for calibration, not a measurement"
+TEC-T1-PAR-opex_per_mu,technology,T1,Digital early warning and agro-situation information,model prior: opex_per_mu,2.0,C,True,"prior for calibration, not a measurement"
+TEC-T1-PAR-learning_cost,technology,T1,Digital early warning and agro-situation information,model prior: learning_cost,0.15,C,True,"prior for calibration, not a measurement"
+TEC-T1-PAR-digital_literacy_threshold,technology,T1,Digital early warning and agro-situation information,model prior: digital_literacy_threshold,0.25,C,True,"prior for calibration, not a measurement"
+TEC-T1-PAR-availability_base,technology,T1,Digital early warning and agro-situation information,model prior: availability_base,0.92,C,True,"prior for calibration, not a measurement"
+TEC-T1-PAR-false_alarm_rate,technology,T1,Digital early warning and agro-situation information,model prior: false_alarm_rate,0.2,C,True,"prior for calibration, not a measurement"
+TEC-T1-PAR-lead_time_days,technology,T1,Digital early warning and agro-situation information,model prior: lead_time_days,"[0.5, 3.0]",C,True,"prior for calibration, not a measurement"
+TEC-T1-PAR-terrain_fit,technology,T1,Digital early warning and agro-situation information,model prior: terrain_fit,"{'plain': 1.0, 'hill': 0.95, 'mountain': 0.85}",C,True,"prior for calibration, not a measurement"
+TEC-T2-PAR-eta_drought,technology,T2,"Smart irrigation, fertigation and field sensing",model prior: eta_drought,0.45,C,True,"prior for calibration, not a measurement"
+TEC-T2-PAR-eta_flood,technology,T2,"Smart irrigation, fertigation and field sensing",model prior: eta_flood,0.05,C,True,"prior for calibration, not a measurement"
+TEC-T2-PAR-eta_compound,technology,T2,"Smart irrigation, fertigation and field sensing",model prior: eta_compound,0.4,C,True,"prior for calibration, not a measurement"
+TEC-T2-PAR-capex_per_mu,technology,T2,"Smart irrigation, fertigation and field sensing",model prior: capex_per_mu,420.0,C,True,"prior for calibration, not a measurement"
+TEC-T2-PAR-opex_per_mu,technology,T2,"Smart irrigation, fertigation and field sensing",model prior: opex_per_mu,35.0,C,True,"prior for calibration, not a measurement"
+TEC-T2-PAR-lifetime_years,technology,T2,"Smart irrigation, fertigation and field sensing",model prior: lifetime_years,8,C,True,"prior for calibration, not a measurement"
+TEC-T2-PAR-learning_cost,technology,T2,"Smart irrigation, fertigation and field sensing",model prior: learning_cost,0.45,C,True,"prior for calibration, not a measurement"
+TEC-T2-PAR-digital_literacy_threshold,technology,T2,"Smart irrigation, fertigation and field sensing",model prior: digital_literacy_threshold,0.4,C,True,"prior for calibration, not a measurement"
+TEC-T2-PAR-availability_base,technology,T2,"Smart irrigation, fertigation and field sensing",model prior: availability_base,0.88,C,True,"prior for calibration, not a measurement"
+TEC-T2-PAR-failure_rate_annual,technology,T2,"Smart irrigation, fertigation and field sensing",model prior: failure_rate_annual,0.18,C,True,"prior for calibration, not a measurement"
+TEC-T2-PAR-repair_delay_days_prior,technology,T2,"Smart irrigation, fertigation and field sensing",model prior: repair_delay_days_prior,9,C,True,"prior for calibration, not a measurement"
+TEC-T2-PAR-requires_water_source,technology,T2,"Smart irrigation, fertigation and field sensing",model prior: requires_water_source,True,C,True,"prior for calibration, not a measurement"
+TEC-T2-PAR-power_dependent,technology,T2,"Smart irrigation, fertigation and field sensing",model prior: power_dependent,True,C,True,"prior for calibration, not a measurement"
+TEC-T2-PAR-terrain_fit,technology,T2,"Smart irrigation, fertigation and field sensing",model prior: terrain_fit,"{'plain': 1.0, 'hill': 0.75, 'mountain': 0.45}",C,True,"prior for calibration, not a measurement"
+TEC-T3-PAR-eta_drought,technology,T3,Drone and BeiDou smart machinery operating services,model prior: eta_drought,0.1,C,True,"prior for calibration, not a measurement"
+TEC-T3-PAR-eta_flood,technology,T3,Drone and BeiDou smart machinery operating services,model prior: eta_flood,0.35,C,True,"prior for calibration, not a measurement"
+TEC-T3-PAR-eta_compound,technology,T3,Drone and BeiDou smart machinery operating services,model prior: eta_compound,0.2,C,True,"prior for calibration, not a measurement"
+TEC-T3-PAR-capex_own_per_unit,technology,T3,Drone and BeiDou smart machinery operating services,model prior: capex_own_per_unit,62000.0,C,True,"prior for calibration, not a measurement"
+TEC-T3-PAR-service_price_per_mu,technology,T3,Drone and BeiDou smart machinery operating services,model prior: service_price_per_mu,12.0,C,True,"prior for calibration, not a measurement"
+TEC-T3-PAR-opex_per_mu,technology,T3,Drone and BeiDou smart machinery operating services,model prior: opex_per_mu,0.0,C,True,"prior for calibration, not a measurement"
+TEC-T3-PAR-learning_cost,technology,T3,Drone and BeiDou smart machinery operating services,model prior: learning_cost,0.25,C,True,"prior for calibration, not a measurement"
+TEC-T3-PAR-learning_cost_own,technology,T3,Drone and BeiDou smart machinery operating services,model prior: learning_cost_own,0.6,C,True,"prior for calibration, not a measurement"
+TEC-T3-PAR-digital_literacy_threshold,technology,T3,Drone and BeiDou smart machinery operating services,model prior: digital_literacy_threshold,0.2,C,True,"prior for calibration, not a measurement"
+TEC-T3-PAR-availability_base,technology,T3,Drone and BeiDou smart machinery operating services,model prior: availability_base,0.9,C,True,"prior for calibration, not a measurement"
+TEC-T3-PAR-capacity_mu_per_unit_per_day,technology,T3,Drone and BeiDou smart machinery operating services,model prior: capacity_mu_per_unit_per_day,300.0,C,True,"prior for calibration, not a measurement"
+TEC-T3-PAR-failure_rate_annual,technology,T3,Drone and BeiDou smart machinery operating services,model prior: failure_rate_annual,0.22,C,True,"prior for calibration, not a measurement"
+TEC-T3-PAR-terrain_fit,technology,T3,Drone and BeiDou smart machinery operating services,model prior: terrain_fit,"{'plain': 1.0, 'hill': 0.85, 'mountain': 0.55}",C,True,"prior for calibration, not a measurement"
+TEC-T3-PAR-congestion_sensitive,technology,T3,Drone and BeiDou smart machinery operating services,model prior: congestion_sensitive,True,C,True,"prior for calibration, not a measurement"
+POL-P1-DV-subsidy_rate,policy,P1,Equipment purchase subsidy,decision variable: subsidy_rate,"{'default': 0.3, 'range': [0.0, 0.6]}",C,True,
+POL-P1-DV-cap_per_farm,policy,P1,Equipment purchase subsidy,decision variable: cap_per_farm,"{'default': 25000.0, 'range': [0.0, 100000.0]}",C,True,
+POL-P1-DV-eligibility_min_area_mu,policy,P1,Equipment purchase subsidy,decision variable: eligibility_min_area_mu,"{'default': 0.0, 'range': [0.0, 100.0]}",C,True,
+POL-P1-DV-disbursement_lag_days,policy,P1,Equipment purchase subsidy,decision variable: disbursement_lag_days,"{'default': 120, 'range': [15, 365]}",C,True,
+POL-P2-DV-voucher_value_per_mu,policy,P2,Per-mu service voucher,decision variable: voucher_value_per_mu,"{'default': 5.0, 'range': [0.0, 15.0]}",C,True,
+POL-P2-DV-max_mu_per_farm,policy,P2,Per-mu service voucher,decision variable: max_mu_per_farm,"{'default': 30.0, 'range': [0.0, 200.0]}",C,True,
+POL-P2-DV-targeting,policy,P2,Per-mu service voucher,decision variable: targeting,"{'default': 'smallholder', 'options': ['universal', 'smallholder', 'remote', 'mountain']}",C,True,
+POL-P2-DV-validity_days,policy,P2,Per-mu service voucher,decision variable: validity_days,"{'default': 180, 'range': [30, 365]}",C,True,
+POL-P3-DV-new_centres_per_year,policy,P3,Service capacity expansion (regional machinery service centres),decision variable: new_centres_per_year,"{'default': 25, 'range': [0, 80]}",C,True,
+POL-P3-DV-units_per_centre,policy,P3,Service capacity expansion (regional machinery service centres),decision variable: units_per_centre,"{'default': 8, 'range': [2, 30]}",C,True,
+POL-P3-DV-mountain_allocation_share,policy,P3,Service capacity expansion (regional machinery service centres),decision variable: mountain_allocation_share,"{'default': 0.25, 'range': [0.0, 0.8]}",C,True,
+POL-P4-DV-slots_per_year,policy,P4,Digital skills training,decision variable: slots_per_year,"{'default': 3000, 'range': [0, 20000]}",C,True,
+POL-P4-DV-followup_support,policy,P4,Digital skills training,decision variable: followup_support,"{'default': False, 'options': [True, False]}",C,True,
+POL-P4-DV-skill_gain,policy,P4,Digital skills training,decision variable: skill_gain,"{'default': 0.12, 'range': [0.02, 0.3]}",C,True,
+POL-P4-DV-decay_rate_annual,policy,P4,Digital skills training,decision variable: decay_rate_annual,"{'default': 0.2, 'range': [0.0, 0.5]}",C,True,
+POL-P5-DV-lead_time_gain_days,policy,P5,Warning plus emergency operation guarantee,decision variable: lead_time_gain_days,"{'default': 0.5, 'range': [0.0, 2.0]}",C,True,
+POL-P5-DV-reserved_capacity_share,policy,P5,Warning plus emergency operation guarantee,decision variable: reserved_capacity_share,"{'default': 0.1, 'range': [0.0, 0.4]}",C,True,
+POL-P5-DV-false_alarm_penalty,policy,P5,Warning plus emergency operation guarantee,decision variable: false_alarm_penalty,"{'default': 0.05, 'range': [0.0, 0.2]}",C,True,
+POL-P6-DV-premium_subsidy_rate,policy,P6,Precision insurance with remote sensing loss assessment,decision variable: premium_subsidy_rate,"{'default': 0.6, 'range': [0.0, 0.9]}",C,True,
+POL-P6-DV-payout_lag_days,policy,P6,Precision insurance with remote sensing loss assessment,decision variable: payout_lag_days,"{'default': 60, 'range': [7, 180]}",C,True,
+POL-P6-DV-coverage_ratio,policy,P6,Precision insurance with remote sensing loss assessment,decision variable: coverage_ratio,"{'default': 0.55, 'range': [0.2, 1.0]}",C,True,
+POL-P6-DV-basis_risk,policy,P6,Precision insurance with remote sensing loss assessment,decision variable: basis_risk,"{'default': 0.15, 'range': [0.0, 0.4]}",C,True,
+POL-P7-DV-light_equipment_share,policy,P7,Mountain and hill adaptation investment,decision variable: light_equipment_share,"{'default': 0.2, 'range': [0.0, 0.6]}",C,True,
+POL-P7-DV-remote_service_points,policy,P7,Mountain and hill adaptation investment,decision variable: remote_service_points,"{'default': 10, 'range': [0, 60]}",C,True,
+POL-P7-DV-transport_support,policy,P7,Mountain and hill adaptation investment,decision variable: transport_support,"{'default': 0.0, 'range': [0.0, 1.0]}",C,True,

@@ -1,0 +1,26 @@
+level,test,expected,observed,verdict,note
+V1,"Tables 2 and 3, Proposition 1, Theorem 1 bounds",all reproduced,max |de*| = 0.0005   max |dJ*| = 0.0005; max |db| = 0.00134   max |dJ| = 0.00085,PASS,
+V2,"effort, state, belief, trust, loss, capacity, budget bounds",0 violations,0 violations ,PASS,
+V2,Theorem 1: 0 < w(x) < x and 0 < dw/dx < 1 (120 random pairs),0 violations,0 violations,PASS,
+V3,cumulative fiscal spend equals the sum of season spends,relative error < 1e-6,0.00e+00,PASS,
+V3,service backlog is never negative,0 seasons,0 seasons,PASS,
+V3,season capacity strictly positive in every season,all > 0,min 70817.1 mu,PASS,
+V3,cumulative exit rate is non-decreasing,monotone,monotone,PASS,
+V4,county occurrence probabilities reproduced,max deviation < 0.03,0.018,PASS,3000 simulated seasons compounded to annual probability against 34 observed years
+V4,spatial correlation of realised events reproduced,max deviation < 0.12 and flood less correlated than drought,"0.041; observed vs simulated {'D1': (0.334, 0.294), 'D2': (0.124, 0.123), 'D3': (0.447, 0.406)}",PASS,compares binary event indicators with binary event indicators; the calibrated rho is a latent Gaussian parameter and is necessarily attenuated in realised 0/1 outcomes
+V4,held-out decade 2015-2024 vs parameters fitted to 1991-2014,max |difference| < 0.15,0.015,PASS,D1: 0.188 -> 0.183; D2: 0.368 -> 0.383; D3: 0.076 -> 0.083
+V4,documented Sichuan drought years recovered from the data,"2006, 2011, 2022 all in the 6 driest of 34","ranks {2006: 3, 2011: 1, 2022: 2} (1 = driest)",PASS,
+V5,no shocks: zero loss and zero mitigation,both 0,"loss 0.0000, mitig 0.0000",PASS,
+V5,"D3 every season: high loss, suppressed mitigation",loss > 0.10 and mitigation < 0.03,"loss 0.2810, mitig 0.0086",PASS,
+V5,unlimited capacity: waiting time at its floor,1.0 day,1.00 days,PASS,
+V5,no capacity: waiting time at ceiling and effort collapses,"wait 30 days, effort < 0.15","wait 30.0, effort 0.000",PASS,
+V5,no monitoring: delivered effort falls to the shirking floor,fall of 35-50 per cent,39.6 per cent,PASS,
+V5,zero budget: instrument rations to nothing,fiscal cost 0,0,PASS,
+V6,steady-state adoption is ordered by true efficacy,zero < baseline < high,0.041 < 0.113 < 0.217,PASS,"measured over the last 6 of 24 seasons, shock every season"
+V6,the efficacy response is economically material,high minus zero exceeds 50 per cent of baseline,156 per cent,PASS,
+V6,beliefs converge toward true efficacy,belief ordered zero < baseline < high,0.121 < 0.290 < 0.522,PASS,
+V7,adoption below the 0.355 stated-willingness anchor,0.05 - 0.355 (revealed use below stated willingness),0.158,PASS,"Gong, Ma & Zhang (2024), 214 Sichuan smallholders: mean stated willingness 0.355; verified use is expected to be lower"
+V7,service is the dominant access mode for T3,service share exceeds own-equipment share,service 0.222,PASS,"over 60 per cent of Sichuan plots are below 0.07 ha, so ownership is uneconomic for most farmers"
+V7,mean seasonal loss in a plausible range,0.01 - 0.25 of gross output,0.027,PASS,
+V7,peak-season waiting time is operationally plausible,1 - 20 days,16.9 days,PASS,NOT yet validated against data; work-order timestamps are the priority-1 acquisition in the data audit
+V7,exit rate is low over a four-year horizon,below 0.10,0.000,PASS,

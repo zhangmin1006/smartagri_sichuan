@@ -1,0 +1,137 @@
+﻿priority,record_id,category,entity_id,name_en,claim,evidence_grade,notes
+1,DIS-D1-PAR-severity_distribution,disruption,D1,Seasonal summer drought,model prior: severity_distribution,C,"prior for calibration, not a measurement"
+1,DIS-D1-PAR-yield_damage_max,disruption,D1,Seasonal summer drought,model prior: yield_damage_max,C,"prior for calibration, not a measurement"
+1,DIS-D1-PAR-terrain_multiplier,disruption,D1,Seasonal summer drought,model prior: terrain_multiplier,C,"prior for calibration, not a measurement"
+1,DIS-D1-PAR-irrigation_offset,disruption,D1,Seasonal summer drought,model prior: irrigation_offset,C,"prior for calibration, not a measurement"
+1,DIS-D2-PAR-severity_distribution,disruption,D2,"Rainstorm, flood and waterlogging",model prior: severity_distribution,C,"prior for calibration, not a measurement"
+1,DIS-D2-PAR-yield_damage_max,disruption,D2,"Rainstorm, flood and waterlogging",model prior: yield_damage_max,C,"prior for calibration, not a measurement"
+1,DIS-D2-PAR-terrain_multiplier,disruption,D2,"Rainstorm, flood and waterlogging",model prior: terrain_multiplier,C,"prior for calibration, not a measurement"
+1,DIS-D2-PAR-warning_lead_time_days,disruption,D2,"Rainstorm, flood and waterlogging",model prior: warning_lead_time_days,C,"prior for calibration, not a measurement"
+1,DIS-D2-PAR-action_window_days,disruption,D2,"Rainstorm, flood and waterlogging",model prior: action_window_days,C,"prior for calibration, not a measurement"
+1,DIS-D3-PAR-severity_distribution,disruption,D3,Compound heat-drought with power and network interruption,model prior: severity_distribution,C,"prior for calibration, not a measurement"
+1,DIS-D3-PAR-yield_damage_max,disruption,D3,Compound heat-drought with power and network interruption,model prior: yield_damage_max,C,"prior for calibration, not a measurement"
+1,DIS-D3-PAR-terrain_multiplier,disruption,D3,Compound heat-drought with power and network interruption,model prior: terrain_multiplier,C,"prior for calibration, not a measurement"
+1,DIS-D3-PAR-tech_availability_multiplier,disruption,D3,Compound heat-drought with power and network interruption,model prior: tech_availability_multiplier,C,"prior for calibration, not a measurement"
+1,DIS-D3-PAR-outage_duration_days,disruption,D3,Compound heat-drought with power and network interruption,model prior: outage_duration_days,C,"prior for calibration, not a measurement"
+1,TEC-T1-PAR-eta_drought,technology,T1,Digital early warning and agro-situation information,model prior: eta_drought,C,"prior for calibration, not a measurement"
+1,TEC-T1-PAR-eta_flood,technology,T1,Digital early warning and agro-situation information,model prior: eta_flood,C,"prior for calibration, not a measurement"
+1,TEC-T1-PAR-eta_compound,technology,T1,Digital early warning and agro-situation information,model prior: eta_compound,C,"prior for calibration, not a measurement"
+1,TEC-T1-PAR-capex_per_farm,technology,T1,Digital early warning and agro-situation information,model prior: capex_per_farm,C,"prior for calibration, not a measurement"
+1,TEC-T1-PAR-opex_per_mu,technology,T1,Digital early warning and agro-situation information,model prior: opex_per_mu,C,"prior for calibration, not a measurement"
+1,TEC-T1-PAR-learning_cost,technology,T1,Digital early warning and agro-situation information,model prior: learning_cost,C,"prior for calibration, not a measurement"
+1,TEC-T1-PAR-digital_literacy_threshold,technology,T1,Digital early warning and agro-situation information,model prior: digital_literacy_threshold,C,"prior for calibration, not a measurement"
+1,TEC-T1-PAR-availability_base,technology,T1,Digital early warning and agro-situation information,model prior: availability_base,C,"prior for calibration, not a measurement"
+1,TEC-T1-PAR-false_alarm_rate,technology,T1,Digital early warning and agro-situation information,model prior: false_alarm_rate,C,"prior for calibration, not a measurement"
+1,TEC-T1-PAR-lead_time_days,technology,T1,Digital early warning and agro-situation information,model prior: lead_time_days,C,"prior for calibration, not a measurement"
+1,TEC-T1-PAR-terrain_fit,technology,T1,Digital early warning and agro-situation information,model prior: terrain_fit,C,"prior for calibration, not a measurement"
+1,TEC-T2-PAR-eta_drought,technology,T2,"Smart irrigation, fertigation and field sensing",model prior: eta_drought,C,"prior for calibration, not a measurement"
+1,TEC-T2-PAR-eta_flood,technology,T2,"Smart irrigation, fertigation and field sensing",model prior: eta_flood,C,"prior for calibration, not a measurement"
+1,TEC-T2-PAR-eta_compound,technology,T2,"Smart irrigation, fertigation and field sensing",model prior: eta_compound,C,"prior for calibration, not a measurement"
+1,TEC-T2-PAR-capex_per_mu,technology,T2,"Smart irrigation, fertigation and field sensing",model prior: capex_per_mu,C,"prior for calibration, not a measurement"
+1,TEC-T2-PAR-opex_per_mu,technology,T2,"Smart irrigation, fertigation and field sensing",model prior: opex_per_mu,C,"prior for calibration, not a measurement"
+1,TEC-T2-PAR-lifetime_years,technology,T2,"Smart irrigation, fertigation and field sensing",model prior: lifetime_years,C,"prior for calibration, not a measurement"
+1,TEC-T2-PAR-learning_cost,technology,T2,"Smart irrigation, fertigation and field sensing",model prior: learning_cost,C,"prior for calibration, not a measurement"
+1,TEC-T2-PAR-digital_literacy_threshold,technology,T2,"Smart irrigation, fertigation and field sensing",model prior: digital_literacy_threshold,C,"prior for calibration, not a measurement"
+1,TEC-T2-PAR-availability_base,technology,T2,"Smart irrigation, fertigation and field sensing",model prior: availability_base,C,"prior for calibration, not a measurement"
+1,TEC-T2-PAR-failure_rate_annual,technology,T2,"Smart irrigation, fertigation and field sensing",model prior: failure_rate_annual,C,"prior for calibration, not a measurement"
+1,TEC-T2-PAR-repair_delay_days_prior,technology,T2,"Smart irrigation, fertigation and field sensing",model prior: repair_delay_days_prior,C,"prior for calibration, not a measurement"
+1,TEC-T2-PAR-requires_water_source,technology,T2,"Smart irrigation, fertigation and field sensing",model prior: requires_water_source,C,"prior for calibration, not a measurement"
+1,TEC-T2-PAR-power_dependent,technology,T2,"Smart irrigation, fertigation and field sensing",model prior: power_dependent,C,"prior for calibration, not a measurement"
+1,TEC-T2-PAR-terrain_fit,technology,T2,"Smart irrigation, fertigation and field sensing",model prior: terrain_fit,C,"prior for calibration, not a measurement"
+1,TEC-T3-PAR-eta_drought,technology,T3,Drone and BeiDou smart machinery operating services,model prior: eta_drought,C,"prior for calibration, not a measurement"
+1,TEC-T3-PAR-eta_flood,technology,T3,Drone and BeiDou smart machinery operating services,model prior: eta_flood,C,"prior for calibration, not a measurement"
+1,TEC-T3-PAR-eta_compound,technology,T3,Drone and BeiDou smart machinery operating services,model prior: eta_compound,C,"prior for calibration, not a measurement"
+1,TEC-T3-PAR-capex_own_per_unit,technology,T3,Drone and BeiDou smart machinery operating services,model prior: capex_own_per_unit,C,"prior for calibration, not a measurement"
+1,TEC-T3-PAR-service_price_per_mu,technology,T3,Drone and BeiDou smart machinery operating services,model prior: service_price_per_mu,C,"prior for calibration, not a measurement"
+1,TEC-T3-PAR-opex_per_mu,technology,T3,Drone and BeiDou smart machinery operating services,model prior: opex_per_mu,C,"prior for calibration, not a measurement"
+1,TEC-T3-PAR-learning_cost,technology,T3,Drone and BeiDou smart machinery operating services,model prior: learning_cost,C,"prior for calibration, not a measurement"
+1,TEC-T3-PAR-learning_cost_own,technology,T3,Drone and BeiDou smart machinery operating services,model prior: learning_cost_own,C,"prior for calibration, not a measurement"
+1,TEC-T3-PAR-digital_literacy_threshold,technology,T3,Drone and BeiDou smart machinery operating services,model prior: digital_literacy_threshold,C,"prior for calibration, not a measurement"
+1,TEC-T3-PAR-availability_base,technology,T3,Drone and BeiDou smart machinery operating services,model prior: availability_base,C,"prior for calibration, not a measurement"
+1,TEC-T3-PAR-capacity_mu_per_unit_per_day,technology,T3,Drone and BeiDou smart machinery operating services,model prior: capacity_mu_per_unit_per_day,C,"prior for calibration, not a measurement"
+1,TEC-T3-PAR-failure_rate_annual,technology,T3,Drone and BeiDou smart machinery operating services,model prior: failure_rate_annual,C,"prior for calibration, not a measurement"
+1,TEC-T3-PAR-terrain_fit,technology,T3,Drone and BeiDou smart machinery operating services,model prior: terrain_fit,C,"prior for calibration, not a measurement"
+1,TEC-T3-PAR-congestion_sensitive,technology,T3,Drone and BeiDou smart machinery operating services,model prior: congestion_sensitive,C,"prior for calibration, not a measurement"
+2,POL-SP1-targets_by_2028-smart_farms,policy,SP1,Sichuan Smart Agriculture Action Plan (2025-2028),targets_by_2028: smart_farms,B,"policy commitment, NOT realised adoption"
+2,POL-SP1-targets_by_2028-smart_pastures,policy,SP1,Sichuan Smart Agriculture Action Plan (2025-2028),targets_by_2028: smart_pastures,B,"policy commitment, NOT realised adoption"
+2,POL-SP1-targets_by_2028-smart_fisheries,policy,SP1,Sichuan Smart Agriculture Action Plan (2025-2028),targets_by_2028: smart_fisheries,B,"policy commitment, NOT realised adoption"
+2,POL-SP1-targets_by_2028-digital_government_scenarios,policy,SP1,Sichuan Smart Agriculture Action Plan (2025-2028),targets_by_2028: digital_government_scenarios,B,"policy commitment, NOT realised adoption"
+2,POL-SP1-targets_by_2028-precision_insurance_counties,policy,SP1,Sichuan Smart Agriculture Action Plan (2025-2028),targets_by_2028: precision_insurance_counties,B,"policy commitment, NOT realised adoption"
+2,POL-SP1-targets_by_2028-microclimate_station_counties,policy,SP1,Sichuan Smart Agriculture Action Plan (2025-2028),targets_by_2028: microclimate_station_counties,B,"policy commitment, NOT realised adoption"
+2,POL-SP1-targets_by_2028-smart_fertigation_counties,policy,SP1,Sichuan Smart Agriculture Action Plan (2025-2028),targets_by_2028: smart_fertigation_counties,B,"policy commitment, NOT realised adoption"
+2,POL-SP1-targets_by_2028-smart_fertigation_area_mu,policy,SP1,Sichuan Smart Agriculture Action Plan (2025-2028),targets_by_2028: smart_fertigation_area_mu,B,"policy commitment, NOT realised adoption"
+2,POL-SP1-targets_by_2028-regional_machinery_service_centres,policy,SP1,Sichuan Smart Agriculture Action Plan (2025-2028),targets_by_2028: regional_machinery_service_centres,B,"policy commitment, NOT realised adoption"
+2,POL-SP1-targets_by_2028-intelligent_machinery_equipment_rate,policy,SP1,Sichuan Smart Agriculture Action Plan (2025-2028),targets_by_2028: intelligent_machinery_equipment_rate,B,"policy commitment, NOT realised adoption"
+2,POL-SP1-targets_by_2028-drones,policy,SP1,Sichuan Smart Agriculture Action Plan (2025-2028),targets_by_2028: drones,B,"policy commitment, NOT realised adoption"
+2,POL-SP1-targets_by_2028-licensed_pilots,policy,SP1,Sichuan Smart Agriculture Action Plan (2025-2028),targets_by_2028: licensed_pilots,B,"policy commitment, NOT realised adoption"
+2,POL-SP1-targets_by_2028-low_altitude_scenarios,policy,SP1,Sichuan Smart Agriculture Action Plan (2025-2028),targets_by_2028: low_altitude_scenarios,B,"policy commitment, NOT realised adoption"
+2,POL-SP1-targets_by_2028-digital_farm_factories,policy,SP1,Sichuan Smart Agriculture Action Plan (2025-2028),targets_by_2028: digital_farm_factories,B,"policy commitment, NOT realised adoption"
+2,POL-SP1-targets_by_2028-upgraded_modern_parks,policy,SP1,Sichuan Smart Agriculture Action Plan (2025-2028),targets_by_2028: upgraded_modern_parks,B,"policy commitment, NOT realised adoption"
+2,POL-SP1-targets_by_2028-smart_agriculture_leading_zones,policy,SP1,Sichuan Smart Agriculture Action Plan (2025-2028),targets_by_2028: smart_agriculture_leading_zones,B,"policy commitment, NOT realised adoption"
+2,TEC-T1-ANCHOR,technology,T1,Digital early warning and agro-situation information,"Provincial action plan targets extend micro-climate station coverage from 36 counties to 66 counties, and the digital base map pilot from 7 prefectures towards province-wide coverage. Rural 5G and broadband coverage is effectively universal at village level, so the binding constraint is not connectivity but whether a warning is ACTED ON.",B,
+2,TEC-T2-ANCHOR,technology,T2,"Smart irrigation, fertigation and field sensing","Provincial targets move smart water-fertiliser integration from about 540 thousand mu across 13 counties towards roughly 1.65 million mu across 40 counties. Effective irrigated area is around 3.0 million ha, so smart fertigation remains a small share of irrigated land and its value is strongly conditional on the underlying irrigation asset.",B,
+2,TEC-T3-ANCHOR,technology,T3,Drone and BeiDou smart machinery operating services,"Provincial targets include more than 200 regional agricultural machinery service centres, upgrading roughly 26 thousand existing terminals, an intelligent assistance and monitoring equipment rate of about 60 per cent, over 15 thousand drones and more than 5 thousand licensed pilots. Comprehensive mechanisation of major crops was around 65 per cent in 2021, below the national level, with maize about 43 per cent and potato about 26 per cent, so machinery capacity is itself scarce and queueing is real rather than notional.",B,
+3,DIS-D1-DATA-13407,disruption,D1,Seasonal summer drought,"CMA station precipitation and temperature, daily, 2000-2025",C,
+3,DIS-D1-DATA-694229,disruption,D1,Seasonal summer drought,"drought index (CI, MCI) gridded series",C,
+3,DIS-D1-DATA-403688,disruption,D1,Seasonal summer drought,irrigated area by county (Sichuan Statistical Yearbook),C,
+3,DIS-D1-DATA-898696,disruption,D1,Seasonal summer drought,insurance drought claim records by county and year,C,
+3,DIS-D2-DATA-21058,disruption,D2,"Rainstorm, flood and waterlogging","hourly rainfall and river stage, flood warning issuance timestamps",C,
+3,DIS-D2-DATA-576203,disruption,D2,"Rainstorm, flood and waterlogging",remote sensing inundation extent by event,C,
+3,DIS-D2-DATA-677752,disruption,D2,"Rainstorm, flood and waterlogging",service work orders with request/dispatch/arrival timestamps,C,
+3,DIS-D2-DATA-523459,disruption,D2,"Rainstorm, flood and waterlogging",crop calendar by county to align stage vulnerability,C,
+3,DIS-D3-DATA-770758,disruption,D3,Compound heat-drought with power and network interruption,2022 heat-drought event chronology and power rationing notices,C,
+3,DIS-D3-DATA-34507,disruption,D3,Compound heat-drought with power and network interruption,base station outage and platform downtime logs,C,
+3,DIS-D3-DATA-211069,disruption,D3,Compound heat-drought with power and network interruption,irrigation pump electricity consumption series,C,
+3,DIS-D3-DATA-354683,disruption,D3,Compound heat-drought with power and network interruption,device telemetry gaps during the event window,C,
+3,DIS-D5-SCOPE,disruption,D5,Migratory pest outbreak (fall armyworm),"Excellent match for early-warning technology (T1) and drone spraying (T3), and Sichuan sits on a migration corridor, but outbreak data are patchier than meteorological series. Add in version 2 once plant protection station records are secured.",C,tier=tier2
+3,DIS-D6-SCOPE,disruption,D6,Continuous overcast rain and hail at harvest,Localised; needs finer-grained station data than the MVP.,C,tier=tier2
+3,DIS-X1-SCOPE,disruption,X1,Earthquake,"High salience in Sichuan but essentially orthogonal to smart agricultural technology adoption decisions and effort levels; the response channel is emergency management, not agronomic operations. Including it would add variance without discriminating between the policies under study.",C,tier=excluded
+3,DIS-X2-SCOPE,disruption,X2,Trade and export demand shocks,"Acts on marketing and e-commerce channels rather than on production effort and disaster loss, which is the causal chain this model is built to represent.",C,tier=excluded
+3,POL-SP1-DOC,policy,SP1,Sichuan Smart Agriculture Action Plan (2025-2028),"Supplies the SD capacity trajectory: these targets become the upper envelope for service capacity, station coverage and equipment stock. Scenario analysis asks whether hitting the targets actually reduces loss, and for whom.",B,scope=provincial; ref=川农发〔2025〕20号
+3,POL-SP1-baseline_2025-microclimate_station_counties,policy,SP1,Sichuan Smart Agriculture Action Plan (2025-2028),baseline_2025: microclimate_station_counties,B,stated starting point
+3,POL-SP1-baseline_2025-smart_fertigation_counties,policy,SP1,Sichuan Smart Agriculture Action Plan (2025-2028),baseline_2025: smart_fertigation_counties,B,stated starting point
+3,POL-SP1-baseline_2025-smart_fertigation_area_mu,policy,SP1,Sichuan Smart Agriculture Action Plan (2025-2028),baseline_2025: smart_fertigation_area_mu,B,stated starting point
+3,POL-SP1-baseline_2025-regional_machinery_service_centres,policy,SP1,Sichuan Smart Agriculture Action Plan (2025-2028),baseline_2025: regional_machinery_service_centres,B,stated starting point
+3,POL-SP1-baseline_2025-terminals_to_upgrade,policy,SP1,Sichuan Smart Agriculture Action Plan (2025-2028),baseline_2025: terminals_to_upgrade,B,stated starting point
+3,POL-SP1-baseline_2025-low_altitude_scenarios,policy,SP1,Sichuan Smart Agriculture Action Plan (2025-2028),baseline_2025: low_altitude_scenarios,B,stated starting point
+3,POL-SP1-baseline_2025-digital_map_pilot_prefectures,policy,SP1,Sichuan Smart Agriculture Action Plan (2025-2028),baseline_2025: digital_map_pilot_prefectures,B,stated starting point
+3,POL-SP2-DOC,policy,SP2,Implementation Plan for Vigorously Developing Smart Agriculture,implementation pathway and departmental responsibilities,B,scope=provincial; ref=川农发〔2025〕19号
+3,POL-P1-INST,policy,P1,Equipment purchase subsidy,"Lowers K (acquisition cost) in the adoption value function, and the disbursement lag interacts with the liquidity constraint: a farmer who must pay up front and wait 120 days for reimbursement faces a real cost far above the nominal net price. This is why lag is a decision variable and not a fixed constant.",C,"targets=['T2', 'T3']; sd_stock=government_budget; equity=poor_favours_large_operators"
+3,POL-P1-DV-subsidy_rate,policy,P1,Equipment purchase subsidy,decision variable: subsidy_rate,C,
+3,POL-P1-DV-cap_per_farm,policy,P1,Equipment purchase subsidy,decision variable: cap_per_farm,C,
+3,POL-P1-DV-eligibility_min_area_mu,policy,P1,Equipment purchase subsidy,decision variable: eligibility_min_area_mu,C,
+3,POL-P1-DV-disbursement_lag_days,policy,P1,Equipment purchase subsidy,decision variable: disbursement_lag_days,C,
+3,POL-P1-SE-863156,policy,P1,Equipment purchase subsidy,biases towards larger operators with the cash to pre-finance,C,
+3,POL-P1-SE-634446,policy,P1,Equipment purchase subsidy,can produce idle or duplicated equipment,C,
+3,POL-P1-SE-148207,policy,P1,Equipment purchase subsidy,"does nothing about maintenance, which is where failure actually bites",C,
+3,POL-P2-INST,policy,P2,Per-mu service voucher,"Reduces the per-mu price of purchased services, shifting the adoption choice from ownership towards the service mode. Because it raises DEMAND without raising CAPACITY, on its own it lengthens queues, and under a correlated shock it can lower realised efficacy for everyone. The interaction between P2 and P3 is the single most policy-relevant non-linearity in the model.",C,"targets=['T3', 'T2']; sd_stock=government_budget; equity=favourable"
+3,POL-P2-DV-voucher_value_per_mu,policy,P2,Per-mu service voucher,decision variable: voucher_value_per_mu,C,
+3,POL-P2-DV-max_mu_per_farm,policy,P2,Per-mu service voucher,decision variable: max_mu_per_farm,C,
+3,POL-P2-DV-targeting,policy,P2,Per-mu service voucher,decision variable: targeting,C,
+3,POL-P2-DV-validity_days,policy,P2,Per-mu service voucher,decision variable: validity_days,C,
+3,POL-P2-SE-372275,policy,P2,Per-mu service voucher,congestion and delayed operations at peak,C,
+3,POL-P2-SE-361179,policy,P2,Per-mu service voucher,remote farmers still served last despite holding vouchers,C,
+3,POL-P3-INST,policy,P3,Service capacity expansion (regional machinery service centres),"Raises the capacity stock that determines queue length and expected wait, which enters the provider effort problem through the agent reservation utility and the farmer access cost.",C,targets=['T3']; sd_stock=service_capacity; equity=depends_on_allocation
+3,POL-P3-DV-new_centres_per_year,policy,P3,Service capacity expansion (regional machinery service centres),decision variable: new_centres_per_year,C,
+3,POL-P3-DV-units_per_centre,policy,P3,Service capacity expansion (regional machinery service centres),decision variable: units_per_centre,C,
+3,POL-P3-DV-mountain_allocation_share,policy,P3,Service capacity expansion (regional machinery service centres),decision variable: mountain_allocation_share,C,
+3,POL-P4-INST,policy,P4,Digital skills training,"Raises digital literacy, which lowers the learning cost term and raises the probability of reaching the effectively-used state. Skill decays without follow-up, so one-off training campaigns produce a transient bump that the model will show fading.",C,"targets=['T1', 'T2', 'T3']; sd_stock=capable_farmers; equity=favourable_if_targeted"
+3,POL-P4-DV-slots_per_year,policy,P4,Digital skills training,decision variable: slots_per_year,C,
+3,POL-P4-DV-followup_support,policy,P4,Digital skills training,decision variable: followup_support,C,
+3,POL-P4-DV-skill_gain,policy,P4,Digital skills training,decision variable: skill_gain,C,
+3,POL-P4-DV-decay_rate_annual,policy,P4,Digital skills training,decision variable: decay_rate_annual,C,
+3,POL-P5-INST,policy,P5,Warning plus emergency operation guarantee,"Combines information with reserved operating capacity, so that a warning can actually be acted on during a correlated shock. Designed specifically to break the D2 and D3 failure mode where everyone is warned simultaneously and nobody can get served.",C,"targets=['T1', 'T3']; sd_stock=['infrastructure', 'service_capacity']; equity=favourable"
+3,POL-P5-DV-lead_time_gain_days,policy,P5,Warning plus emergency operation guarantee,decision variable: lead_time_gain_days,C,
+3,POL-P5-DV-reserved_capacity_share,policy,P5,Warning plus emergency operation guarantee,decision variable: reserved_capacity_share,C,
+3,POL-P5-DV-false_alarm_penalty,policy,P5,Warning plus emergency operation guarantee,decision variable: false_alarm_penalty,C,
+3,POL-P6-INST,policy,P6,Precision insurance with remote sensing loss assessment,"Changes the outcome distribution the farmer faces rather than the production function, so it acts directly on the risk-aversion channel: it lowers the effective c1 and therefore, through Proposition 1, shifts the equilibrium contract form and the effort the provider supplies. Payout speed governs post-shock replanting and recovery time.",C,targets=['T6']; sd_stock=government_budget; equity=mixed
+3,POL-P6-DV-premium_subsidy_rate,policy,P6,Precision insurance with remote sensing loss assessment,decision variable: premium_subsidy_rate,C,
+3,POL-P6-DV-payout_lag_days,policy,P6,Precision insurance with remote sensing loss assessment,decision variable: payout_lag_days,C,
+3,POL-P6-DV-coverage_ratio,policy,P6,Precision insurance with remote sensing loss assessment,decision variable: coverage_ratio,C,
+3,POL-P6-DV-basis_risk,policy,P6,Precision insurance with remote sensing loss assessment,decision variable: basis_risk,C,
+3,POL-P6-SE-249962,policy,P6,Precision insurance with remote sensing loss assessment,basis risk and algorithmic exclusion of atypical plots,C,
+3,POL-P6-SE-94602,policy,P6,Precision insurance with remote sensing loss assessment,claim processing congestion after correlated events,C,
+3,POL-P7-INST,policy,P7,Mountain and hill adaptation investment,"Raises the terrain-fit multiplier for hill and mountain agents, which otherwise caps achievable efficacy regardless of how much subsidy is spent. The instrument that most directly addresses the spatial equity objective.",C,"targets=['T2', 'T3']; sd_stock=service_capacity; equity=strongly_favourable"
+3,POL-P7-DV-light_equipment_share,policy,P7,Mountain and hill adaptation investment,decision variable: light_equipment_share,C,
+3,POL-P7-DV-remote_service_points,policy,P7,Mountain and hill adaptation investment,decision variable: remote_service_points,C,
+3,POL-P7-DV-transport_support,policy,P7,Mountain and hill adaptation investment,decision variable: transport_support,C,

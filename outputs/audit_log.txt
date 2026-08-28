@@ -1,0 +1,60 @@
+============================================================================
+MODEL AND DATA AUDIT
+============================================================================
+
+[A1] configuration coverage
+  declared keys checked : 299
+  never read by code    : 74
+    - disruptions.yaml       calibrated_on
+    - disruptions.yaml       decision_date
+    - disruptions.yaml       liquidity_stress_elasticity
+    - disruptions.yaml       outage_duration_days
+    - disruptions.yaml       region
+    - disruptions.yaml       risk_aversion_shift
+    - disruptions.yaml       scope_change_2026_08
+    - disruptions.yaml       spatial_correlation_estimated
+    - disruptions.yaml       tier1_rationale
+    - disruptions.yaml       typical_duration_days
+    - model_params.yaml      abm_to_sd
+    - model_params.yaml      base_verifiability
+    - model_params.yaml      choice_rule
+    - model_params.yaml      contract_diversification
+    - model_params.yaml      debt_ratio
+    - model_params.yaml      distribution
+    - model_params.yaml      dt_years
+    - model_params.yaml      fleet_size
+    - model_params.yaml      grain_filling
+    - model_params.yaml      harvest_month
+    - model_params.yaml      input_price_shock
+    - model_params.yaml      jointing
+    - model_params.yaml      liquidity_floor
+    - model_params.yaml      maturity
+    - model_params.yaml      outcome_scale_per_mu
+
+[A2] hard-coded numeric literals in behavioural code
+  literals flagged: 158
+file
+agents.py    39
+model.py     97
+sd.py        14
+shocks.py     8
+
+[A3] sensitivity analysis (this takes a few minutes)
+         parameter     module  max_effect_pct             drives
+   logit scale tau  behaviour          101.76    mitigation_rate
+    gamma provider   contract           81.96 effective_use_rate
+provider risk mean       risk           62.00 effective_use_rate
+ capacity coverage         sd           55.28     mean_wait_days
+    U_min provider   contract           38.53 effective_use_rate
+  T3 service price technology           29.52     mean_wait_days
+      eta T3 flood technology           25.96    mitigation_rate
+  verifiability T3   contract           22.42 effective_use_rate
+      eta T1 flood technology           20.17    mitigation_rate
+  farmer risk mean       risk           16.20     mean_wait_days
+  shirk multiplier   contract           15.94 effective_use_rate
+   T2 capex per mu technology            9.31     mean_wait_days
+   social learning  behaviour            7.88 effective_use_rate
+    max mitigation       loss            0.02    mitigation_rate
+    eta T2 drought technology            0.00     mean_wait_days
+
+[A4] Monte Carlo stability

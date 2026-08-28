@@ -1,0 +1,9 @@
+test,expected,adopt_T3,effort_T3,mitigation,wait_days,loss,income,exit_rate
+No shocks at all,"zero loss, zero mitigation",0.203,0.7065,0.0,17.127,0.0,12255.0,0.0
+Every season D3,"high loss, low mitigation",0.1585,0.7097,0.007,8.367,0.3373,6248.2,0.0
+Technology efficacy = 0,"adoption collapses, mitigation = 0",0.1115,0.6904,0.0,5.253,0.3392,6197.4,0.0
+Technology is free,"adoption near ceiling, queue binds",0.2095,0.699,0.0104,26.793,0.3363,6357.8,0.0
+Unlimited service capacity,wait -> minimum,0.1945,0.6299,0.0085,1.0,0.3368,6245.7,0.0
+No service capacity,"wait at ceiling, service adoption unusable",0.049,0.0,0.0,30.0,0.3392,6196.2,0.0
+No monitoring at all,effort falls to the shirking floor,0.1375,0.4182,0.0039,6.769,0.3381,6225.3,0.0
+Zero budget with subsidy scenario,instrument rations to zero,0.1585,0.7097,0.007,8.367,0.3373,6248.2,0.0
