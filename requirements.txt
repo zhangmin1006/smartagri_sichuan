@@ -5,3 +5,4 @@ pyyaml>=6.0
 requests>=2.31
 beautifulsoup4>=4.12
 matplotlib>=3.8
+streamlit>=1.54,<2

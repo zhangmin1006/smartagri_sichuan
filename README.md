@@ -35,6 +35,18 @@ python -m smartagri.monte_carlo --min-reps 30 --max-reps 100 \
   --batch-size 10 --parameter-draws 30 --inner-reps 5
 ```
 
+## Streamlit app
+
+The deployable Chinese-language policy simulator uses the same model, YAML
+configuration, paired baseline design, and precomputed contract cache:
+
+```bash
+streamlit run streamlit_app.py
+```
+
+The Streamlit Community Cloud entry point is `streamlit_app.py` at the
+repository root. No secrets are required.
+
 ---
 
 ## What is here
